@@ -9,22 +9,24 @@ namespace DX_Student_Score_Management
 {
     static class Program
     {
-        public static ConnectionData connectionData;
-        /// <summary>
-        /// The main entry point for the application.
-        /// </summary>
+        public static DataRepository dataRepository;
+
         [STAThread]
         static void Main()
         {
-            connectionData = new ConnectionData();
-            
+            dataRepository = new DataRepository();
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
             BonusSkins.Register();
             SkinManager.EnableFormSkins();
-            Application.Run(new FormLogin(connectionData));
-            Application.Run(new FormMain(connectionData));
+            //Application.Run(new FormLogin(dataRepository));
+            //if (dataRepository.Ready)
+            //{
+                Application.Run(new FormMain());
+            //}
+
         }
     }
 }

@@ -1,59 +1,47 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace DX_Student_Score_Management
 {
-    public class ConnectionData
+    public class DataRepository
     {
-        private string server;
-        private string dataBase;
-        private string userId;
-        private string password;
+        private SqlConnection sqlConnection;
+        public string Server { get; set; }
+        public string DataBase { get; set; }
+        public string UserId { get; set; }
+        public string Password { get; set; }
+        public string UserName { get; set; }
+        public string FullName { get; set; }
+        public string GroupId { get; set; }
+        public bool Ready { get; set; } = false;
 
+        public void NewSqlConnection()
+        {
+            this.sqlConnection = new SqlConnection(this.GetConnectionString());
+        }
+        public void Open()
+        {
+            this.sqlConnection.Open();
+        }
         public string GetConnectionString()
         {
-            return $"server={server};database={dataBase};user id={userId};password={password}";
+            return $"server={Server};database={DataBase};user id={UserId};password={Password}";
         }
 
-        public string GetServer()
-        {
-            return server;
-        }
 
-        public void SetServer(string value)
+        public void GetLoginInfomation()
         {
-            server = value;
-        }
-
-        public string GetDataBase()
-        {
-            return dataBase;
-        }
-
-        public void SetDataBase(string value)
-        {
-            dataBase = value;
-        }
-        public string GetUserId()
-        {
-            return userId;
-        }
-
-        public void SetUserId(string value)
-        {
-            userId = value;
-        }
-        public string GetPassword()
-        {
-            return password;
-        }
-
-        public void SetPassword(string value)
-        {
-            password = value;
+            string sql = "EXEC SP_DANGNHAP " + this.UserId;
+            SqlCommand sqlCommand = new SqlCommand(sql, this.sqlConnection);
+            SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
+            sqlDataReader.Read();
+            this.UserName = sqlDataReader.GetValue(0).ToString();
+            this.FullName = sqlDataReader.GetValue(1).ToString();
+            this.GroupId = sqlDataReader.GetValue(2).ToString();
         }
     }
 }
