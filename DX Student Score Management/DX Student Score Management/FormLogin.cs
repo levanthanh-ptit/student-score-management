@@ -14,11 +14,12 @@ namespace DX_Student_Score_Management
 {
     public partial class FormLogin : DevExpress.XtraEditors.XtraForm
     {
-        DataRepository dataRepository;
+        DataRepository _dataRepository;
         public FormLogin(DataRepository dataRepository)
         {
+            this._dataRepository = dataRepository;
             InitializeComponent();
-            this.dataRepository = dataRepository;
+           
         }
 
         private void FormLogin_Load(object sender, EventArgs e)
@@ -31,16 +32,16 @@ namespace DX_Student_Score_Management
 
         private void loginLoginButton_Click(object sender, EventArgs e)
         {
-            dataRepository.Server = LoginServerListComboBox.SelectedValue.ToString();
-            dataRepository.DataBase = "QLDSV";
-            dataRepository.UserId = LoginUserTextBox.Text;
-            dataRepository.Password = LoginPasswordTextBox.Text; 
-            dataRepository.NewSqlConnection();
+            _dataRepository.Server = LoginServerListComboBox.SelectedValue.ToString();
+            _dataRepository.DataBase = "QLDSV";
+            _dataRepository.UserId = LoginUserTextBox.Text;
+            _dataRepository.Password = LoginPasswordTextBox.Text; 
+            _dataRepository.NewSqlConnection();
             try
             {
-                dataRepository.Open();
-                dataRepository.GetLoginInfomation();
-                dataRepository.Ready = true;
+                _dataRepository.Open();
+                _dataRepository.GetLoginInfomation();
+                _dataRepository.Ready = true;
                 MessageBox.Show("Kết nối thành công!");
                 this.Close();
             }

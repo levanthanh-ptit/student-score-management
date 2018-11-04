@@ -26,10 +26,22 @@ namespace DX_Student_Score_Management.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=FPTDNSB;Initial Catalog=QLDSV;Integrated Security=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=FPTDNSB;Initial Catalog=QLDSV;Persist Security Info=False;User ID=sa;" +
+            "Password=123")]
         public string QLDSV_MASTER_ConnectionString {
             get {
                 return ((string)(this["QLDSV_MASTER_ConnectionString"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=FPTDNSB\\THANH02;Initial Catalog=QLDSV;Persist Security Info=True;User" +
+            " ID=sa;Password=123")]
+        public string QLDSVKhoaConnectionString {
+            get {
+                return ((string)(this["QLDSVKhoaConnectionString"]));
             }
         }
     }

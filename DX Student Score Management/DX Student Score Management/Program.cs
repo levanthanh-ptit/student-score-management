@@ -9,23 +9,30 @@ namespace DX_Student_Score_Management
 {
     static class Program
     {
-        public static DataRepository dataRepository;
+        public static DataRepository _dataRepository;
+        public static FormLogin _formLogin;
+        public static DXFormMain _DXFormMain;
+
+        private static void InitServices()
+        {
+            _dataRepository = new DataRepository();
+            _formLogin = new FormLogin(_dataRepository);
+        }
 
         [STAThread]
         static void Main()
         {
-            dataRepository = new DataRepository();
-
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
             BonusSkins.Register();
             SkinManager.EnableFormSkins();
-            //Application.Run(new FormLogin(dataRepository));
-            //if (dataRepository.Ready)
-            //{
-                Application.Run(new FormMain());
-            //}
+
+            InitServices();
+
+            Application.Run(_formLogin);
+            if (_dataRepository.Ready) Application.Run(_DXFormMain = new DXFormMain(_dataRepository));
+            
 
         }
     }
