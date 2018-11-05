@@ -32,7 +32,6 @@ namespace DX_Student_Score_Management
             return $"server={Server};database={DataBase};user id={UserId};password={Password}";
         }
 
-
         public void GetLoginInfomation()
         {
             string sql = "EXEC SP_DANGNHAP " + this.UserId;

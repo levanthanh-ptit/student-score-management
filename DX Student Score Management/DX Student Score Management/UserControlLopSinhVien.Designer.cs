@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserControlLopSinhVien));
             System.Windows.Forms.Label mALOPLabel;
             System.Windows.Forms.Label tENLOPLabel;
             System.Windows.Forms.Label mAKHLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserControlLopSinhVien));
             this.toolBar = new DevExpress.XtraBars.Bar();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
@@ -52,10 +52,11 @@
             this.colTENLOP = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMAKH = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelSubContainer = new System.Windows.Forms.Panel();
-            this.mALOPTextEdit = new DevExpress.XtraEditors.TextEdit();
-            this.tENLOPTextEdit = new DevExpress.XtraEditors.TextEdit();
             this.mAKHTextEdit = new DevExpress.XtraEditors.TextEdit();
-            this.tableLayoutPanelContainer = new System.Windows.Forms.TableLayoutPanel();
+            this.tENLOPTextEdit = new DevExpress.XtraEditors.TextEdit();
+            this.mALOPTextEdit = new DevExpress.XtraEditors.TextEdit();
+            this.label1 = new System.Windows.Forms.Label();
+            this.splitContainer = new System.Windows.Forms.SplitContainer();
             mALOPLabel = new System.Windows.Forms.Label();
             tENLOPLabel = new System.Windows.Forms.Label();
             mAKHLabel = new System.Windows.Forms.Label();
@@ -65,11 +66,41 @@
             ((System.ComponentModel.ISupportInitialize)(this.lOPGridControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.panelSubContainer.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.mALOPTextEdit.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tENLOPTextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mAKHTextEdit.Properties)).BeginInit();
-            this.tableLayoutPanelContainer.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tENLOPTextEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mALOPTextEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer)).BeginInit();
+            this.splitContainer.Panel1.SuspendLayout();
+            this.splitContainer.Panel2.SuspendLayout();
+            this.splitContainer.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // mALOPLabel
+            // 
+            mALOPLabel.AutoSize = true;
+            mALOPLabel.Location = new System.Drawing.Point(10, 34);
+            mALOPLabel.Name = "mALOPLabel";
+            mALOPLabel.Size = new System.Drawing.Size(42, 13);
+            mALOPLabel.TabIndex = 0;
+            mALOPLabel.Text = "Mã lớp:";
+            // 
+            // tENLOPLabel
+            // 
+            tENLOPLabel.AutoSize = true;
+            tENLOPLabel.Location = new System.Drawing.Point(344, 34);
+            tENLOPLabel.Name = "tENLOPLabel";
+            tENLOPLabel.Size = new System.Drawing.Size(46, 13);
+            tENLOPLabel.TabIndex = 2;
+            tENLOPLabel.Text = "Tên lớp:";
+            // 
+            // mAKHLabel
+            // 
+            mAKHLabel.AutoSize = true;
+            mAKHLabel.Location = new System.Drawing.Point(173, 34);
+            mAKHLabel.Name = "mAKHLabel";
+            mAKHLabel.Size = new System.Drawing.Size(51, 13);
+            mAKHLabel.TabIndex = 4;
+            mAKHLabel.Text = "Mã khoa:";
             // 
             // toolBar
             // 
@@ -129,7 +160,7 @@
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(794, 40);
+            this.barDockControlTop.Size = new System.Drawing.Size(794, 42);
             // 
             // barDockControlBottom
             // 
@@ -143,17 +174,17 @@
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 40);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 42);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 605);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 603);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(794, 40);
+            this.barDockControlRight.Location = new System.Drawing.Point(794, 42);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 605);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 603);
             // 
             // qLDSVKhoaDataSet
             // 
@@ -184,8 +215,7 @@
             // lOPGridControl
             // 
             this.lOPGridControl.DataSource = this.lOPBindingSource;
-            this.lOPGridControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lOPGridControl.Location = new System.Drawing.Point(3, 3);
+            this.lOPGridControl.Location = new System.Drawing.Point(0, 10);
             this.lOPGridControl.MainView = this.gridView1;
             this.lOPGridControl.MenuManager = this.barManager1;
             this.lOPGridControl.Name = "lOPGridControl";
@@ -193,6 +223,7 @@
             this.lOPGridControl.TabIndex = 5;
             this.lOPGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
+            this.lOPGridControl.Click += new System.EventHandler(this.lOPGridControl_Click);
             // 
             // gridView1
             // 
@@ -205,6 +236,7 @@
             // 
             // colMALOP
             // 
+            this.colMALOP.Caption = "Mã lớp";
             this.colMALOP.FieldName = "MALOP";
             this.colMALOP.Name = "colMALOP";
             this.colMALOP.Visible = true;
@@ -212,6 +244,7 @@
             // 
             // colTENLOP
             // 
+            this.colTENLOP.Caption = "Tên lớp";
             this.colTENLOP.FieldName = "TENLOP";
             this.colTENLOP.Name = "colTENLOP";
             this.colTENLOP.Visible = true;
@@ -219,6 +252,7 @@
             // 
             // colMAKH
             // 
+            this.colMAKH.Caption = "Mã khoa";
             this.colMAKH.FieldName = "MAKH";
             this.colMAKH.Name = "colMAKH";
             this.colMAKH.Visible = true;
@@ -227,6 +261,7 @@
             // panelSubContainer
             // 
             this.panelSubContainer.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panelSubContainer.Controls.Add(this.label1);
             this.panelSubContainer.Controls.Add(mAKHLabel);
             this.panelSubContainer.Controls.Add(this.mAKHTextEdit);
             this.panelSubContainer.Controls.Add(tENLOPLabel);
@@ -234,85 +269,71 @@
             this.panelSubContainer.Controls.Add(mALOPLabel);
             this.panelSubContainer.Controls.Add(this.mALOPTextEdit);
             this.panelSubContainer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelSubContainer.Location = new System.Drawing.Point(3, 245);
+            this.panelSubContainer.Location = new System.Drawing.Point(0, 0);
             this.panelSubContainer.Name = "panelSubContainer";
-            this.panelSubContainer.Size = new System.Drawing.Size(788, 357);
+            this.panelSubContainer.Size = new System.Drawing.Size(794, 247);
             this.panelSubContainer.TabIndex = 6;
-            // 
-            // mALOPLabel
-            // 
-            mALOPLabel.AutoSize = true;
-            mALOPLabel.Location = new System.Drawing.Point(10, 16);
-            mALOPLabel.Name = "mALOPLabel";
-            mALOPLabel.Size = new System.Drawing.Size(42, 13);
-            mALOPLabel.TabIndex = 0;
-            mALOPLabel.Text = "Mã lớp:";
-            // 
-            // mALOPTextEdit
-            // 
-            this.mALOPTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.lOPBindingSource, "MALOP", true));
-            this.mALOPTextEdit.Location = new System.Drawing.Point(61, 13);
-            this.mALOPTextEdit.MenuManager = this.barManager1;
-            this.mALOPTextEdit.Name = "mALOPTextEdit";
-            this.mALOPTextEdit.Size = new System.Drawing.Size(100, 20);
-            this.mALOPTextEdit.TabIndex = 1;
-            // 
-            // tENLOPLabel
-            // 
-            tENLOPLabel.AutoSize = true;
-            tENLOPLabel.Location = new System.Drawing.Point(344, 16);
-            tENLOPLabel.Name = "tENLOPLabel";
-            tENLOPLabel.Size = new System.Drawing.Size(46, 13);
-            tENLOPLabel.TabIndex = 2;
-            tENLOPLabel.Text = "Tên lớp:";
-            // 
-            // tENLOPTextEdit
-            // 
-            this.tENLOPTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.lOPBindingSource, "TENLOP", true));
-            this.tENLOPTextEdit.Location = new System.Drawing.Point(399, 13);
-            this.tENLOPTextEdit.MenuManager = this.barManager1;
-            this.tENLOPTextEdit.Name = "tENLOPTextEdit";
-            this.tENLOPTextEdit.Size = new System.Drawing.Size(351, 20);
-            this.tENLOPTextEdit.TabIndex = 3;
-            // 
-            // mAKHLabel
-            // 
-            mAKHLabel.AutoSize = true;
-            mAKHLabel.Location = new System.Drawing.Point(173, 16);
-            mAKHLabel.Name = "mAKHLabel";
-            mAKHLabel.Size = new System.Drawing.Size(51, 13);
-            mAKHLabel.TabIndex = 4;
-            mAKHLabel.Text = "Mã khoa:";
             // 
             // mAKHTextEdit
             // 
             this.mAKHTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.lOPBindingSource, "MAKH", true));
-            this.mAKHTextEdit.Location = new System.Drawing.Point(230, 13);
+            this.mAKHTextEdit.Location = new System.Drawing.Point(230, 31);
             this.mAKHTextEdit.MenuManager = this.barManager1;
             this.mAKHTextEdit.Name = "mAKHTextEdit";
             this.mAKHTextEdit.Size = new System.Drawing.Size(100, 20);
             this.mAKHTextEdit.TabIndex = 5;
             // 
-            // tableLayoutPanelContainer
+            // tENLOPTextEdit
             // 
-            this.tableLayoutPanelContainer.ColumnCount = 1;
-            this.tableLayoutPanelContainer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelContainer.Controls.Add(this.lOPGridControl, 0, 0);
-            this.tableLayoutPanelContainer.Controls.Add(this.panelSubContainer, 0, 1);
-            this.tableLayoutPanelContainer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanelContainer.Location = new System.Drawing.Point(0, 40);
-            this.tableLayoutPanelContainer.Name = "tableLayoutPanelContainer";
-            this.tableLayoutPanelContainer.RowCount = 2;
-            this.tableLayoutPanelContainer.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
-            this.tableLayoutPanelContainer.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60F));
-            this.tableLayoutPanelContainer.Size = new System.Drawing.Size(794, 605);
-            this.tableLayoutPanelContainer.TabIndex = 15;
+            this.tENLOPTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.lOPBindingSource, "TENLOP", true));
+            this.tENLOPTextEdit.Location = new System.Drawing.Point(399, 31);
+            this.tENLOPTextEdit.MenuManager = this.barManager1;
+            this.tENLOPTextEdit.Name = "tENLOPTextEdit";
+            this.tENLOPTextEdit.Size = new System.Drawing.Size(351, 20);
+            this.tENLOPTextEdit.TabIndex = 3;
+            // 
+            // mALOPTextEdit
+            // 
+            this.mALOPTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.lOPBindingSource, "MALOP", true));
+            this.mALOPTextEdit.Location = new System.Drawing.Point(61, 31);
+            this.mALOPTextEdit.MenuManager = this.barManager1;
+            this.mALOPTextEdit.Name = "mALOPTextEdit";
+            this.mALOPTextEdit.Size = new System.Drawing.Size(100, 20);
+            this.mALOPTextEdit.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.label1.Location = new System.Drawing.Point(10, 10);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(80, 13);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Thông tin lớp";
+            // 
+            // splitContainer
+            // 
+            this.splitContainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer.Location = new System.Drawing.Point(0, 42);
+            this.splitContainer.Name = "splitContainer";
+            this.splitContainer.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // splitContainer.Panel1
+            // 
+            this.splitContainer.Panel1.Controls.Add(this.lOPGridControl);
+            // 
+            // splitContainer.Panel2
+            // 
+            this.splitContainer.Panel2.Controls.Add(this.panelSubContainer);
+            this.splitContainer.Size = new System.Drawing.Size(794, 603);
+            this.splitContainer.SplitterDistance = 352;
+            this.splitContainer.TabIndex = 20;
             // 
             // UserControlLopSinhVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.tableLayoutPanelContainer);
+            this.Controls.Add(this.splitContainer);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
@@ -326,10 +347,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.panelSubContainer.ResumeLayout(false);
             this.panelSubContainer.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.mALOPTextEdit.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tENLOPTextEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mAKHTextEdit.Properties)).EndInit();
-            this.tableLayoutPanelContainer.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.tENLOPTextEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mALOPTextEdit.Properties)).EndInit();
+            this.splitContainer.Panel1.ResumeLayout(false);
+            this.splitContainer.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer)).EndInit();
+            this.splitContainer.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -359,6 +383,7 @@
         private DevExpress.XtraEditors.TextEdit mAKHTextEdit;
         private DevExpress.XtraEditors.TextEdit tENLOPTextEdit;
         private DevExpress.XtraEditors.TextEdit mALOPTextEdit;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanelContainer;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.SplitContainer splitContainer;
     }
 }

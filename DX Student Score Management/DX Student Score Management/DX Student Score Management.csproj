@@ -67,7 +67,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ConnectionData.cs" />
+    <Compile Include="DataRepository.cs" />
     <Compile Include="DXFormMain.cs">
       <SubType>Form</SubType>
     </Compile>

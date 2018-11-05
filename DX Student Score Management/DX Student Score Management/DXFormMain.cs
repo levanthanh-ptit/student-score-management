@@ -36,7 +36,8 @@ namespace DX_Student_Score_Management
         {
             this._dataRepository = dataRepository;
             InitializeComponent();
-            InitializeExtendComponent();   
+            InitializeExtendComponent();
+
         }
     }
 }

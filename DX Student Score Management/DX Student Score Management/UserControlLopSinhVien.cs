@@ -34,5 +34,10 @@ namespace DX_Student_Score_Management
         {
             this.lOPTableAdapter.Fill(this.qLDSVKhoaDataSet.LOP);
         }
+
+        private void lOPGridControl_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
