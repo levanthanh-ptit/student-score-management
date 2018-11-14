@@ -4,6 +4,8 @@ using System.Linq;
 using System.Windows.Forms;
 using DevExpress.UserSkins;
 using DevExpress.Skins;
+using DX_Student_Score_Management.Repositories;
+using DX_Student_Score_Management.Components;
 
 namespace DX_Student_Score_Management
 {
@@ -18,7 +20,11 @@ namespace DX_Student_Score_Management
             _dataRepository = new DataRepository();
             _formLogin = new FormLogin(_dataRepository);
         }
-
+        private static void InitForm()
+        {
+            _DXFormMain = new DXFormMain(_dataRepository,
+                                         new LayoutTabPage(_dataRepository.GroupId));
+        }
         [STAThread]
         static void Main()
         {
@@ -31,9 +37,9 @@ namespace DX_Student_Score_Management
             InitServices();
 
             Application.Run(_formLogin);
-            if (_dataRepository.Ready) Application.Run(_DXFormMain = new DXFormMain(_dataRepository));
-            
-
+            if (_dataRepository.Ready)
+                InitForm();
+            Application.Run(_DXFormMain);
         }
     }
 }

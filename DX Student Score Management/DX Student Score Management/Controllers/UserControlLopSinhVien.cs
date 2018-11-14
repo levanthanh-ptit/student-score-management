@@ -6,10 +6,10 @@ using System.Data;
 using System.Text;
 using System.Linq;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 using DevExpress.XtraEditors;
 
-namespace DX_Student_Score_Management
+namespace DX_Student_Score_Management.Controllers
+
 {
     public partial class UserControlLopSinhVien : DevExpress.XtraEditors.XtraUserControl
     {

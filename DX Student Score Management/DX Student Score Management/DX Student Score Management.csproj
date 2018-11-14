@@ -67,7 +67,38 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataRepository.cs" />
+    <Compile Include="Components\LayoutTabPage.cs" />
+    <Compile Include="Controllers\UserControlDiem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controllers\UserControlDiem.Designer.cs">
+      <DependentUpon>UserControlDiem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\UserControlHocPhi.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controllers\UserControlHocPhi.Designer.cs">
+      <DependentUpon>UserControlHocPhi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\UserControlMon.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controllers\UserControlMon.Designer.cs">
+      <DependentUpon>UserControlMon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\UserControlSinhVien.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controllers\UserControlSinhVien.Designer.cs">
+      <DependentUpon>UserControlSinhVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\UserControlTaiKhoan.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controllers\UserControlTaiKhoan.Designer.cs">
+      <DependentUpon>UserControlTaiKhoan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Repositories\DataRepository.cs" />
     <Compile Include="DXFormMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,12 +126,27 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>QLDSVKhoaDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="UserControlLopSinhVien.cs">
+    <Compile Include="Controllers\UserControlLopSinhVien.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControlLopSinhVien.Designer.cs">
+    <Compile Include="Controllers\UserControlLopSinhVien.Designer.cs">
       <DependentUpon>UserControlLopSinhVien.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Controllers\UserControlDiem.resx">
+      <DependentUpon>UserControlDiem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controllers\UserControlHocPhi.resx">
+      <DependentUpon>UserControlHocPhi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controllers\UserControlMon.resx">
+      <DependentUpon>UserControlMon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controllers\UserControlSinhVien.resx">
+      <DependentUpon>UserControlSinhVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controllers\UserControlTaiKhoan.resx">
+      <DependentUpon>UserControlTaiKhoan.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DXFormMain.resx">
       <DependentUpon>DXFormMain.cs</DependentUpon>
     </EmbeddedResource>
@@ -117,7 +163,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="UserControlLopSinhVien.resx">
+    <EmbeddedResource Include="Controllers\UserControlLopSinhVien.resx">
       <DependentUpon>UserControlLopSinhVien.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.config" />

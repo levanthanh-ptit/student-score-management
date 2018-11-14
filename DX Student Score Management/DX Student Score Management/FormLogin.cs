@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using System.Data.SqlClient;
+using DX_Student_Score_Management.Repositories;
 
 namespace DX_Student_Score_Management
 {
@@ -37,18 +38,8 @@ namespace DX_Student_Score_Management
             _dataRepository.UserId = LoginUserTextBox.Text;
             _dataRepository.Password = LoginPasswordTextBox.Text; 
             _dataRepository.NewSqlConnection();
-            try
-            {
-                _dataRepository.Open();
-                _dataRepository.GetLoginInfomation();
-                _dataRepository.Ready = true;
-                MessageBox.Show("Kết nối thành công!");
-                this.Close();
-            }
-            catch (SqlException SqlE)
-            {
-                MessageBox.Show(SqlE.Message);
-            }
+            MessageBox.Show(_dataRepository.ConnectServer());
+            if (_dataRepository.Ready) this.Close();
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿namespace DX_Student_Score_Management
+﻿namespace DX_Student_Score_Management.Controllers
 {
     partial class UserControlLopSinhVien
     {
@@ -52,10 +52,10 @@
             this.colTENLOP = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMAKH = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelSubContainer = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.mAKHTextEdit = new DevExpress.XtraEditors.TextEdit();
             this.tENLOPTextEdit = new DevExpress.XtraEditors.TextEdit();
             this.mALOPTextEdit = new DevExpress.XtraEditors.TextEdit();
-            this.label1 = new System.Windows.Forms.Label();
             this.splitContainer = new System.Windows.Forms.SplitContainer();
             mALOPLabel = new System.Windows.Forms.Label();
             tENLOPLabel = new System.Windows.Forms.Label();
@@ -215,11 +215,12 @@
             // lOPGridControl
             // 
             this.lOPGridControl.DataSource = this.lOPBindingSource;
-            this.lOPGridControl.Location = new System.Drawing.Point(0, 10);
+            this.lOPGridControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lOPGridControl.Location = new System.Drawing.Point(0, 0);
             this.lOPGridControl.MainView = this.gridView1;
             this.lOPGridControl.MenuManager = this.barManager1;
             this.lOPGridControl.Name = "lOPGridControl";
-            this.lOPGridControl.Size = new System.Drawing.Size(788, 236);
+            this.lOPGridControl.Size = new System.Drawing.Size(794, 352);
             this.lOPGridControl.TabIndex = 5;
             this.lOPGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -274,6 +275,16 @@
             this.panelSubContainer.Size = new System.Drawing.Size(794, 247);
             this.panelSubContainer.TabIndex = 6;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.label1.Location = new System.Drawing.Point(10, 10);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(80, 13);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Thông tin lớp";
+            // 
             // mAKHTextEdit
             // 
             this.mAKHTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.lOPBindingSource, "MAKH", true));
@@ -300,16 +311,6 @@
             this.mALOPTextEdit.Name = "mALOPTextEdit";
             this.mALOPTextEdit.Size = new System.Drawing.Size(100, 20);
             this.mALOPTextEdit.TabIndex = 1;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(10, 10);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(80, 13);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Thông tin lớp";
             // 
             // splitContainer
             // 

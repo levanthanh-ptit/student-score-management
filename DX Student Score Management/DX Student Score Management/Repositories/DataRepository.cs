@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DX_Student_Score_Management
+namespace DX_Student_Score_Management.Repositories
 {
     public class DataRepository
     {
@@ -41,6 +41,20 @@ namespace DX_Student_Score_Management
             this.UserName = sqlDataReader.GetValue(0).ToString();
             this.FullName = sqlDataReader.GetValue(1).ToString();
             this.GroupId = sqlDataReader.GetValue(2).ToString();
+        }
+        public string ConnectServer()
+        {
+            try
+            {
+                this.sqlConnection.Open();
+                this.GetLoginInfomation();
+                this.Ready = true;
+                return "Kết nối thành công!";
+            }
+            catch (SqlException SqlE)
+            {
+                return SqlE.Message;
+            }
         }
     }
 }
