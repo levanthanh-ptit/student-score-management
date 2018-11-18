@@ -35,14 +35,14 @@
             this.tableAdapterManager = new DX_Student_Score_Management.QLDSVDataSetMasterTableAdapters.TableAdapterManager();
             this.v_DSPMBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.v_DSPMBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
-            this.loginServerListComboBox = new System.Windows.Forms.ComboBox();
+            this.LoginServerListComboBox = new System.Windows.Forms.ComboBox();
             this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.loginUserTextBox = new System.Windows.Forms.TextBox();
+            this.LoginUserTextBox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.loginPasswordTextBox = new System.Windows.Forms.TextBox();
-            this.loginLoginButton = new System.Windows.Forms.Button();
+            this.LoginPasswordTextBox = new System.Windows.Forms.TextBox();
+            this.LoginButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.qLDSVDataSetMaster)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.v_DSPMBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.v_DSPMBindingSource1)).BeginInit();
@@ -79,16 +79,16 @@
             this.v_DSPMBindingSource2.DataMember = "V_DSPM";
             this.v_DSPMBindingSource2.DataSource = this.qLDSVDataSetMaster;
             // 
-            // loginServerListComboBox
+            // LoginServerListComboBox
             // 
-            this.loginServerListComboBox.DataSource = this.v_DSPMBindingSource2;
-            this.loginServerListComboBox.DisplayMember = "description";
-            this.loginServerListComboBox.FormattingEnabled = true;
-            this.loginServerListComboBox.Location = new System.Drawing.Point(115, 41);
-            this.loginServerListComboBox.Name = "loginServerListComboBox";
-            this.loginServerListComboBox.Size = new System.Drawing.Size(222, 21);
-            this.loginServerListComboBox.TabIndex = 0;
-            this.loginServerListComboBox.ValueMember = "subscriber_server";
+            this.LoginServerListComboBox.DataSource = this.v_DSPMBindingSource2;
+            this.LoginServerListComboBox.DisplayMember = "description";
+            this.LoginServerListComboBox.FormattingEnabled = true;
+            this.LoginServerListComboBox.Location = new System.Drawing.Point(115, 41);
+            this.LoginServerListComboBox.Name = "LoginServerListComboBox";
+            this.LoginServerListComboBox.Size = new System.Drawing.Size(222, 21);
+            this.LoginServerListComboBox.TabIndex = 0;
+            this.LoginServerListComboBox.ValueMember = "subscriber_server";
             // 
             // defaultLookAndFeel1
             // 
@@ -114,12 +114,12 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "User";
             // 
-            // loginUserTextBox
+            // LoginUserTextBox
             // 
-            this.loginUserTextBox.Location = new System.Drawing.Point(115, 89);
-            this.loginUserTextBox.Name = "loginUserTextBox";
-            this.loginUserTextBox.Size = new System.Drawing.Size(222, 21);
-            this.loginUserTextBox.TabIndex = 3;
+            this.LoginUserTextBox.Location = new System.Drawing.Point(115, 89);
+            this.LoginUserTextBox.Name = "LoginUserTextBox";
+            this.LoginUserTextBox.Size = new System.Drawing.Size(222, 21);
+            this.LoginUserTextBox.TabIndex = 3;
             // 
             // label3
             // 
@@ -131,36 +131,36 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "Password";
             // 
-            // loginPasswordTextBox
+            // LoginPasswordTextBox
             // 
-            this.loginPasswordTextBox.Location = new System.Drawing.Point(115, 116);
-            this.loginPasswordTextBox.Name = "loginPasswordTextBox";
-            this.loginPasswordTextBox.Size = new System.Drawing.Size(222, 21);
-            this.loginPasswordTextBox.TabIndex = 3;
-            this.loginPasswordTextBox.UseSystemPasswordChar = true;
+            this.LoginPasswordTextBox.Location = new System.Drawing.Point(115, 116);
+            this.LoginPasswordTextBox.Name = "LoginPasswordTextBox";
+            this.LoginPasswordTextBox.Size = new System.Drawing.Size(222, 21);
+            this.LoginPasswordTextBox.TabIndex = 3;
+            this.LoginPasswordTextBox.UseSystemPasswordChar = true;
             // 
-            // loginLoginButton
+            // LoginButton
             // 
-            this.loginLoginButton.Location = new System.Drawing.Point(169, 163);
-            this.loginLoginButton.Name = "loginLoginButton";
-            this.loginLoginButton.Size = new System.Drawing.Size(65, 30);
-            this.loginLoginButton.TabIndex = 4;
-            this.loginLoginButton.Text = "LOGIN";
-            this.loginLoginButton.UseVisualStyleBackColor = true;
-            this.loginLoginButton.Click += new System.EventHandler(this.loginLoginButton_Click);
+            this.LoginButton.Location = new System.Drawing.Point(169, 163);
+            this.LoginButton.Name = "LoginButton";
+            this.LoginButton.Size = new System.Drawing.Size(65, 30);
+            this.LoginButton.TabIndex = 4;
+            this.LoginButton.Text = "LOGIN";
+            this.LoginButton.UseVisualStyleBackColor = true;
+            this.LoginButton.Click += new System.EventHandler(this.loginLoginButton_Click);
             // 
             // FormLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(401, 216);
-            this.Controls.Add(this.loginLoginButton);
-            this.Controls.Add(this.loginPasswordTextBox);
+            this.Controls.Add(this.LoginButton);
+            this.Controls.Add(this.LoginPasswordTextBox);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.loginUserTextBox);
+            this.Controls.Add(this.LoginUserTextBox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.loginServerListComboBox);
+            this.Controls.Add(this.LoginServerListComboBox);
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(417, 277);
             this.MinimizeBox = false;
@@ -185,13 +185,13 @@
         private QLDSVDataSetMasterTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.BindingSource v_DSPMBindingSource1;
         private System.Windows.Forms.BindingSource v_DSPMBindingSource2;
-        private System.Windows.Forms.ComboBox loginServerListComboBox;
+        private System.Windows.Forms.ComboBox LoginServerListComboBox;
         private DevExpress.LookAndFeel.DefaultLookAndFeel defaultLookAndFeel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox loginUserTextBox;
+        private System.Windows.Forms.TextBox LoginUserTextBox;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox loginPasswordTextBox;
-        private System.Windows.Forms.Button loginLoginButton;
+        private System.Windows.Forms.TextBox LoginPasswordTextBox;
+        private System.Windows.Forms.Button LoginButton;
     }
 }

@@ -9,16 +9,18 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using System.Data.SqlClient;
+using DX_Student_Score_Management.Repositories;
 
 namespace DX_Student_Score_Management
 {
     public partial class FormLogin : DevExpress.XtraEditors.XtraForm
     {
-        ConnectionData connectionData;
-        public FormLogin(ConnectionData connectionData)
+        DataRepository _dataRepository;
+        public FormLogin(DataRepository dataRepository)
         {
+            this._dataRepository = dataRepository;
             InitializeComponent();
-            this.connectionData = connectionData;
+           
         }
 
         private void FormLogin_Load(object sender, EventArgs e)
@@ -31,21 +33,13 @@ namespace DX_Student_Score_Management
 
         private void loginLoginButton_Click(object sender, EventArgs e)
         {
-            connectionData.SetServer(loginServerListComboBox.SelectedValue.ToString());
-            connectionData.SetDataBase("QLDSV");
-            connectionData.SetUserId(loginUserTextBox.Text);
-            connectionData.SetPassword(loginPasswordTextBox.Text);
-            SqlConnection sqlConnection = new SqlConnection(connectionData.GetConnectionString());
-            try
-            {
-                sqlConnection.Open();
-                MessageBox.Show("Kết nối thành công!");
-                this.Close();
-            }
-            catch (SqlException SqlE)
-            {
-                MessageBox.Show(SqlE.Message);
-            }
+            _dataRepository.Server = LoginServerListComboBox.SelectedValue.ToString();
+            _dataRepository.DataBase = "QLDSV";
+            _dataRepository.UserId = LoginUserTextBox.Text;
+            _dataRepository.Password = LoginPasswordTextBox.Text; 
+            _dataRepository.NewSqlConnection();
+            MessageBox.Show(_dataRepository.ConnectServer());
+            if (_dataRepository.Ready) this.Close();
         }
     }
 }
