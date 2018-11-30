@@ -9,7 +9,7 @@ namespace DX_Student_Score_Management.Repositories
 {
     public class DataRepository
     {
-        private SqlConnection sqlConnection;
+        public SqlConnection sqlConnection { get; set; }
         public string Server { get; set; }
         public string DataBase { get; set; }
         public string UserId { get; set; }

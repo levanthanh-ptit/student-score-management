@@ -21,23 +21,80 @@ namespace DX_Student_Score_Management.Controllers
         }
         private void InitializeExtendComponent()
         {
-
+            this.tableAdapterManager.Connection = Program._dataRepository.sqlConnection;
+            this.kHOATableAdapter.Connection = Program._dataRepository.sqlConnection;
+            this.lOPTableAdapter.Connection = Program._dataRepository.sqlConnection;
+            this.sINHVIENTableAdapter.Connection = Program._dataRepository.sqlConnection;
         }
-        private void lOPBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.lOPBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.qLDSVKhoaDataSet);
-
-        }
+        
         private void UserControlLopSinhVien_Load()
         {
-            this.lOPTableAdapter.Fill(this.qLDSVKhoaDataSet.LOP);
+            kHOATableAdapter.Fill(qLDSVKhoaDataSet.KHOA);
+            lOPTableAdapter.Fill(qLDSVKhoaDataSet.LOP);
+            sINHVIENTableAdapter.Fill(qLDSVKhoaDataSet.SINHVIEN);
         }
 
-        private void lOPGridControl_Click(object sender, EventArgs e)
+        private void barBtnAddLop_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            fKLOPKHOABindingSource.AddNew();
+            btnAddLop.Visible = true;
+            btnCancelAddLop.Visible = true;
+        }
 
+        private void barBtnDeleteLop_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            fKLOPKHOABindingSource.RemoveCurrent();
+        }
+
+        private void btnAddLop_Click(object sender, EventArgs e)
+        {
+            fKLOPKHOABindingSource.EndEdit();
+            btnAddLop.Visible = false;
+            btnCancelAddLop.Visible = false;
+        }
+
+        private void btnCancelAddLop_Click(object sender, EventArgs e)
+        {
+            fKLOPKHOABindingSource.CancelEdit();
+            btnAddLop.Visible = false;
+            btnCancelAddLop.Visible = false;
+        }
+
+        private void btnAddSinhVien_Click(object sender, EventArgs e)
+        {
+            fKSINHVIENLOPBindingSource.EndEdit();
+            btnAddSinhVien.Visible = false;
+            btnCancelAddSinhVien.Visible = false;
+        }
+
+        private void btnCancelAddSinhVien_Click(object sender, EventArgs e)
+        {
+            fKSINHVIENLOPBindingSource.CancelEdit();
+            btnAddSinhVien.Visible = false;
+            btnCancelAddSinhVien.Visible = false;
+        }
+
+        private void barBtnAddSinhVien_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            fKSINHVIENLOPBindingSource.AddNew();
+            btnAddSinhVien.Visible = true;
+            btnCancelAddSinhVien.Visible = true;
+        }
+
+        private void barBtnDeleteSinhVien_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            fKSINHVIENLOPBindingSource.RemoveCurrent();
+        }
+
+        private void barBtnRefresh_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            this.UserControlLopSinhVien_Load();
+        }
+
+        private void barBtnUpload_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            lOPTableAdapter.Update(qLDSVKhoaDataSet.LOP);
+            sINHVIENTableAdapter.Update(qLDSVKhoaDataSet.SINHVIEN);
         }
     }
 }

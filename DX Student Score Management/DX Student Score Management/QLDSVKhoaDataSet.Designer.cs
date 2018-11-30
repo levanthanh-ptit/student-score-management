@@ -46,7 +46,7 @@ namespace DX_Student_Score_Management {
         
         private global::System.Data.DataRelation relationFK_HOCPHI_SINHVIEN;
         
-        private global::System.Data.DataRelation relationFK_LOP_KHOA1;
+        private global::System.Data.DataRelation relationFK_LOP_KHOA;
         
         private global::System.Data.DataRelation relationFK_SINHVIEN_LOP;
         
@@ -354,7 +354,7 @@ namespace DX_Student_Score_Management {
             this.relationFK_DIEM_SINHVIEN = this.Relations["FK_DIEM_SINHVIEN"];
             this.relationFK_GIANGVIEN_KHOA = this.Relations["FK_GIANGVIEN_KHOA"];
             this.relationFK_HOCPHI_SINHVIEN = this.Relations["FK_HOCPHI_SINHVIEN"];
-            this.relationFK_LOP_KHOA1 = this.Relations["FK_LOP_KHOA1"];
+            this.relationFK_LOP_KHOA = this.Relations["FK_LOP_KHOA"];
             this.relationFK_SINHVIEN_LOP = this.Relations["FK_SINHVIEN_LOP"];
         }
         
@@ -409,7 +409,7 @@ namespace DX_Student_Score_Management {
             fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
             fkc.DeleteRule = global::System.Data.Rule.None;
             fkc.UpdateRule = global::System.Data.Rule.Cascade;
-            fkc = new global::System.Data.ForeignKeyConstraint("FK_LOP_KHOA1", new global::System.Data.DataColumn[] {
+            fkc = new global::System.Data.ForeignKeyConstraint("FK_LOP_KHOA", new global::System.Data.DataColumn[] {
                         this.tableKHOA.MAKHColumn}, new global::System.Data.DataColumn[] {
                         this.tableLOP.MAKHColumn});
             this.tableLOP.Constraints.Add(fkc);
@@ -439,10 +439,10 @@ namespace DX_Student_Score_Management {
                         this.tableSINHVIEN.MASVColumn}, new global::System.Data.DataColumn[] {
                         this.tableHOCPHI.MASVColumn}, false);
             this.Relations.Add(this.relationFK_HOCPHI_SINHVIEN);
-            this.relationFK_LOP_KHOA1 = new global::System.Data.DataRelation("FK_LOP_KHOA1", new global::System.Data.DataColumn[] {
+            this.relationFK_LOP_KHOA = new global::System.Data.DataRelation("FK_LOP_KHOA", new global::System.Data.DataColumn[] {
                         this.tableKHOA.MAKHColumn}, new global::System.Data.DataColumn[] {
                         this.tableLOP.MAKHColumn}, false);
-            this.Relations.Add(this.relationFK_LOP_KHOA1);
+            this.Relations.Add(this.relationFK_LOP_KHOA);
             this.relationFK_SINHVIEN_LOP = new global::System.Data.DataRelation("FK_SINHVIEN_LOP", new global::System.Data.DataColumn[] {
                         this.tableLOP.MALOPColumn}, new global::System.Data.DataColumn[] {
                         this.tableSINHVIEN.MALOPColumn}, false);
@@ -1899,14 +1899,14 @@ namespace DX_Student_Score_Management {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public LOPRow AddLOPRow(string MALOP, string TENLOP, KHOARow parentKHOARowByFK_LOP_KHOA1) {
+            public LOPRow AddLOPRow(string MALOP, string TENLOP, KHOARow parentKHOARowByFK_LOP_KHOA) {
                 LOPRow rowLOPRow = ((LOPRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         MALOP,
                         TENLOP,
                         null};
-                if ((parentKHOARowByFK_LOP_KHOA1 != null)) {
-                    columnValuesArray[2] = parentKHOARowByFK_LOP_KHOA1[0];
+                if ((parentKHOARowByFK_LOP_KHOA != null)) {
+                    columnValuesArray[2] = parentKHOARowByFK_LOP_KHOA[0];
                 }
                 rowLOPRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowLOPRow);
@@ -3024,11 +3024,11 @@ namespace DX_Student_Score_Management {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public LOPRow[] GetLOPRows() {
-                if ((this.Table.ChildRelations["FK_LOP_KHOA1"] == null)) {
+                if ((this.Table.ChildRelations["FK_LOP_KHOA"] == null)) {
                     return new LOPRow[0];
                 }
                 else {
-                    return ((LOPRow[])(base.GetChildRows(this.Table.ChildRelations["FK_LOP_KHOA1"])));
+                    return ((LOPRow[])(base.GetChildRows(this.Table.ChildRelations["FK_LOP_KHOA"])));
                 }
             }
             
@@ -3105,10 +3105,10 @@ namespace DX_Student_Score_Management {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public KHOARow KHOARow {
                 get {
-                    return ((KHOARow)(this.GetParentRow(this.Table.ParentRelations["FK_LOP_KHOA1"])));
+                    return ((KHOARow)(this.GetParentRow(this.Table.ParentRelations["FK_LOP_KHOA"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK_LOP_KHOA1"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_LOP_KHOA"]);
                 }
             }
             

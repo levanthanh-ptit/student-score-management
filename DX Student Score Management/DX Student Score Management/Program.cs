@@ -38,8 +38,11 @@ namespace DX_Student_Score_Management
 
             Application.Run(_formLogin);
             if (_dataRepository.Ready)
+            {
                 InitForm();
-            Application.Run(_DXFormMain);
+                Application.Run(_DXFormMain);
+            }
+
         }
     }
 }

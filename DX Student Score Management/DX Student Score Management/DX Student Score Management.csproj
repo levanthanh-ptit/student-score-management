@@ -98,6 +98,9 @@
     <Compile Include="Controllers\UserControlTaiKhoan.Designer.cs">
       <DependentUpon>UserControlTaiKhoan.cs</DependentUpon>
     </Compile>
+    <Compile Include="QLDSVKhoaDataSet.cs">
+      <DependentUpon>QLDSVKhoaDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Repositories\DataRepository.cs" />
     <Compile Include="DXFormMain.cs">
       <SubType>Form</SubType>
