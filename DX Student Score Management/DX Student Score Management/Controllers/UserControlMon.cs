@@ -16,9 +16,9 @@ namespace DX_Student_Score_Management.Controllers
         public UserControlMon()
         {
             InitializeComponent();
-            UserControlLopSinhVien_Load();
+            UserControlMon_Load();
         }
-        private void UserControlLopSinhVien_Load()
+        private void UserControlMon_Load()
         {
             this.mONHOCTableAdapter.Fill(this.qLDSVKhoaDataSet.MONHOC);
         }
@@ -28,6 +28,50 @@ namespace DX_Student_Score_Management.Controllers
             this.mONHOCBindingSource.EndEdit();
             this.tableAdapterManager.UpdateAll(this.qLDSVKhoaDataSet);
 
+        }
+
+        private void barBtnUpload_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            this.tableAdapterManager.UpdateAll(qLDSVKhoaDataSet);
+        }
+
+        private void barBtnRefresh_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            this.UserControlMon_Load();
+        }
+
+        private void barBtnAddMonHoc_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            this.mONHOCBindingSource.AddNew();
+            this.btnEditMonHocOK.Visible = false;
+            this.btnAddMonHoc.Visible = true;
+            this.btnCancelAddMonHoc.Visible = true;
+        }
+
+        private void barBtnDeleteMonHoc_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            this.mONHOCBindingSource.RemoveCurrent();
+        }
+
+        private void btnAddMonHoc_Click(object sender, EventArgs e)
+        {
+            this.mONHOCBindingSource.EndEdit();
+            this.btnAddMonHoc.Visible = false;
+            this.btnCancelAddMonHoc.Visible = false;
+            this.btnEditMonHocOK.Visible = true;
+        }
+
+        private void btnCancelAddMonHoc_Click(object sender, EventArgs e)
+        {
+            this.mONHOCBindingSource.CancelEdit();
+            this.btnAddMonHoc.Visible = false;
+            this.btnCancelAddMonHoc.Visible = false;
+            this.btnEditMonHocOK.Visible = true;
+        }
+
+        private void btnEditMonHocOK_Click(object sender, EventArgs e)
+        {
+            this.mONHOCBindingSource.EndEdit();
         }
     }
 }

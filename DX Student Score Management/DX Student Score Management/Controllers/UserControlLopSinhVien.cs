@@ -37,6 +37,7 @@ namespace DX_Student_Score_Management.Controllers
         private void barBtnAddLop_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             fKLOPKHOABindingSource.AddNew();
+            btnEditLopOK.Visible = false;
             btnAddLop.Visible = true;
             btnCancelAddLop.Visible = true;
         }
@@ -51,13 +52,16 @@ namespace DX_Student_Score_Management.Controllers
             fKLOPKHOABindingSource.EndEdit();
             btnAddLop.Visible = false;
             btnCancelAddLop.Visible = false;
+            btnEditLopOK.Visible = true;
         }
 
         private void btnCancelAddLop_Click(object sender, EventArgs e)
         {
             fKLOPKHOABindingSource.CancelEdit();
+            fKLOPKHOABindingSource.RemoveCurrent();
             btnAddLop.Visible = false;
             btnCancelAddLop.Visible = false;
+            btnEditLopOK.Visible = true;
         }
 
         private void btnAddSinhVien_Click(object sender, EventArgs e)
@@ -65,20 +69,25 @@ namespace DX_Student_Score_Management.Controllers
             fKSINHVIENLOPBindingSource.EndEdit();
             btnAddSinhVien.Visible = false;
             btnCancelAddSinhVien.Visible = false;
+            btnEditSinhVienOK.Visible = true;
         }
 
         private void btnCancelAddSinhVien_Click(object sender, EventArgs e)
         {
             fKSINHVIENLOPBindingSource.CancelEdit();
+            fKSINHVIENLOPBindingSource.RemoveCurrent();
             btnAddSinhVien.Visible = false;
             btnCancelAddSinhVien.Visible = false;
+            btnEditSinhVienOK.Visible = true;
         }
 
         private void barBtnAddSinhVien_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             fKSINHVIENLOPBindingSource.AddNew();
+            btnEditSinhVienOK.Visible = false;
             btnAddSinhVien.Visible = true;
             btnCancelAddSinhVien.Visible = true;
+
         }
 
         private void barBtnDeleteSinhVien_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -93,8 +102,7 @@ namespace DX_Student_Score_Management.Controllers
 
         private void barBtnUpload_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            lOPTableAdapter.Update(qLDSVKhoaDataSet.LOP);
-            sINHVIENTableAdapter.Update(qLDSVKhoaDataSet.SINHVIEN);
+            tableAdapterManager.UpdateAll(qLDSVKhoaDataSet);
         }
     }
 }

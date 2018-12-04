@@ -29,21 +29,126 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.Label mASVLabel;
+            System.Windows.Forms.Label nIENKHOALabel;
+            System.Windows.Forms.Label hOCKYLabel;
+            System.Windows.Forms.Label hOCPHILabel;
+            System.Windows.Forms.Label sOTIENDADONGLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserControlHocPhi));
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.toolBar = new DevExpress.XtraBars.Bar();
-            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
+            this.barBtnAddHocPhi = new DevExpress.XtraBars.BarButtonItem();
+            this.barBtnDeleteHocPhi = new DevExpress.XtraBars.BarButtonItem();
+            this.barBtnRefresh = new DevExpress.XtraBars.BarButtonItem();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.splitContainer = new System.Windows.Forms.SplitContainer();
+            this.sINHVIENGridControl = new DevExpress.XtraGrid.GridControl();
+            this.sINHVIENBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.qLDSVKhoaDataSet = new DX_Student_Score_Management.QLDSVKhoaDataSet();
+            this.gridViewSinhVien = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colMASV1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colHO = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colTEN = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colMALOP = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colPHAI = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colNGAYSINH = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colNOISINH = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDIACHI = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colGHICHU = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colNGHIHOC = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.sOTIENDADONGSpinEdit = new DevExpress.XtraEditors.SpinEdit();
+            this.fKHOCPHISINHVIENBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.hOCPHISpinEdit = new DevExpress.XtraEditors.SpinEdit();
+            this.hOCKYSpinEdit = new DevExpress.XtraEditors.SpinEdit();
+            this.nIENKHOATextEdit = new DevExpress.XtraEditors.TextEdit();
+            this.mASVTextEdit = new DevExpress.XtraEditors.TextEdit();
+            this.hOCPHIGridControl = new DevExpress.XtraGrid.GridControl();
+            this.gridViewHocPhi = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colMASV = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colNIENKHOA = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colHOCKY = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colHOCPHI = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSOTIENDADONG = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.sINHVIENTableAdapter = new DX_Student_Score_Management.QLDSVKhoaDataSetTableAdapters.SINHVIENTableAdapter();
+            this.tableAdapterManager = new DX_Student_Score_Management.QLDSVKhoaDataSetTableAdapters.TableAdapterManager();
+            this.hOCPHITableAdapter = new DX_Student_Score_Management.QLDSVKhoaDataSetTableAdapters.HOCPHITableAdapter();
+            this.btnAddHocPhi = new System.Windows.Forms.Button();
+            this.btnEditHocPhiOK = new System.Windows.Forms.Button();
+            this.btnCancelAddHocPhi = new System.Windows.Forms.Button();
+            this.barBtnUpload = new DevExpress.XtraBars.BarButtonItem();
+            mASVLabel = new System.Windows.Forms.Label();
+            nIENKHOALabel = new System.Windows.Forms.Label();
+            hOCKYLabel = new System.Windows.Forms.Label();
+            hOCPHILabel = new System.Windows.Forms.Label();
+            sOTIENDADONGLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer)).BeginInit();
+            this.splitContainer.Panel1.SuspendLayout();
+            this.splitContainer.Panel2.SuspendLayout();
             this.splitContainer.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.sINHVIENGridControl)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sINHVIENBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qLDSVKhoaDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewSinhVien)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.sOTIENDADONGSpinEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fKHOCPHISINHVIENBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hOCPHISpinEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hOCKYSpinEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nIENKHOATextEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mASVTextEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hOCPHIGridControl)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewHocPhi)).BeginInit();
             this.SuspendLayout();
+            // 
+            // mASVLabel
+            // 
+            mASVLabel.AutoSize = true;
+            mASVLabel.Location = new System.Drawing.Point(7, 32);
+            mASVLabel.Name = "mASVLabel";
+            mASVLabel.Size = new System.Drawing.Size(41, 13);
+            mASVLabel.TabIndex = 0;
+            mASVLabel.Text = "Mã SV";
+            // 
+            // nIENKHOALabel
+            // 
+            nIENKHOALabel.AutoSize = true;
+            nIENKHOALabel.Location = new System.Drawing.Point(182, 32);
+            nIENKHOALabel.Name = "nIENKHOALabel";
+            nIENKHOALabel.Size = new System.Drawing.Size(62, 13);
+            nIENKHOALabel.TabIndex = 2;
+            nIENKHOALabel.Text = "Niên khóa";
+            // 
+            // hOCKYLabel
+            // 
+            hOCKYLabel.AutoSize = true;
+            hOCKYLabel.Location = new System.Drawing.Point(387, 32);
+            hOCKYLabel.Name = "hOCKYLabel";
+            hOCKYLabel.Size = new System.Drawing.Size(45, 13);
+            hOCKYLabel.TabIndex = 4;
+            hOCKYLabel.Text = "Học kỳ";
+            // 
+            // hOCPHILabel
+            // 
+            hOCPHILabel.AutoSize = true;
+            hOCPHILabel.Location = new System.Drawing.Point(547, 32);
+            hOCPHILabel.Name = "hOCPHILabel";
+            hOCPHILabel.Size = new System.Drawing.Size(48, 13);
+            hOCPHILabel.TabIndex = 6;
+            hOCPHILabel.Text = "Học phí";
+            // 
+            // sOTIENDADONGLabel
+            // 
+            sOTIENDADONGLabel.AutoSize = true;
+            sOTIENDADONGLabel.Location = new System.Drawing.Point(782, 32);
+            sOTIENDADONGLabel.Name = "sOTIENDADONGLabel";
+            sOTIENDADONGLabel.Size = new System.Drawing.Size(94, 13);
+            sOTIENDADONGLabel.TabIndex = 8;
+            sOTIENDADONGLabel.Text = "Số tiền đã đóng";
             // 
             // barManager1
             // 
@@ -55,11 +160,12 @@
             this.barManager1.DockControls.Add(this.barDockControlRight);
             this.barManager1.Form = this;
             this.barManager1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
-            this.barButtonItem1,
-            this.barButtonItem2,
-            this.barButtonItem3});
+            this.barBtnAddHocPhi,
+            this.barBtnDeleteHocPhi,
+            this.barBtnRefresh,
+            this.barBtnUpload});
             this.barManager1.MainMenu = this.toolBar;
-            this.barManager1.MaxItemId = 3;
+            this.barManager1.MaxItemId = 4;
             // 
             // toolBar
             // 
@@ -69,33 +175,35 @@
             this.toolBar.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
             this.toolBar.FloatLocation = new System.Drawing.Point(358, 119);
             this.toolBar.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barButtonItem1, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barButtonItem2, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barButtonItem3, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph)});
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barBtnRefresh, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barBtnUpload, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barBtnAddHocPhi, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barBtnDeleteHocPhi, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph)});
             this.toolBar.OptionsBar.MultiLine = true;
             this.toolBar.OptionsBar.UseWholeRow = true;
             this.toolBar.Text = "Main menu";
             // 
-            // barButtonItem1
+            // barBtnAddHocPhi
             // 
-            this.barButtonItem1.Caption = "Add";
-            this.barButtonItem1.Id = 0;
-            this.barButtonItem1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
-            this.barButtonItem1.Name = "barButtonItem1";
+            this.barBtnAddHocPhi.Caption = "Add";
+            this.barBtnAddHocPhi.Id = 0;
+            this.barBtnAddHocPhi.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image1")));
+            this.barBtnAddHocPhi.Name = "barBtnAddHocPhi";
+            this.barBtnAddHocPhi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barBtnAddHocPhi_ItemClick);
             // 
-            // barButtonItem2
+            // barBtnDeleteHocPhi
             // 
-            this.barButtonItem2.Caption = "Delete";
-            this.barButtonItem2.Id = 1;
-            this.barButtonItem2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.Image")));
-            this.barButtonItem2.Name = "barButtonItem2";
+            this.barBtnDeleteHocPhi.Caption = "Delete";
+            this.barBtnDeleteHocPhi.Id = 1;
+            this.barBtnDeleteHocPhi.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.Image")));
+            this.barBtnDeleteHocPhi.Name = "barBtnDeleteHocPhi";
             // 
-            // barButtonItem3
+            // barBtnRefresh
             // 
-            this.barButtonItem3.Caption = "Refresh";
-            this.barButtonItem3.Id = 2;
-            this.barButtonItem3.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.ImageOptions.Image")));
-            this.barButtonItem3.Name = "barButtonItem3";
+            this.barBtnRefresh.Caption = "Refresh";
+            this.barBtnRefresh.Id = 2;
+            this.barBtnRefresh.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.ImageOptions.Image")));
+            this.barBtnRefresh.Name = "barBtnRefresh";
             // 
             // barDockControlTop
             // 
@@ -103,41 +211,437 @@
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(686, 42);
+            this.barDockControlTop.Size = new System.Drawing.Size(1245, 40);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 479);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 573);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(686, 0);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1245, 0);
             // 
             // barDockControlLeft
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 42);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 40);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 437);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 533);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(686, 42);
+            this.barDockControlRight.Location = new System.Drawing.Point(1245, 40);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 437);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 533);
             // 
             // splitContainer
             // 
             this.splitContainer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer.Location = new System.Drawing.Point(0, 42);
+            this.splitContainer.Location = new System.Drawing.Point(0, 40);
             this.splitContainer.Name = "splitContainer";
             this.splitContainer.Orientation = System.Windows.Forms.Orientation.Horizontal;
-            this.splitContainer.Size = new System.Drawing.Size(686, 437);
-            this.splitContainer.SplitterDistance = 229;
+            // 
+            // splitContainer.Panel1
+            // 
+            this.splitContainer.Panel1.AutoScroll = true;
+            this.splitContainer.Panel1.Controls.Add(this.sINHVIENGridControl);
+            // 
+            // splitContainer.Panel2
+            // 
+            this.splitContainer.Panel2.AutoScroll = true;
+            this.splitContainer.Panel2.Controls.Add(this.groupBox1);
+            this.splitContainer.Panel2.Controls.Add(this.hOCPHIGridControl);
+            this.splitContainer.Size = new System.Drawing.Size(1245, 533);
+            this.splitContainer.SplitterDistance = 220;
             this.splitContainer.TabIndex = 5;
+            // 
+            // sINHVIENGridControl
+            // 
+            this.sINHVIENGridControl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.sINHVIENGridControl.DataSource = this.sINHVIENBindingSource;
+            this.sINHVIENGridControl.Location = new System.Drawing.Point(3, 3);
+            this.sINHVIENGridControl.MainView = this.gridViewSinhVien;
+            this.sINHVIENGridControl.MenuManager = this.barManager1;
+            this.sINHVIENGridControl.Name = "sINHVIENGridControl";
+            this.sINHVIENGridControl.Size = new System.Drawing.Size(1239, 214);
+            this.sINHVIENGridControl.TabIndex = 0;
+            this.sINHVIENGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridViewSinhVien});
+            // 
+            // sINHVIENBindingSource
+            // 
+            this.sINHVIENBindingSource.DataMember = "SINHVIEN";
+            this.sINHVIENBindingSource.DataSource = this.qLDSVKhoaDataSet;
+            // 
+            // qLDSVKhoaDataSet
+            // 
+            this.qLDSVKhoaDataSet.DataSetName = "QLDSVKhoaDataSet";
+            this.qLDSVKhoaDataSet.EnforceConstraints = false;
+            this.qLDSVKhoaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // gridViewSinhVien
+            // 
+            this.gridViewSinhVien.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colMASV1,
+            this.colHO,
+            this.colTEN,
+            this.colMALOP,
+            this.colPHAI,
+            this.colNGAYSINH,
+            this.colNOISINH,
+            this.colDIACHI,
+            this.colGHICHU,
+            this.colNGHIHOC});
+            this.gridViewSinhVien.GridControl = this.sINHVIENGridControl;
+            this.gridViewSinhVien.Name = "gridViewSinhVien";
+            // 
+            // colMASV1
+            // 
+            this.colMASV1.Caption = "Mã SV";
+            this.colMASV1.FieldName = "MASV";
+            this.colMASV1.Name = "colMASV1";
+            this.colMASV1.OptionsColumn.AllowEdit = false;
+            this.colMASV1.Visible = true;
+            this.colMASV1.VisibleIndex = 0;
+            this.colMASV1.Width = 135;
+            // 
+            // colHO
+            // 
+            this.colHO.Caption = "Họ";
+            this.colHO.FieldName = "HO";
+            this.colHO.Name = "colHO";
+            this.colHO.OptionsColumn.AllowEdit = false;
+            this.colHO.Visible = true;
+            this.colHO.VisibleIndex = 1;
+            this.colHO.Width = 136;
+            // 
+            // colTEN
+            // 
+            this.colTEN.Caption = "Tên";
+            this.colTEN.FieldName = "TEN";
+            this.colTEN.Name = "colTEN";
+            this.colTEN.OptionsColumn.AllowEdit = false;
+            this.colTEN.Visible = true;
+            this.colTEN.VisibleIndex = 2;
+            this.colTEN.Width = 118;
+            // 
+            // colMALOP
+            // 
+            this.colMALOP.Caption = "Mã lớp";
+            this.colMALOP.FieldName = "MALOP";
+            this.colMALOP.Name = "colMALOP";
+            this.colMALOP.OptionsColumn.AllowEdit = false;
+            this.colMALOP.Visible = true;
+            this.colMALOP.VisibleIndex = 3;
+            this.colMALOP.Width = 153;
+            // 
+            // colPHAI
+            // 
+            this.colPHAI.Caption = "Phái";
+            this.colPHAI.FieldName = "PHAI";
+            this.colPHAI.Name = "colPHAI";
+            this.colPHAI.OptionsColumn.AllowEdit = false;
+            this.colPHAI.Visible = true;
+            this.colPHAI.VisibleIndex = 4;
+            this.colPHAI.Width = 42;
+            // 
+            // colNGAYSINH
+            // 
+            this.colNGAYSINH.Caption = "Ngày sinh";
+            this.colNGAYSINH.FieldName = "NGAYSINH";
+            this.colNGAYSINH.Name = "colNGAYSINH";
+            this.colNGAYSINH.OptionsColumn.AllowEdit = false;
+            this.colNGAYSINH.Visible = true;
+            this.colNGAYSINH.VisibleIndex = 5;
+            this.colNGAYSINH.Width = 124;
+            // 
+            // colNOISINH
+            // 
+            this.colNOISINH.Caption = "Nơi sinh";
+            this.colNOISINH.FieldName = "NOISINH";
+            this.colNOISINH.Name = "colNOISINH";
+            this.colNOISINH.OptionsColumn.AllowEdit = false;
+            this.colNOISINH.Visible = true;
+            this.colNOISINH.VisibleIndex = 6;
+            this.colNOISINH.Width = 163;
+            // 
+            // colDIACHI
+            // 
+            this.colDIACHI.Caption = "Địa chỉ";
+            this.colDIACHI.FieldName = "DIACHI";
+            this.colDIACHI.Name = "colDIACHI";
+            this.colDIACHI.OptionsColumn.AllowEdit = false;
+            this.colDIACHI.Visible = true;
+            this.colDIACHI.VisibleIndex = 7;
+            this.colDIACHI.Width = 148;
+            // 
+            // colGHICHU
+            // 
+            this.colGHICHU.Caption = "Ghi chú";
+            this.colGHICHU.FieldName = "GHICHU";
+            this.colGHICHU.Name = "colGHICHU";
+            this.colGHICHU.OptionsColumn.AllowEdit = false;
+            this.colGHICHU.Visible = true;
+            this.colGHICHU.VisibleIndex = 8;
+            this.colGHICHU.Width = 130;
+            // 
+            // colNGHIHOC
+            // 
+            this.colNGHIHOC.Caption = "Nghỉ học";
+            this.colNGHIHOC.FieldName = "NGHIHOC";
+            this.colNGHIHOC.Name = "colNGHIHOC";
+            this.colNGHIHOC.OptionsColumn.AllowEdit = false;
+            this.colNGHIHOC.Visible = true;
+            this.colNGHIHOC.VisibleIndex = 9;
+            this.colNGHIHOC.Width = 72;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.btnCancelAddHocPhi);
+            this.groupBox1.Controls.Add(this.btnEditHocPhiOK);
+            this.groupBox1.Controls.Add(this.btnAddHocPhi);
+            this.groupBox1.Controls.Add(sOTIENDADONGLabel);
+            this.groupBox1.Controls.Add(this.sOTIENDADONGSpinEdit);
+            this.groupBox1.Controls.Add(hOCPHILabel);
+            this.groupBox1.Controls.Add(this.hOCPHISpinEdit);
+            this.groupBox1.Controls.Add(hOCKYLabel);
+            this.groupBox1.Controls.Add(this.hOCKYSpinEdit);
+            this.groupBox1.Controls.Add(nIENKHOALabel);
+            this.groupBox1.Controls.Add(this.nIENKHOATextEdit);
+            this.groupBox1.Controls.Add(mASVLabel);
+            this.groupBox1.Controls.Add(this.mASVTextEdit);
+            this.groupBox1.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.groupBox1.Location = new System.Drawing.Point(3, 223);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(1239, 83);
+            this.groupBox1.TabIndex = 1;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Thông tin Học phí";
+            // 
+            // sOTIENDADONGSpinEdit
+            // 
+            this.sOTIENDADONGSpinEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.fKHOCPHISINHVIENBindingSource, "SOTIENDADONG", true));
+            this.sOTIENDADONGSpinEdit.EditValue = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.sOTIENDADONGSpinEdit.Location = new System.Drawing.Point(882, 29);
+            this.sOTIENDADONGSpinEdit.MenuManager = this.barManager1;
+            this.sOTIENDADONGSpinEdit.Name = "sOTIENDADONGSpinEdit";
+            this.sOTIENDADONGSpinEdit.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
+            this.sOTIENDADONGSpinEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.sOTIENDADONGSpinEdit.Properties.Increment = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.sOTIENDADONGSpinEdit.Properties.IsFloatValue = false;
+            this.sOTIENDADONGSpinEdit.Properties.Mask.EditMask = "N00";
+            this.sOTIENDADONGSpinEdit.Size = new System.Drawing.Size(151, 20);
+            this.sOTIENDADONGSpinEdit.TabIndex = 9;
+            // 
+            // fKHOCPHISINHVIENBindingSource
+            // 
+            this.fKHOCPHISINHVIENBindingSource.DataMember = "FK_HOCPHI_SINHVIEN";
+            this.fKHOCPHISINHVIENBindingSource.DataSource = this.sINHVIENBindingSource;
+            // 
+            // hOCPHISpinEdit
+            // 
+            this.hOCPHISpinEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.fKHOCPHISINHVIENBindingSource, "HOCPHI", true));
+            this.hOCPHISpinEdit.EditValue = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.hOCPHISpinEdit.Location = new System.Drawing.Point(601, 29);
+            this.hOCPHISpinEdit.MenuManager = this.barManager1;
+            this.hOCPHISpinEdit.Name = "hOCPHISpinEdit";
+            this.hOCPHISpinEdit.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
+            this.hOCPHISpinEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.hOCPHISpinEdit.Properties.Increment = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.hOCPHISpinEdit.Properties.IsFloatValue = false;
+            this.hOCPHISpinEdit.Properties.Mask.EditMask = "N00";
+            this.hOCPHISpinEdit.Size = new System.Drawing.Size(151, 20);
+            this.hOCPHISpinEdit.TabIndex = 7;
+            // 
+            // hOCKYSpinEdit
+            // 
+            this.hOCKYSpinEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.fKHOCPHISINHVIENBindingSource, "HOCKY", true));
+            this.hOCKYSpinEdit.EditValue = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.hOCKYSpinEdit.Location = new System.Drawing.Point(438, 29);
+            this.hOCKYSpinEdit.MenuManager = this.barManager1;
+            this.hOCKYSpinEdit.Name = "hOCKYSpinEdit";
+            this.hOCKYSpinEdit.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
+            this.hOCKYSpinEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.hOCKYSpinEdit.Size = new System.Drawing.Size(80, 20);
+            this.hOCKYSpinEdit.TabIndex = 5;
+            // 
+            // nIENKHOATextEdit
+            // 
+            this.nIENKHOATextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.fKHOCPHISINHVIENBindingSource, "NIENKHOA", true));
+            this.nIENKHOATextEdit.Location = new System.Drawing.Point(250, 29);
+            this.nIENKHOATextEdit.MenuManager = this.barManager1;
+            this.nIENKHOATextEdit.Name = "nIENKHOATextEdit";
+            this.nIENKHOATextEdit.Size = new System.Drawing.Size(100, 20);
+            this.nIENKHOATextEdit.TabIndex = 3;
+            // 
+            // mASVTextEdit
+            // 
+            this.mASVTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.fKHOCPHISINHVIENBindingSource, "MASV", true));
+            this.mASVTextEdit.Location = new System.Drawing.Point(54, 29);
+            this.mASVTextEdit.MenuManager = this.barManager1;
+            this.mASVTextEdit.Name = "mASVTextEdit";
+            this.mASVTextEdit.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
+            this.mASVTextEdit.Size = new System.Drawing.Size(100, 20);
+            this.mASVTextEdit.TabIndex = 1;
+            // 
+            // hOCPHIGridControl
+            // 
+            this.hOCPHIGridControl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.hOCPHIGridControl.DataSource = this.fKHOCPHISINHVIENBindingSource;
+            this.hOCPHIGridControl.Location = new System.Drawing.Point(3, 3);
+            this.hOCPHIGridControl.MainView = this.gridViewHocPhi;
+            this.hOCPHIGridControl.MenuManager = this.barManager1;
+            this.hOCPHIGridControl.Name = "hOCPHIGridControl";
+            this.hOCPHIGridControl.Size = new System.Drawing.Size(1239, 214);
+            this.hOCPHIGridControl.TabIndex = 0;
+            this.hOCPHIGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridViewHocPhi});
+            // 
+            // gridViewHocPhi
+            // 
+            this.gridViewHocPhi.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colMASV,
+            this.colNIENKHOA,
+            this.colHOCKY,
+            this.colHOCPHI,
+            this.colSOTIENDADONG});
+            this.gridViewHocPhi.GridControl = this.hOCPHIGridControl;
+            this.gridViewHocPhi.Name = "gridViewHocPhi";
+            // 
+            // colMASV
+            // 
+            this.colMASV.Caption = "Mã SV";
+            this.colMASV.FieldName = "MASV";
+            this.colMASV.Name = "colMASV";
+            this.colMASV.OptionsColumn.AllowEdit = false;
+            this.colMASV.Visible = true;
+            this.colMASV.VisibleIndex = 0;
+            // 
+            // colNIENKHOA
+            // 
+            this.colNIENKHOA.Caption = "Niên khóa";
+            this.colNIENKHOA.FieldName = "NIENKHOA";
+            this.colNIENKHOA.Name = "colNIENKHOA";
+            this.colNIENKHOA.OptionsColumn.AllowEdit = false;
+            this.colNIENKHOA.Visible = true;
+            this.colNIENKHOA.VisibleIndex = 1;
+            // 
+            // colHOCKY
+            // 
+            this.colHOCKY.Caption = "Học kỳ";
+            this.colHOCKY.FieldName = "HOCKY";
+            this.colHOCKY.Name = "colHOCKY";
+            this.colHOCKY.OptionsColumn.AllowEdit = false;
+            this.colHOCKY.Visible = true;
+            this.colHOCKY.VisibleIndex = 2;
+            // 
+            // colHOCPHI
+            // 
+            this.colHOCPHI.Caption = "Học phí";
+            this.colHOCPHI.FieldName = "HOCPHI";
+            this.colHOCPHI.Name = "colHOCPHI";
+            this.colHOCPHI.OptionsColumn.AllowEdit = false;
+            this.colHOCPHI.Visible = true;
+            this.colHOCPHI.VisibleIndex = 3;
+            // 
+            // colSOTIENDADONG
+            // 
+            this.colSOTIENDADONG.Caption = "Số tiền đã đóng";
+            this.colSOTIENDADONG.FieldName = "SOTIENDADONG";
+            this.colSOTIENDADONG.Name = "colSOTIENDADONG";
+            this.colSOTIENDADONG.OptionsColumn.AllowEdit = false;
+            this.colSOTIENDADONG.Visible = true;
+            this.colSOTIENDADONG.VisibleIndex = 4;
+            // 
+            // sINHVIENTableAdapter
+            // 
+            this.sINHVIENTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.DIEMTableAdapter = null;
+            this.tableAdapterManager.GIANGVIENTableAdapter = null;
+            this.tableAdapterManager.HOCPHITableAdapter = this.hOCPHITableAdapter;
+            this.tableAdapterManager.KHOATableAdapter = null;
+            this.tableAdapterManager.LOPTableAdapter = null;
+            this.tableAdapterManager.MONHOCTableAdapter = null;
+            this.tableAdapterManager.SINHVIENTableAdapter = this.sINHVIENTableAdapter;
+            this.tableAdapterManager.UpdateOrder = DX_Student_Score_Management.QLDSVKhoaDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            // 
+            // hOCPHITableAdapter
+            // 
+            this.hOCPHITableAdapter.ClearBeforeFill = true;
+            // 
+            // btnAddHocPhi
+            // 
+            this.btnAddHocPhi.Location = new System.Drawing.Point(1051, 27);
+            this.btnAddHocPhi.Name = "btnAddHocPhi";
+            this.btnAddHocPhi.Size = new System.Drawing.Size(75, 23);
+            this.btnAddHocPhi.TabIndex = 10;
+            this.btnAddHocPhi.Text = "Thêm";
+            this.btnAddHocPhi.UseVisualStyleBackColor = true;
+            this.btnAddHocPhi.Visible = false;
+            this.btnAddHocPhi.Click += new System.EventHandler(this.btnAddHocPhi_Click);
+            // 
+            // btnEditHocPhiOK
+            // 
+            this.btnEditHocPhiOK.Location = new System.Drawing.Point(1102, 27);
+            this.btnEditHocPhiOK.Name = "btnEditHocPhiOK";
+            this.btnEditHocPhiOK.Size = new System.Drawing.Size(75, 23);
+            this.btnEditHocPhiOK.TabIndex = 10;
+            this.btnEditHocPhiOK.Text = "OK";
+            this.btnEditHocPhiOK.UseVisualStyleBackColor = true;
+            // 
+            // btnCancelAddHocPhi
+            // 
+            this.btnCancelAddHocPhi.Location = new System.Drawing.Point(1146, 27);
+            this.btnCancelAddHocPhi.Name = "btnCancelAddHocPhi";
+            this.btnCancelAddHocPhi.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelAddHocPhi.TabIndex = 10;
+            this.btnCancelAddHocPhi.Text = "Hủy";
+            this.btnCancelAddHocPhi.UseVisualStyleBackColor = true;
+            this.btnCancelAddHocPhi.Visible = false;
+            this.btnCancelAddHocPhi.Click += new System.EventHandler(this.btnCancelAddHocPhi_Click);
+            // 
+            // barBtnUpload
+            // 
+            this.barBtnUpload.Caption = "Upload";
+            this.barBtnUpload.Id = 3;
+            this.barBtnUpload.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
+            this.barBtnUpload.Name = "barBtnUpload";
             // 
             // UserControlHocPhi
             // 
@@ -149,10 +653,26 @@
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
             this.Name = "UserControlHocPhi";
-            this.Size = new System.Drawing.Size(686, 479);
+            this.Size = new System.Drawing.Size(1245, 573);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
+            this.splitContainer.Panel1.ResumeLayout(false);
+            this.splitContainer.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer)).EndInit();
             this.splitContainer.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.sINHVIENGridControl)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sINHVIENBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qLDSVKhoaDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewSinhVien)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.sOTIENDADONGSpinEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fKHOCPHISINHVIENBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hOCPHISpinEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hOCKYSpinEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nIENKHOATextEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mASVTextEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hOCPHIGridControl)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewHocPhi)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -162,13 +682,48 @@
 
         private DevExpress.XtraBars.BarManager barManager1;
         private DevExpress.XtraBars.Bar toolBar;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem2;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem3;
+        private DevExpress.XtraBars.BarButtonItem barBtnAddHocPhi;
+        private DevExpress.XtraBars.BarButtonItem barBtnDeleteHocPhi;
+        private DevExpress.XtraBars.BarButtonItem barBtnRefresh;
         private DevExpress.XtraBars.BarDockControl barDockControlTop;
         private DevExpress.XtraBars.BarDockControl barDockControlBottom;
         private DevExpress.XtraBars.BarDockControl barDockControlLeft;
         private DevExpress.XtraBars.BarDockControl barDockControlRight;
         private System.Windows.Forms.SplitContainer splitContainer;
+        private System.Windows.Forms.BindingSource sINHVIENBindingSource;
+        private QLDSVKhoaDataSet qLDSVKhoaDataSet;
+        private QLDSVKhoaDataSetTableAdapters.SINHVIENTableAdapter sINHVIENTableAdapter;
+        private QLDSVKhoaDataSetTableAdapters.TableAdapterManager tableAdapterManager;
+        private DevExpress.XtraGrid.GridControl sINHVIENGridControl;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridViewSinhVien;
+        private DevExpress.XtraGrid.Columns.GridColumn colMASV1;
+        private DevExpress.XtraGrid.Columns.GridColumn colHO;
+        private DevExpress.XtraGrid.Columns.GridColumn colTEN;
+        private DevExpress.XtraGrid.Columns.GridColumn colMALOP;
+        private DevExpress.XtraGrid.Columns.GridColumn colPHAI;
+        private DevExpress.XtraGrid.Columns.GridColumn colNGAYSINH;
+        private DevExpress.XtraGrid.Columns.GridColumn colNOISINH;
+        private DevExpress.XtraGrid.Columns.GridColumn colDIACHI;
+        private DevExpress.XtraGrid.Columns.GridColumn colGHICHU;
+        private DevExpress.XtraGrid.Columns.GridColumn colNGHIHOC;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private DevExpress.XtraGrid.GridControl hOCPHIGridControl;
+        private System.Windows.Forms.BindingSource fKHOCPHISINHVIENBindingSource;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridViewHocPhi;
+        private DevExpress.XtraGrid.Columns.GridColumn colMASV;
+        private DevExpress.XtraGrid.Columns.GridColumn colNIENKHOA;
+        private DevExpress.XtraGrid.Columns.GridColumn colHOCKY;
+        private DevExpress.XtraGrid.Columns.GridColumn colHOCPHI;
+        private DevExpress.XtraGrid.Columns.GridColumn colSOTIENDADONG;
+        private QLDSVKhoaDataSetTableAdapters.HOCPHITableAdapter hOCPHITableAdapter;
+        private DevExpress.XtraEditors.SpinEdit sOTIENDADONGSpinEdit;
+        private DevExpress.XtraEditors.SpinEdit hOCPHISpinEdit;
+        private DevExpress.XtraEditors.SpinEdit hOCKYSpinEdit;
+        private DevExpress.XtraEditors.TextEdit nIENKHOATextEdit;
+        private DevExpress.XtraEditors.TextEdit mASVTextEdit;
+        private System.Windows.Forms.Button btnCancelAddHocPhi;
+        private System.Windows.Forms.Button btnEditHocPhiOK;
+        private System.Windows.Forms.Button btnAddHocPhi;
+        private DevExpress.XtraBars.BarButtonItem barBtnUpload;
     }
 }
