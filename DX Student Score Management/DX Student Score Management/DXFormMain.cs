@@ -18,11 +18,9 @@ namespace DX_Student_Score_Management
     public partial class DXFormMain : DevExpress.XtraEditors.XtraForm
     {
         DataRepository _dataRepository;
-        private UserControlLopSinhVien userControlLopSinhVien;
         private LayoutTabPage layoutTabPage;
         private void InitializeExtendComponent()
         {
-            userControlLopSinhVien = new UserControlLopSinhVien();
             //
             // xtraTabControlMain
             //

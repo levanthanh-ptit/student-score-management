@@ -13,26 +13,29 @@ namespace DX_Student_Score_Management.Controllers
 {
     public partial class UserControlMon : DevExpress.XtraEditors.XtraUserControl
     {
-        public UserControlMon()
+        private QLDSVKhoaDataSet _QLDSVKhoaDataSet;
+        public UserControlMon(QLDSVKhoaDataSet _QLDSVKhoaDataSet)
         {
+            this._QLDSVKhoaDataSet = _QLDSVKhoaDataSet;
             InitializeComponent();
+            this.mONHOCBindingSource.DataSource = _QLDSVKhoaDataSet;
             UserControlMon_Load();
         }
         private void UserControlMon_Load()
         {
-            this.mONHOCTableAdapter.Fill(this.qLDSVKhoaDataSet.MONHOC);
+            this.mONHOCTableAdapter.Fill(this._QLDSVKhoaDataSet.MONHOC);
         }
         private void mONHOCBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
             this.Validate();
             this.mONHOCBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.qLDSVKhoaDataSet);
+            this.tableAdapterManager.UpdateAll(this._QLDSVKhoaDataSet);
 
         }
 
         private void barBtnUpload_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            this.tableAdapterManager.UpdateAll(qLDSVKhoaDataSet);
+            this.tableAdapterManager.UpdateAll(this._QLDSVKhoaDataSet);
         }
 
         private void barBtnRefresh_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

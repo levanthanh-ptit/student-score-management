@@ -246,6 +246,7 @@
             // 
             // splitContainer
             // 
+            this.splitContainer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.splitContainer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer.Location = new System.Drawing.Point(0, 40);
             this.splitContainer.Name = "splitContainer";
@@ -272,11 +273,12 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.sINHVIENGridControl.DataSource = this.fKSINHVIENLOPBindingSource;
-            this.sINHVIENGridControl.Location = new System.Drawing.Point(416, 3);
+            this.sINHVIENGridControl.Location = new System.Drawing.Point(416, 5);
             this.sINHVIENGridControl.MainView = this.gridViewSinhVien;
             this.sINHVIENGridControl.MenuManager = this.barManager1;
             this.sINHVIENGridControl.Name = "sINHVIENGridControl";
-            this.sINHVIENGridControl.Size = new System.Drawing.Size(798, 232);
+            this.sINHVIENGridControl.ShowOnlyPredefinedDetails = true;
+            this.sINHVIENGridControl.Size = new System.Drawing.Size(796, 228);
             this.sINHVIENGridControl.TabIndex = 1;
             this.sINHVIENGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewSinhVien});
@@ -310,6 +312,7 @@
             this.colNGHIHOC});
             this.gridViewSinhVien.GridControl = this.sINHVIENGridControl;
             this.gridViewSinhVien.Name = "gridViewSinhVien";
+            this.gridViewSinhVien.OptionsView.ShowGroupPanel = false;
             // 
             // colMASV
             // 
@@ -396,11 +399,12 @@
             this.lOPGridControl.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.lOPGridControl.DataSource = this.lOPBindingSource;
-            this.lOPGridControl.Location = new System.Drawing.Point(3, 3);
+            this.lOPGridControl.Location = new System.Drawing.Point(3, 5);
             this.lOPGridControl.MainView = this.gridViewLop;
             this.lOPGridControl.MenuManager = this.barManager1;
             this.lOPGridControl.Name = "lOPGridControl";
-            this.lOPGridControl.Size = new System.Drawing.Size(407, 232);
+            this.lOPGridControl.ShowOnlyPredefinedDetails = true;
+            this.lOPGridControl.Size = new System.Drawing.Size(407, 228);
             this.lOPGridControl.TabIndex = 0;
             this.lOPGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewLop});
@@ -413,6 +417,7 @@
             this.colMAKH});
             this.gridViewLop.GridControl = this.lOPGridControl;
             this.gridViewLop.Name = "gridViewLop";
+            this.gridViewLop.OptionsView.ShowGroupPanel = false;
             // 
             // colMALOP
             // 
@@ -460,9 +465,9 @@
             this.groupBoxDiem.Controls.Add(mASVLabel);
             this.groupBoxDiem.Controls.Add(this.mASVTextEdit);
             this.groupBoxDiem.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.groupBoxDiem.Location = new System.Drawing.Point(3, 261);
+            this.groupBoxDiem.Location = new System.Drawing.Point(3, 259);
             this.groupBoxDiem.Name = "groupBoxDiem";
-            this.groupBoxDiem.Size = new System.Drawing.Size(1207, 69);
+            this.groupBoxDiem.Size = new System.Drawing.Size(1205, 69);
             this.groupBoxDiem.TabIndex = 1;
             this.groupBoxDiem.TabStop = false;
             this.groupBoxDiem.Text = "Điểm Sinh viên";
@@ -571,7 +576,7 @@
             this.dIEMGridControl.MainView = this.gridViewDiem;
             this.dIEMGridControl.MenuManager = this.barManager1;
             this.dIEMGridControl.Name = "dIEMGridControl";
-            this.dIEMGridControl.Size = new System.Drawing.Size(1211, 252);
+            this.dIEMGridControl.Size = new System.Drawing.Size(1209, 250);
             this.dIEMGridControl.TabIndex = 0;
             this.dIEMGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewDiem});
@@ -585,6 +590,7 @@
             this.colDIEM});
             this.gridViewDiem.GridControl = this.dIEMGridControl;
             this.gridViewDiem.Name = "gridViewDiem";
+            this.gridViewDiem.OptionsView.ShowGroupPanel = false;
             this.gridViewDiem.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gridViewDiem_RowClick);
             // 
             // colMASV1

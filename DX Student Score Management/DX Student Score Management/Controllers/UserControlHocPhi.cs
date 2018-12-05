@@ -13,17 +13,31 @@ namespace DX_Student_Score_Management.Controllers
 {
     public partial class UserControlHocPhi : DevExpress.XtraEditors.XtraUserControl
     {
-        public UserControlHocPhi()
+        private QLDSVKhoaDataSet _QLDSVKhoaDataSet;
+        public UserControlHocPhi(QLDSVKhoaDataSet _QLDSVKhoaDataSet)
         {
+            this._QLDSVKhoaDataSet = _QLDSVKhoaDataSet;
             InitializeComponent();
+            InitializeExtendComponent();
+            sINHVIENBindingSource.DataSource = _QLDSVKhoaDataSet;
+            UserControlHocPhi_Load();
         }
-
+        private void InitializeExtendComponent()
+        {
+            this.tableAdapterManager.Connection = Program._dataRepository.sqlConnection;
+            this.sINHVIENTableAdapter.Connection = Program._dataRepository.sqlConnection;
+            this.hOCPHITableAdapter.Connection = Program._dataRepository.sqlConnection;
+        }
+        public void UserControlHocPhi_Load()
+        {
+            sINHVIENTableAdapter.Fill(_QLDSVKhoaDataSet.SINHVIEN);
+            hOCPHITableAdapter.Fill(_QLDSVKhoaDataSet.HOCPHI);
+        }
         private void sINHVIENBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
             this.Validate();
             this.sINHVIENBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.qLDSVKhoaDataSet);
-
+            this.tableAdapterManager.UpdateAll(this._QLDSVKhoaDataSet);
         }
 
         private void barBtnAddHocPhi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -49,6 +63,16 @@ namespace DX_Student_Score_Management.Controllers
             this.btnEditHocPhiOK.Visible = true;
             this.btnAddHocPhi.Visible = false;
             this.btnCancelAddHocPhi.Visible = false;
+        }
+
+        private void barBtnUpload_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            this.tableAdapterManager.UpdateAll(this._QLDSVKhoaDataSet);
+        }
+
+        private void barBtnRefresh_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            UserControlHocPhi_Load();
         }
     }
 }

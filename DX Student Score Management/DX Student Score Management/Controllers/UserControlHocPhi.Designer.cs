@@ -37,9 +37,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserControlHocPhi));
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.toolBar = new DevExpress.XtraBars.Bar();
+            this.barBtnRefresh = new DevExpress.XtraBars.BarButtonItem();
+            this.barBtnUpload = new DevExpress.XtraBars.BarButtonItem();
             this.barBtnAddHocPhi = new DevExpress.XtraBars.BarButtonItem();
             this.barBtnDeleteHocPhi = new DevExpress.XtraBars.BarButtonItem();
-            this.barBtnRefresh = new DevExpress.XtraBars.BarButtonItem();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
@@ -60,6 +61,9 @@
             this.colGHICHU = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colNGHIHOC = new DevExpress.XtraGrid.Columns.GridColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnCancelAddHocPhi = new System.Windows.Forms.Button();
+            this.btnEditHocPhiOK = new System.Windows.Forms.Button();
+            this.btnAddHocPhi = new System.Windows.Forms.Button();
             this.sOTIENDADONGSpinEdit = new DevExpress.XtraEditors.SpinEdit();
             this.fKHOCPHISINHVIENBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.hOCPHISpinEdit = new DevExpress.XtraEditors.SpinEdit();
@@ -76,10 +80,6 @@
             this.sINHVIENTableAdapter = new DX_Student_Score_Management.QLDSVKhoaDataSetTableAdapters.SINHVIENTableAdapter();
             this.tableAdapterManager = new DX_Student_Score_Management.QLDSVKhoaDataSetTableAdapters.TableAdapterManager();
             this.hOCPHITableAdapter = new DX_Student_Score_Management.QLDSVKhoaDataSetTableAdapters.HOCPHITableAdapter();
-            this.btnAddHocPhi = new System.Windows.Forms.Button();
-            this.btnEditHocPhiOK = new System.Windows.Forms.Button();
-            this.btnCancelAddHocPhi = new System.Windows.Forms.Button();
-            this.barBtnUpload = new DevExpress.XtraBars.BarButtonItem();
             mASVLabel = new System.Windows.Forms.Label();
             nIENKHOALabel = new System.Windows.Forms.Label();
             hOCKYLabel = new System.Windows.Forms.Label();
@@ -183,11 +183,27 @@
             this.toolBar.OptionsBar.UseWholeRow = true;
             this.toolBar.Text = "Main menu";
             // 
+            // barBtnRefresh
+            // 
+            this.barBtnRefresh.Caption = "Refresh";
+            this.barBtnRefresh.Id = 2;
+            this.barBtnRefresh.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barBtnRefresh.ImageOptions.Image")));
+            this.barBtnRefresh.Name = "barBtnRefresh";
+            this.barBtnRefresh.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barBtnRefresh_ItemClick);
+            // 
+            // barBtnUpload
+            // 
+            this.barBtnUpload.Caption = "Upload";
+            this.barBtnUpload.Id = 3;
+            this.barBtnUpload.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barBtnUpload.ImageOptions.Image")));
+            this.barBtnUpload.Name = "barBtnUpload";
+            this.barBtnUpload.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barBtnUpload_ItemClick);
+            // 
             // barBtnAddHocPhi
             // 
             this.barBtnAddHocPhi.Caption = "Add";
             this.barBtnAddHocPhi.Id = 0;
-            this.barBtnAddHocPhi.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image1")));
+            this.barBtnAddHocPhi.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barBtnAddHocPhi.ImageOptions.Image")));
             this.barBtnAddHocPhi.Name = "barBtnAddHocPhi";
             this.barBtnAddHocPhi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barBtnAddHocPhi_ItemClick);
             // 
@@ -195,15 +211,8 @@
             // 
             this.barBtnDeleteHocPhi.Caption = "Delete";
             this.barBtnDeleteHocPhi.Id = 1;
-            this.barBtnDeleteHocPhi.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.Image")));
+            this.barBtnDeleteHocPhi.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barBtnDeleteHocPhi.ImageOptions.Image")));
             this.barBtnDeleteHocPhi.Name = "barBtnDeleteHocPhi";
-            // 
-            // barBtnRefresh
-            // 
-            this.barBtnRefresh.Caption = "Refresh";
-            this.barBtnRefresh.Id = 2;
-            this.barBtnRefresh.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.ImageOptions.Image")));
-            this.barBtnRefresh.Name = "barBtnRefresh";
             // 
             // barDockControlTop
             // 
@@ -239,6 +248,7 @@
             // 
             // splitContainer
             // 
+            this.splitContainer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.splitContainer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer.Location = new System.Drawing.Point(0, 40);
             this.splitContainer.Name = "splitContainer";
@@ -255,7 +265,7 @@
             this.splitContainer.Panel2.Controls.Add(this.groupBox1);
             this.splitContainer.Panel2.Controls.Add(this.hOCPHIGridControl);
             this.splitContainer.Size = new System.Drawing.Size(1245, 533);
-            this.splitContainer.SplitterDistance = 220;
+            this.splitContainer.SplitterDistance = 219;
             this.splitContainer.TabIndex = 5;
             // 
             // sINHVIENGridControl
@@ -264,11 +274,12 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.sINHVIENGridControl.DataSource = this.sINHVIENBindingSource;
-            this.sINHVIENGridControl.Location = new System.Drawing.Point(3, 3);
+            this.sINHVIENGridControl.Location = new System.Drawing.Point(3, 5);
             this.sINHVIENGridControl.MainView = this.gridViewSinhVien;
             this.sINHVIENGridControl.MenuManager = this.barManager1;
             this.sINHVIENGridControl.Name = "sINHVIENGridControl";
-            this.sINHVIENGridControl.Size = new System.Drawing.Size(1239, 214);
+            this.sINHVIENGridControl.ShowOnlyPredefinedDetails = true;
+            this.sINHVIENGridControl.Size = new System.Drawing.Size(1237, 209);
             this.sINHVIENGridControl.TabIndex = 0;
             this.sINHVIENGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewSinhVien});
@@ -299,6 +310,7 @@
             this.colNGHIHOC});
             this.gridViewSinhVien.GridControl = this.sINHVIENGridControl;
             this.gridViewSinhVien.Name = "gridViewSinhVien";
+            this.gridViewSinhVien.OptionsView.ShowGroupPanel = false;
             // 
             // colMASV1
             // 
@@ -418,12 +430,43 @@
             this.groupBox1.Controls.Add(mASVLabel);
             this.groupBox1.Controls.Add(this.mASVTextEdit);
             this.groupBox1.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.groupBox1.Location = new System.Drawing.Point(3, 223);
+            this.groupBox1.Location = new System.Drawing.Point(3, 222);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1239, 83);
+            this.groupBox1.Size = new System.Drawing.Size(1237, 83);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin Học phí";
+            // 
+            // btnCancelAddHocPhi
+            // 
+            this.btnCancelAddHocPhi.Location = new System.Drawing.Point(1146, 27);
+            this.btnCancelAddHocPhi.Name = "btnCancelAddHocPhi";
+            this.btnCancelAddHocPhi.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelAddHocPhi.TabIndex = 10;
+            this.btnCancelAddHocPhi.Text = "Hủy";
+            this.btnCancelAddHocPhi.UseVisualStyleBackColor = true;
+            this.btnCancelAddHocPhi.Visible = false;
+            this.btnCancelAddHocPhi.Click += new System.EventHandler(this.btnCancelAddHocPhi_Click);
+            // 
+            // btnEditHocPhiOK
+            // 
+            this.btnEditHocPhiOK.Location = new System.Drawing.Point(1102, 27);
+            this.btnEditHocPhiOK.Name = "btnEditHocPhiOK";
+            this.btnEditHocPhiOK.Size = new System.Drawing.Size(75, 23);
+            this.btnEditHocPhiOK.TabIndex = 10;
+            this.btnEditHocPhiOK.Text = "OK";
+            this.btnEditHocPhiOK.UseVisualStyleBackColor = true;
+            // 
+            // btnAddHocPhi
+            // 
+            this.btnAddHocPhi.Location = new System.Drawing.Point(1051, 27);
+            this.btnAddHocPhi.Name = "btnAddHocPhi";
+            this.btnAddHocPhi.Size = new System.Drawing.Size(75, 23);
+            this.btnAddHocPhi.TabIndex = 10;
+            this.btnAddHocPhi.Text = "Thêm";
+            this.btnAddHocPhi.UseVisualStyleBackColor = true;
+            this.btnAddHocPhi.Visible = false;
+            this.btnAddHocPhi.Click += new System.EventHandler(this.btnAddHocPhi_Click);
             // 
             // sOTIENDADONGSpinEdit
             // 
@@ -524,7 +567,7 @@
             this.hOCPHIGridControl.MainView = this.gridViewHocPhi;
             this.hOCPHIGridControl.MenuManager = this.barManager1;
             this.hOCPHIGridControl.Name = "hOCPHIGridControl";
-            this.hOCPHIGridControl.Size = new System.Drawing.Size(1239, 214);
+            this.hOCPHIGridControl.Size = new System.Drawing.Size(1237, 213);
             this.hOCPHIGridControl.TabIndex = 0;
             this.hOCPHIGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewHocPhi});
@@ -539,6 +582,7 @@
             this.colSOTIENDADONG});
             this.gridViewHocPhi.GridControl = this.hOCPHIGridControl;
             this.gridViewHocPhi.Name = "gridViewHocPhi";
+            this.gridViewHocPhi.OptionsView.ShowGroupPanel = false;
             // 
             // colMASV
             // 
@@ -604,44 +648,6 @@
             // hOCPHITableAdapter
             // 
             this.hOCPHITableAdapter.ClearBeforeFill = true;
-            // 
-            // btnAddHocPhi
-            // 
-            this.btnAddHocPhi.Location = new System.Drawing.Point(1051, 27);
-            this.btnAddHocPhi.Name = "btnAddHocPhi";
-            this.btnAddHocPhi.Size = new System.Drawing.Size(75, 23);
-            this.btnAddHocPhi.TabIndex = 10;
-            this.btnAddHocPhi.Text = "Thêm";
-            this.btnAddHocPhi.UseVisualStyleBackColor = true;
-            this.btnAddHocPhi.Visible = false;
-            this.btnAddHocPhi.Click += new System.EventHandler(this.btnAddHocPhi_Click);
-            // 
-            // btnEditHocPhiOK
-            // 
-            this.btnEditHocPhiOK.Location = new System.Drawing.Point(1102, 27);
-            this.btnEditHocPhiOK.Name = "btnEditHocPhiOK";
-            this.btnEditHocPhiOK.Size = new System.Drawing.Size(75, 23);
-            this.btnEditHocPhiOK.TabIndex = 10;
-            this.btnEditHocPhiOK.Text = "OK";
-            this.btnEditHocPhiOK.UseVisualStyleBackColor = true;
-            // 
-            // btnCancelAddHocPhi
-            // 
-            this.btnCancelAddHocPhi.Location = new System.Drawing.Point(1146, 27);
-            this.btnCancelAddHocPhi.Name = "btnCancelAddHocPhi";
-            this.btnCancelAddHocPhi.Size = new System.Drawing.Size(75, 23);
-            this.btnCancelAddHocPhi.TabIndex = 10;
-            this.btnCancelAddHocPhi.Text = "Hủy";
-            this.btnCancelAddHocPhi.UseVisualStyleBackColor = true;
-            this.btnCancelAddHocPhi.Visible = false;
-            this.btnCancelAddHocPhi.Click += new System.EventHandler(this.btnCancelAddHocPhi_Click);
-            // 
-            // barBtnUpload
-            // 
-            this.barBtnUpload.Caption = "Upload";
-            this.barBtnUpload.Id = 3;
-            this.barBtnUpload.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
-            this.barBtnUpload.Name = "barBtnUpload";
             // 
             // UserControlHocPhi
             // 

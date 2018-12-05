@@ -13,10 +13,14 @@ namespace DX_Student_Score_Management.Controllers
 {
     public partial class UserControlLopSinhVien : DevExpress.XtraEditors.XtraUserControl
     {
-        public UserControlLopSinhVien()
+        private QLDSVKhoaDataSet _QLDSVKhoaDataSet;
+        public UserControlLopSinhVien(QLDSVKhoaDataSet _QLDSVKhoaDataSet)
         {
+            // Inversion of control
+            this._QLDSVKhoaDataSet = _QLDSVKhoaDataSet;
             InitializeComponent();
             InitializeExtendComponent();
+            this.kHOABindingSource.DataSource = _QLDSVKhoaDataSet;
             UserControlLopSinhVien_Load();
         }
         private void InitializeExtendComponent()
@@ -29,9 +33,9 @@ namespace DX_Student_Score_Management.Controllers
         
         private void UserControlLopSinhVien_Load()
         {
-            kHOATableAdapter.Fill(qLDSVKhoaDataSet.KHOA);
-            lOPTableAdapter.Fill(qLDSVKhoaDataSet.LOP);
-            sINHVIENTableAdapter.Fill(qLDSVKhoaDataSet.SINHVIEN);
+            kHOATableAdapter.Fill(_QLDSVKhoaDataSet.KHOA);
+            lOPTableAdapter.Fill(_QLDSVKhoaDataSet.LOP);
+            sINHVIENTableAdapter.Fill(_QLDSVKhoaDataSet.SINHVIEN);
         }
 
         private void barBtnAddLop_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -102,7 +106,7 @@ namespace DX_Student_Score_Management.Controllers
 
         private void barBtnUpload_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            tableAdapterManager.UpdateAll(qLDSVKhoaDataSet);
+            tableAdapterManager.UpdateAll(_QLDSVKhoaDataSet);
         }
     }
 }

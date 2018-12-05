@@ -120,6 +120,7 @@
             this.LoginUserTextBox.Name = "LoginUserTextBox";
             this.LoginUserTextBox.Size = new System.Drawing.Size(222, 21);
             this.LoginUserTextBox.TabIndex = 3;
+            this.LoginUserTextBox.Text = "sa";
             // 
             // label3
             // 
@@ -137,6 +138,7 @@
             this.LoginPasswordTextBox.Name = "LoginPasswordTextBox";
             this.LoginPasswordTextBox.Size = new System.Drawing.Size(222, 21);
             this.LoginPasswordTextBox.TabIndex = 3;
+            this.LoginPasswordTextBox.Text = "123";
             this.LoginPasswordTextBox.UseSystemPasswordChar = true;
             // 
             // LoginButton

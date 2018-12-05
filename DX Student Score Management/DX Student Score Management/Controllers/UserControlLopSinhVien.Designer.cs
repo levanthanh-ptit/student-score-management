@@ -444,7 +444,7 @@
             this.panelSubContainer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelSubContainer.Location = new System.Drawing.Point(0, 0);
             this.panelSubContainer.Name = "panelSubContainer";
-            this.panelSubContainer.Size = new System.Drawing.Size(1256, 338);
+            this.panelSubContainer.Size = new System.Drawing.Size(1254, 336);
             this.panelSubContainer.TabIndex = 6;
             // 
             // groupBox2
@@ -475,9 +475,9 @@
             this.groupBox2.Controls.Add(nGAYSINHLabel);
             this.groupBox2.Controls.Add(this.nGAYSINHDateEdit);
             this.groupBox2.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.groupBox2.Location = new System.Drawing.Point(3, 239);
+            this.groupBox2.Location = new System.Drawing.Point(3, 237);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1250, 96);
+            this.groupBox2.Size = new System.Drawing.Size(1248, 96);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thông tin Sinh viên";
@@ -636,7 +636,8 @@
             this.sINHVIENGridControl.MainView = this.gridViewSinhVien;
             this.sINHVIENGridControl.MenuManager = this.barManager1;
             this.sINHVIENGridControl.Name = "sINHVIENGridControl";
-            this.sINHVIENGridControl.Size = new System.Drawing.Size(1250, 230);
+            this.sINHVIENGridControl.ShowOnlyPredefinedDetails = true;
+            this.sINHVIENGridControl.Size = new System.Drawing.Size(1248, 228);
             this.sINHVIENGridControl.TabIndex = 1;
             this.sINHVIENGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewSinhVien});
@@ -656,6 +657,7 @@
             this.colNGHIHOC});
             this.gridViewSinhVien.GridControl = this.sINHVIENGridControl;
             this.gridViewSinhVien.Name = "gridViewSinhVien";
+            this.gridViewSinhVien.OptionsView.ShowGroupPanel = false;
             // 
             // colMASV
             // 
@@ -778,6 +780,7 @@
             // 
             // splitContainer
             // 
+            this.splitContainer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.splitContainer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer.Location = new System.Drawing.Point(0, 40);
             this.splitContainer.Name = "splitContainer";
@@ -811,9 +814,9 @@
             this.groupBox1.Controls.Add(this.btnEditLopOK);
             this.groupBox1.Controls.Add(this.btnAddLop);
             this.groupBox1.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.groupBox1.Location = new System.Drawing.Point(3, 203);
+            this.groupBox1.Location = new System.Drawing.Point(3, 201);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1250, 57);
+            this.groupBox1.Size = new System.Drawing.Size(1248, 57);
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin lớp";
@@ -871,7 +874,8 @@
             this.lOPGridControl.MainView = this.gridViewLop;
             this.lOPGridControl.MenuManager = this.barManager1;
             this.lOPGridControl.Name = "lOPGridControl";
-            this.lOPGridControl.Size = new System.Drawing.Size(1250, 167);
+            this.lOPGridControl.ShowOnlyPredefinedDetails = true;
+            this.lOPGridControl.Size = new System.Drawing.Size(1248, 165);
             this.lOPGridControl.TabIndex = 6;
             this.lOPGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewLop});
@@ -884,6 +888,7 @@
             this.colMAKH});
             this.gridViewLop.GridControl = this.lOPGridControl;
             this.gridViewLop.Name = "gridViewLop";
+            this.gridViewLop.OptionsView.ShowGroupPanel = false;
             // 
             // colMALOP1
             // 

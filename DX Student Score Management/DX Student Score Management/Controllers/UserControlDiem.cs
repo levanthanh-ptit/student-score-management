@@ -13,9 +13,14 @@ namespace DX_Student_Score_Management.Controllers
 {
     public partial class UserControlDiem : DevExpress.XtraEditors.XtraUserControl
     {
-        public UserControlDiem()
+        private QLDSVKhoaDataSet _QLDSVKhoaDataSet;
+        public UserControlDiem(QLDSVKhoaDataSet _QLDSVKhoaDataSet)
         {
+            this._QLDSVKhoaDataSet = _QLDSVKhoaDataSet;
             InitializeComponent();
+            InitializeExtendComponent();
+            this.lOPBindingSource.DataSource = _QLDSVKhoaDataSet;
+            this.mONHOCBindingSource.DataSource = _QLDSVKhoaDataSet;
             UserControlDiem_Load();
         }
         private void InitializeExtendComponent()
@@ -28,10 +33,10 @@ namespace DX_Student_Score_Management.Controllers
         }
         public void UserControlDiem_Load()
         {
-            this.lOPTableAdapter.Fill(qLDSVKhoaDataSet.LOP);
-            this.sINHVIENTableAdapter.Fill(qLDSVKhoaDataSet.SINHVIEN);
-            this.dIEMTableAdapter.Fill(qLDSVKhoaDataSet.DIEM);
-            this.mONHOCTableAdapter.Fill(qLDSVKhoaDataSet.MONHOC);
+            this.lOPTableAdapter.Fill(_QLDSVKhoaDataSet.LOP);
+            this.sINHVIENTableAdapter.Fill(_QLDSVKhoaDataSet.SINHVIEN);
+            this.dIEMTableAdapter.Fill(_QLDSVKhoaDataSet.DIEM);
+            this.mONHOCTableAdapter.Fill(_QLDSVKhoaDataSet.MONHOC);
         }
 
         private void barBtnRefresh_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -45,7 +50,7 @@ namespace DX_Student_Score_Management.Controllers
             this.btnEditDiemOK.Visible = false;
             this.btnAddDien.Visible = true;
             this.btnCancelAddDiem.Visible = true;
-            
+
         }
 
         private void barBtnDeleteDiem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

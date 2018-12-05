@@ -11,25 +11,25 @@ namespace DX_Student_Score_Management.Components
     public class LayoutTabPage
     {
 
-        private readonly PageInfo[] pageInfo = { new PageInfo("Lop","Lớp - Sinh viên"),
-                                        new PageInfo("Mon","Môn học"),
-                                        new PageInfo("Diem", "Nhập Điểm"),
-                                        new PageInfo("HocPhi","Học phí"),
-                                        new PageInfo("TaiKhoan","Tài khoản"),
-                                        new PageInfo("SinhVien","Sinh Viên")};
+        private readonly PageInfo[] pageInfo = { new PageInfo("Lop","Lớp - Sinh viên"), //0
+                                        new PageInfo("Mon","Môn học"),//1
+                                        new PageInfo("Diem", "Nhập Điểm"),//2
+                                        new PageInfo("HocPhi","Học phí"),//3
+                                        new PageInfo("TaiKhoan","Tài khoản"),//4
+                                        new PageInfo("SinhVien","Sinh Viên")};//5
         // Mapper Role
         private Dictionary<string, int[]> pageMap;
         // Main collection 
         public List<XtraTabPage> TabPages { get; }
 
-        public LayoutTabPage(string grounpId)
+        public LayoutTabPage(string grounpId, QLDSVKhoaDataSet _QLDSVKhoaDataSet)
         {
             pageMap = new Dictionary<string, int[]>();
             TabPages = new List<XtraTabPage>();
-            pageMap.Add("PGV", new int[] { 0, 1, 2, 3 });
-            pageMap.Add("KHOA", new int[] { 0, 1, 2, 4 });
+            pageMap.Add("PGV", new int[] { 0, 1, 2, 4 });
+            pageMap.Add("KHOA", new int[] { 0, 1, 2 });
             pageMap.Add("KETOAN", new int[] { 3 });
-            pageMap.Add("USER", new int[] { 5 });
+            pageMap.Add("USER", new int[] { 2 });
             pageMap.Add("db_owner", new int[] { 0, 1, 2, 3, 4 });
             int[] tryGet;
             if (pageMap.TryGetValue(grounpId, out tryGet))
@@ -41,35 +41,35 @@ namespace DX_Student_Score_Management.Components
                     {
                         case 0:
                             {
-                                pageInfo[el].UserControl = new UserControlLopSinhVien();
+                                pageInfo[el].UserControl = new UserControlLopSinhVien(_QLDSVKhoaDataSet);
                                 TabPages.Last().Controls.Add(pageInfo[el].UserControl);
                                 pageInfo[el].UserControl.Dock = System.Windows.Forms.DockStyle.Fill;
                                 break;
                             }
                         case 1:
                             {
-                                pageInfo[el].UserControl = new UserControlMon();
+                                pageInfo[el].UserControl = new UserControlMon(_QLDSVKhoaDataSet);
                                 TabPages.Last().Controls.Add(pageInfo[el].UserControl);
                                 pageInfo[el].UserControl.Dock = System.Windows.Forms.DockStyle.Fill;
                                 break;
                             }
                         case 2:
                             {
-                                pageInfo[el].UserControl = new UserControlDiem();
+                                pageInfo[el].UserControl = new UserControlDiem(_QLDSVKhoaDataSet);
                                 TabPages.Last().Controls.Add(pageInfo[el].UserControl);
                                 pageInfo[el].UserControl.Dock = System.Windows.Forms.DockStyle.Fill;
                                 break;
                             }
                         case 3:
                             {
-                                pageInfo[el].UserControl = new UserControlHocPhi();
+                                pageInfo[el].UserControl = new UserControlHocPhi(_QLDSVKhoaDataSet);
                                 TabPages.Last().Controls.Add(pageInfo[el].UserControl);
                                 pageInfo[el].UserControl.Dock = System.Windows.Forms.DockStyle.Fill;
                                 break;
                             }
                         case 4:
                             {
-                                pageInfo[el].UserControl = new UserControlTaiKhoan();
+                                pageInfo[el].UserControl = new UserControlTaiKhoan(_QLDSVKhoaDataSet);
                                 TabPages.Last().Controls.Add(pageInfo[el].UserControl);
                                 pageInfo[el].UserControl.Dock = System.Windows.Forms.DockStyle.Fill;
                                 break;
