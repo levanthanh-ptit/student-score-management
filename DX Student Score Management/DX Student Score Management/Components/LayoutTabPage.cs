@@ -22,7 +22,7 @@ namespace DX_Student_Score_Management.Components
         // Main collection 
         public List<XtraTabPage> TabPages { get; }
 
-        public LayoutTabPage(string grounpId, QLDSVKhoaDataSet _QLDSVKhoaDataSet)
+        public LayoutTabPage(string grounpId)
         {
             pageMap = new Dictionary<string, int[]>();
             TabPages = new List<XtraTabPage>();
@@ -41,35 +41,35 @@ namespace DX_Student_Score_Management.Components
                     {
                         case 0:
                             {
-                                pageInfo[el].UserControl = new UserControlLopSinhVien(_QLDSVKhoaDataSet);
+                                pageInfo[el].UserControl = new UserControlLopSinhVien(Program._QLDSVKhoaDataSet);
                                 TabPages.Last().Controls.Add(pageInfo[el].UserControl);
                                 pageInfo[el].UserControl.Dock = System.Windows.Forms.DockStyle.Fill;
                                 break;
                             }
                         case 1:
                             {
-                                pageInfo[el].UserControl = new UserControlMon(_QLDSVKhoaDataSet);
+                                pageInfo[el].UserControl = new UserControlMon(Program._QLDSVKhoaDataSet);
                                 TabPages.Last().Controls.Add(pageInfo[el].UserControl);
                                 pageInfo[el].UserControl.Dock = System.Windows.Forms.DockStyle.Fill;
                                 break;
                             }
                         case 2:
                             {
-                                pageInfo[el].UserControl = new UserControlDiem(_QLDSVKhoaDataSet);
+                                pageInfo[el].UserControl = new UserControlDiem(Program._QLDSVKhoaDataSet);
                                 TabPages.Last().Controls.Add(pageInfo[el].UserControl);
                                 pageInfo[el].UserControl.Dock = System.Windows.Forms.DockStyle.Fill;
                                 break;
                             }
                         case 3:
                             {
-                                pageInfo[el].UserControl = new UserControlHocPhi(_QLDSVKhoaDataSet);
+                                pageInfo[el].UserControl = new UserControlHocPhi(Program._QLDSVHocPhiDataSet);
                                 TabPages.Last().Controls.Add(pageInfo[el].UserControl);
                                 pageInfo[el].UserControl.Dock = System.Windows.Forms.DockStyle.Fill;
                                 break;
                             }
                         case 4:
                             {
-                                pageInfo[el].UserControl = new UserControlTaiKhoan(_QLDSVKhoaDataSet);
+                                pageInfo[el].UserControl = new UserControlTaiKhoan(Program._QLDSVKhoaDataSet);
                                 TabPages.Last().Controls.Add(pageInfo[el].UserControl);
                                 pageInfo[el].UserControl.Dock = System.Windows.Forms.DockStyle.Fill;
                                 break;

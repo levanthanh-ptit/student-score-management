@@ -44,5 +44,15 @@ namespace DX_Student_Score_Management.Properties {
                 return ((string)(this["QLDSVKhoaConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=FPTDNSB\\THANH04;Initial Catalog=QLDSV;User ID=sa;Password=123")]
+        public string QLDSVHocPhiConnectionString {
+            get {
+                return ((string)(this["QLDSVHocPhiConnectionString"]));
+            }
+        }
     }
 }

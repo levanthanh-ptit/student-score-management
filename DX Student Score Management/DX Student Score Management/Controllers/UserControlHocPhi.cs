@@ -13,13 +13,13 @@ namespace DX_Student_Score_Management.Controllers
 {
     public partial class UserControlHocPhi : DevExpress.XtraEditors.XtraUserControl
     {
-        private QLDSVKhoaDataSet _QLDSVKhoaDataSet;
-        public UserControlHocPhi(QLDSVKhoaDataSet _QLDSVKhoaDataSet)
+        private QLDSVHocPhiDataSet _QLDSVHocPhiDataSet;
+        public UserControlHocPhi(QLDSVHocPhiDataSet _QLDSVHocPhiDataSet)
         {
-            this._QLDSVKhoaDataSet = _QLDSVKhoaDataSet;
+            this._QLDSVHocPhiDataSet = _QLDSVHocPhiDataSet;
             InitializeComponent();
             InitializeExtendComponent();
-            sINHVIENBindingSource.DataSource = _QLDSVKhoaDataSet;
+            sINHVIENBindingSource.DataSource = _QLDSVHocPhiDataSet;
             UserControlHocPhi_Load();
         }
         private void InitializeExtendComponent()
@@ -30,14 +30,14 @@ namespace DX_Student_Score_Management.Controllers
         }
         public void UserControlHocPhi_Load()
         {
-            sINHVIENTableAdapter.Fill(_QLDSVKhoaDataSet.SINHVIEN);
-            hOCPHITableAdapter.Fill(_QLDSVKhoaDataSet.HOCPHI);
+            sINHVIENTableAdapter.Fill(_QLDSVHocPhiDataSet.SINHVIEN);
+            hOCPHITableAdapter.Fill(_QLDSVHocPhiDataSet.HOCPHI);
         }
         private void sINHVIENBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
             this.Validate();
             this.sINHVIENBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this._QLDSVKhoaDataSet);
+            this.tableAdapterManager.UpdateAll(this._QLDSVHocPhiDataSet);
         }
 
         private void barBtnAddHocPhi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -67,12 +67,17 @@ namespace DX_Student_Score_Management.Controllers
 
         private void barBtnUpload_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            this.tableAdapterManager.UpdateAll(this._QLDSVKhoaDataSet);
+            this.tableAdapterManager.UpdateAll(this._QLDSVHocPhiDataSet);
         }
 
         private void barBtnRefresh_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             UserControlHocPhi_Load();
+        }
+
+        private void barBtnDeleteHocPhi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            this.fKHOCPHISINHVIENBindingSource.RemoveCurrent();
         }
     }
 }

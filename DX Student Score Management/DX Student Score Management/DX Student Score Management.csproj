@@ -98,6 +98,11 @@
     <Compile Include="Controllers\UserControlTaiKhoan.Designer.cs">
       <DependentUpon>UserControlTaiKhoan.cs</DependentUpon>
     </Compile>
+    <Compile Include="QLDSVHocPhiDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLDSVHocPhiDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="QLDSVKhoaDataSet.cs">
       <DependentUpon>QLDSVKhoaDataSet.xsd</DependentUpon>
     </Compile>
@@ -189,6 +194,17 @@
     </None>
     <None Include="QLDSVDataSetMaster.xss">
       <DependentUpon>QLDSVDataSetMaster.xsd</DependentUpon>
+    </None>
+    <None Include="QLDSVHocPhiDataSet.xsc">
+      <DependentUpon>QLDSVHocPhiDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="QLDSVHocPhiDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QLDSVHocPhiDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QLDSVHocPhiDataSet.xss">
+      <DependentUpon>QLDSVHocPhiDataSet.xsd</DependentUpon>
     </None>
     <None Include="QLDSVKhoaDataSet.xsc">
       <DependentUpon>QLDSVKhoaDataSet.xsd</DependentUpon>

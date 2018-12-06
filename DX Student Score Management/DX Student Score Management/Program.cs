@@ -12,6 +12,7 @@ namespace DX_Student_Score_Management
     static class Program
     {
         public static QLDSVKhoaDataSet _QLDSVKhoaDataSet;
+        public static QLDSVHocPhiDataSet _QLDSVHocPhiDataSet;
         public static DataRepository _dataRepository;
         public static FormLogin _formLogin;
         public static DXFormMain _DXFormMain;
@@ -19,13 +20,14 @@ namespace DX_Student_Score_Management
         private static void InitServices()
         {
             _QLDSVKhoaDataSet = new QLDSVKhoaDataSet();
+            _QLDSVHocPhiDataSet = new QLDSVHocPhiDataSet();
             _dataRepository = new DataRepository();
             _formLogin = new FormLogin(_dataRepository);
         }
         private static void InitForm()
         {
             _DXFormMain = new DXFormMain(_dataRepository,
-                                         new LayoutTabPage(_dataRepository.GroupId, _QLDSVKhoaDataSet));
+                                         new LayoutTabPage(_dataRepository.GroupId));
         }
         [STAThread]
         static void Main()
