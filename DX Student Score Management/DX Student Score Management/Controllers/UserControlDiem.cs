@@ -8,12 +8,16 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using System.Data.SqlClient;
 
 namespace DX_Student_Score_Management.Controllers
 {
     public partial class UserControlDiem : DevExpress.XtraEditors.XtraUserControl
     {
         private QLDSVKhoaDataSet _QLDSVKhoaDataSet;
+        private bool stateLabelColapse = false;
+
+
         public UserControlDiem(QLDSVKhoaDataSet _QLDSVKhoaDataSet)
         {
             this._QLDSVKhoaDataSet = _QLDSVKhoaDataSet;
@@ -21,6 +25,7 @@ namespace DX_Student_Score_Management.Controllers
             InitializeExtendComponent();
             this.lOPBindingSource.DataSource = _QLDSVKhoaDataSet;
             this.mONHOCBindingSource.DataSource = _QLDSVKhoaDataSet;
+            this.dIEMBindingSource.DataSource = _QLDSVKhoaDataSet;
             UserControlDiem_Load();
         }
         private void InitializeExtendComponent()
@@ -35,70 +40,73 @@ namespace DX_Student_Score_Management.Controllers
         {
             this.lOPTableAdapter.Fill(_QLDSVKhoaDataSet.LOP);
             this.sINHVIENTableAdapter.Fill(_QLDSVKhoaDataSet.SINHVIEN);
-            this.dIEMTableAdapter.Fill(_QLDSVKhoaDataSet.DIEM);
             this.mONHOCTableAdapter.Fill(_QLDSVKhoaDataSet.MONHOC);
+            this.dIEMTableAdapter.Fill(_QLDSVKhoaDataSet.DIEM);
         }
 
         private void barBtnRefresh_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            this.dIEMBindingSource.EndEdit();
             this.UserControlDiem_Load();
-        }
-
-        private void barBtnAddDiem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            this.fKDIEMSINHVIENBindingSource.AddNew();
-            this.btnEditDiemOK.Visible = false;
-            this.btnAddDien.Visible = true;
-            this.btnCancelAddDiem.Visible = true;
-
-        }
-
-        private void barBtnDeleteDiem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            this.fKDIEMSINHVIENBindingSource.RemoveCurrent();
+            
         }
 
         private void barBtnUpload_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            this.tableAdapterManager.UpdateAll(qLDSVKhoaDataSet);
-        }
-
-        private void btnAddDien_Click(object sender, EventArgs e)
-        {
-            ((DataRowView)this.fKDIEMSINHVIENBindingSource.Current)["MAMH"] = this.mONHOCComboBox.SelectedValue;
-            this.fKDIEMSINHVIENBindingSource.EndEdit();
-            this.btnAddDien.Visible = false;
-            this.btnCancelAddDiem.Visible = false;
-            this.btnEditDiemOK.Visible = true;
-
-        }
-
-        private void btnCancelAddDiem_Click(object sender, EventArgs e)
-        {
-            this.fKDIEMSINHVIENBindingSource.CancelEdit();
-            this.fKDIEMSINHVIENBindingSource.RemoveCurrent();
-            this.btnAddDien.Visible = false;
-            this.btnCancelAddDiem.Visible = false;
-            this.btnEditDiemOK.Visible = true;
-        }
-
-        private void gridViewDiem_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
-        {
-            this.barBtnDeleteDiem.Enabled = true;
-            this.mONHOCBindingSource.MoveFirst();
-            for (int i = 0; i < this.mONHOCBindingSource.Count; i++)
+            this.dIEMBindingSource.EndEdit();
+            try
             {
-                if (((DataRowView)this.fKDIEMSINHVIENBindingSource.Current)["MAMH"].ToString() == ((DataRowView)this.mONHOCBindingSource.Current)["MAMH"].ToString())
-                {
-                    break;
-                }
-                this.mONHOCBindingSource.MoveNext();
+                this.dIEMTableAdapter.Update(_QLDSVKhoaDataSet.DIEM);
             }
+            catch (SqlException sqlExc)
+            {
+                MessageBox.Show(sqlExc.Message);
+            }
+
+            this.dIEMBindingSource.EndEdit();
         }
 
-        private void btnEditDiemOK_Click(object sender, EventArgs e)
+        private void btnGetFilter_Click(object sender, EventArgs e)
         {
-            this.fKDIEMSINHVIENBindingSource.EndEdit();
+            if (fKSINHVIENLOPBindingSource.Count != 0)
+            {
+                this.dIEMGridControl.Visible = true;
+                // colapse header
+                this.labelColapse.Text = "Extend";
+                panelInfo.Height = 40;
+                // query and generate List of SinhVien in selected Lop into Diem table.
+                int DiemTablePosition = dIEMBindingSource.Count;
+                fKSINHVIENLOPBindingSource.MoveFirst();
+                for (int i = 0; i < fKSINHVIENLOPBindingSource.Count; i++)
+                {
+                    dIEMBindingSource.AddNew();
+                    ((DataRowView)dIEMBindingSource.Current)["MASV"] = ((DataRowView)fKSINHVIENLOPBindingSource.Current)["MASV"];
+                    ((DataRowView)dIEMBindingSource.Current)["MAMH"] = this.labelMaMonHoc.Text;
+                    ((DataRowView)dIEMBindingSource.Current)["LAN"] = Convert.ToInt32(this.textEditLan.Text);
+                    fKSINHVIENLOPBindingSource.MoveNext();
+                }
+                dIEMBindingSource.Position = DiemTablePosition;
+            }
+            else
+            {
+                MessageBox.Show($"Lớp {((DataRowView)this.lOPBindingSource.Current)["MALOP"].ToString()} đã chọn không có bất cứ sinh viên nào.");
+            }
+
+        }
+
+        private void labelColapse_Click(object sender, EventArgs e)
+        {
+            if (!stateLabelColapse)
+            {
+                this.labelColapse.Text = "Extend";
+                panelInfo.Height = 40;
+            }
+            else
+            {
+                this.labelColapse.Text = "Colapse";
+                panelInfo.Height = 155;
+            }
+            stateLabelColapse = !stateLabelColapse;
         }
     }
 }

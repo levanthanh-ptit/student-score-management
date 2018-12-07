@@ -15,8 +15,7 @@ namespace DX_Student_Score_Management.Components
                                         new PageInfo("Mon","Môn học"),//1
                                         new PageInfo("Diem", "Nhập Điểm"),//2
                                         new PageInfo("HocPhi","Học phí"),//3
-                                        new PageInfo("TaiKhoan","Tài khoản"),//4
-                                        new PageInfo("SinhVien","Sinh Viên")};//5
+                                        new PageInfo("TaiKhoan","Tài khoản")};//4
         // Mapper Role
         private Dictionary<string, int[]> pageMap;
         // Main collection 
@@ -30,7 +29,7 @@ namespace DX_Student_Score_Management.Components
             pageMap.Add("KHOA", new int[] { 0, 1, 2 });
             pageMap.Add("KETOAN", new int[] { 3 });
             pageMap.Add("USER", new int[] { 2 });
-            pageMap.Add("db_owner", new int[] { 0, 1, 2, 3, 4 });
+            pageMap.Add("db_owner", new int[] { 0, 1, 2, 4 });
             int[] tryGet;
             if (pageMap.TryGetValue(grounpId, out tryGet))
             {
@@ -70,13 +69,6 @@ namespace DX_Student_Score_Management.Components
                         case 4:
                             {
                                 pageInfo[el].UserControl = new UserControlTaiKhoan(Program._QLDSVKhoaDataSet);
-                                TabPages.Last().Controls.Add(pageInfo[el].UserControl);
-                                pageInfo[el].UserControl.Dock = System.Windows.Forms.DockStyle.Fill;
-                                break;
-                            }
-                        case 5:
-                            {
-                                pageInfo[el].UserControl = new UserControlSinhVien();
                                 TabPages.Last().Controls.Add(pageInfo[el].UserControl);
                                 pageInfo[el].UserControl.Dock = System.Windows.Forms.DockStyle.Fill;
                                 break;

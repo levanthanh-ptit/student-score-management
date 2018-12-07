@@ -16,9 +16,11 @@ namespace DX_Student_Score_Management
         public static DataRepository _dataRepository;
         public static FormLogin _formLogin;
         public static DXFormMain _DXFormMain;
+        public static LoadingForm _LoadingForm;
 
         private static void InitServices()
         {
+            _LoadingForm = new LoadingForm();
             _QLDSVKhoaDataSet = new QLDSVKhoaDataSet();
             _QLDSVHocPhiDataSet = new QLDSVHocPhiDataSet();
             _dataRepository = new DataRepository();
@@ -43,7 +45,9 @@ namespace DX_Student_Score_Management
             Application.Run(_formLogin);
             if (_dataRepository.Ready)
             {
+                _LoadingForm.Show();
                 InitForm();
+                _LoadingForm.Hide();
                 Application.Run(_DXFormMain);
             }
 

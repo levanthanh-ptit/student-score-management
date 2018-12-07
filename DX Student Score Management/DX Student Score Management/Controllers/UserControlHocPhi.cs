@@ -18,8 +18,8 @@ namespace DX_Student_Score_Management.Controllers
         {
             this._QLDSVHocPhiDataSet = _QLDSVHocPhiDataSet;
             InitializeComponent();
-            InitializeExtendComponent();
             sINHVIENBindingSource.DataSource = _QLDSVHocPhiDataSet;
+            InitializeExtendComponent();
             UserControlHocPhi_Load();
         }
         private void InitializeExtendComponent()
@@ -30,9 +30,10 @@ namespace DX_Student_Score_Management.Controllers
         }
         public void UserControlHocPhi_Load()
         {
-            sINHVIENTableAdapter.Fill(_QLDSVHocPhiDataSet.SINHVIEN);
-            hOCPHITableAdapter.Fill(_QLDSVHocPhiDataSet.HOCPHI);
+            this.hOCPHITableAdapter.Fill(this._QLDSVHocPhiDataSet.HOCPHI);
+            this.sINHVIENTableAdapter.Fill(this._QLDSVHocPhiDataSet.SINHVIEN);
         }
+
         private void sINHVIENBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
             this.Validate();
@@ -63,6 +64,11 @@ namespace DX_Student_Score_Management.Controllers
             this.btnEditHocPhiOK.Visible = true;
             this.btnAddHocPhi.Visible = false;
             this.btnCancelAddHocPhi.Visible = false;
+
+        }
+        private void btnEditHocPhiOK_Click(object sender, EventArgs e)
+        {
+            this.fKHOCPHISINHVIENBindingSource.EndEdit();
         }
 
         private void barBtnUpload_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -79,5 +85,25 @@ namespace DX_Student_Score_Management.Controllers
         {
             this.fKHOCPHISINHVIENBindingSource.RemoveCurrent();
         }
+
+        private void btnMaSVSearch_Click(object sender, EventArgs e)
+        {
+            this.sINHVIENBindingSource.Filter = $"MASV = '{this.textBoxMaSV.Text}'";
+            if (this.sINHVIENBindingSource.Count == 0)
+            {
+                MessageBox.Show("Không tìm thấy sinh viên. Xin thử lại.");
+            }
+            else
+            {
+                this.labelMaSV.Text = ((DataRowView)sINHVIENBindingSource.Current)["MASV"].ToString();
+                this.labelHoTen.Text = ((DataRowView)sINHVIENBindingSource.Current)["HO"].ToString()
+                                        + " " + ((DataRowView)sINHVIENBindingSource.Current)["TEN"].ToString();
+                this.labelMaLop.Text = ((DataRowView)sINHVIENBindingSource.Current)["MALOP"].ToString();
+                this.panelHocPhi.Visible = true;
+            }
+
+        }
+
+
     }
 }
