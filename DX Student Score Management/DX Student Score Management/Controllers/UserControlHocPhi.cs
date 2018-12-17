@@ -8,6 +8,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using System.Data.SqlClient;
 
 namespace DX_Student_Score_Management.Controllers
 {
@@ -73,7 +74,15 @@ namespace DX_Student_Score_Management.Controllers
 
         private void barBtnUpload_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            this.tableAdapterManager.UpdateAll(this._QLDSVHocPhiDataSet);
+            try
+            {
+                this.tableAdapterManager.UpdateAll(this._QLDSVHocPhiDataSet);
+            }
+            catch (SqlException sqlEx)
+            {
+                MessageBox.Show(sqlEx.Message);
+            }
+            
         }
 
         private void barBtnRefresh_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

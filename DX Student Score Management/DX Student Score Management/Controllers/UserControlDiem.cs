@@ -108,5 +108,15 @@ namespace DX_Student_Score_Management.Controllers
             }
             stateLabelColapse = !stateLabelColapse;
         }
+
+        private void labelColapse_MouseHover(object sender, EventArgs e)
+        {
+            labelColapse.ForeColor = Color.OrangeRed;
+        }
+
+        private void labelColapse_MouseLeave(object sender, EventArgs e)
+        {
+            labelColapse.ForeColor = Color.White;
+        }
     }
 }

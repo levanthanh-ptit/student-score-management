@@ -42,6 +42,7 @@
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.panelInfo = new System.Windows.Forms.Panel();
             this.labelColapse = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.btnGetFilter = new System.Windows.Forms.Button();
             this.lOPComboBox = new System.Windows.Forms.ComboBox();
             this.lOPBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -64,10 +65,10 @@
             this.colDIEM = new DevExpress.XtraGrid.Columns.GridColumn();
             this.mONHOCTableAdapter = new DX_Student_Score_Management.QLDSVKhoaDataSetTableAdapters.MONHOCTableAdapter();
             this.tableAdapterManager = new DX_Student_Score_Management.QLDSVKhoaDataSetTableAdapters.TableAdapterManager();
+            this.dIEMTableAdapter = new DX_Student_Score_Management.QLDSVKhoaDataSetTableAdapters.DIEMTableAdapter();
             this.lOPTableAdapter = new DX_Student_Score_Management.QLDSVKhoaDataSetTableAdapters.LOPTableAdapter();
             this.sINHVIENTableAdapter = new DX_Student_Score_Management.QLDSVKhoaDataSetTableAdapters.SINHVIENTableAdapter();
             this.fKSINHVIENLOPBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dIEMTableAdapter = new DX_Student_Score_Management.QLDSVKhoaDataSetTableAdapters.DIEMTableAdapter();
             this.panelMain = new System.Windows.Forms.Panel();
             mAMHLabel = new System.Windows.Forms.Label();
             label6 = new System.Windows.Forms.Label();
@@ -185,8 +186,9 @@
             // 
             this.panelInfo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelInfo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelInfo.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panelInfo.Controls.Add(this.labelColapse);
+            this.panelInfo.Controls.Add(this.panel1);
             this.panelInfo.Controls.Add(this.btnGetFilter);
             this.panelInfo.Controls.Add(this.lOPComboBox);
             this.panelInfo.Controls.Add(this.textEditLan);
@@ -199,18 +201,19 @@
             this.panelInfo.Controls.Add(this.label3);
             this.panelInfo.Controls.Add(this.label4);
             this.panelInfo.Controls.Add(this.label1);
-            this.panelInfo.Location = new System.Drawing.Point(10, 10);
+            this.panelInfo.Location = new System.Drawing.Point(0, 0);
             this.panelInfo.Margin = new System.Windows.Forms.Padding(0, 0, 0, 10);
             this.panelInfo.Name = "panelInfo";
-            this.panelInfo.Size = new System.Drawing.Size(1197, 155);
+            this.panelInfo.Size = new System.Drawing.Size(1217, 165);
             this.panelInfo.TabIndex = 0;
             // 
             // labelColapse
             // 
             this.labelColapse.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.labelColapse.AutoSize = true;
-            this.labelColapse.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.labelColapse.Location = new System.Drawing.Point(1136, 134);
+            this.labelColapse.BackColor = System.Drawing.Color.SteelBlue;
+            this.labelColapse.ForeColor = System.Drawing.Color.White;
+            this.labelColapse.Location = new System.Drawing.Point(1157, 141);
             this.labelColapse.MaximumSize = new System.Drawing.Size(60, 20);
             this.labelColapse.MinimumSize = new System.Drawing.Size(60, 20);
             this.labelColapse.Name = "labelColapse";
@@ -220,6 +223,18 @@
             this.labelColapse.Text = "Colapse";
             this.labelColapse.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.labelColapse.Click += new System.EventHandler(this.labelColapse_Click);
+            this.labelColapse.MouseLeave += new System.EventHandler(this.labelColapse_MouseLeave);
+            this.labelColapse.MouseHover += new System.EventHandler(this.labelColapse_MouseHover);
+            // 
+            // panel1
+            // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.BackColor = System.Drawing.Color.SteelBlue;
+            this.panel1.Location = new System.Drawing.Point(0, 160);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1217, 5);
+            this.panel1.TabIndex = 10;
             // 
             // btnGetFilter
             // 
@@ -430,6 +445,10 @@
             this.tableAdapterManager.SINHVIENTableAdapter = this.sINHVIENTableAdapter;
             this.tableAdapterManager.UpdateOrder = DX_Student_Score_Management.QLDSVKhoaDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
+            // dIEMTableAdapter
+            // 
+            this.dIEMTableAdapter.ClearBeforeFill = true;
+            // 
             // lOPTableAdapter
             // 
             this.lOPTableAdapter.ClearBeforeFill = true;
@@ -442,10 +461,6 @@
             // 
             this.fKSINHVIENLOPBindingSource.DataMember = "FK_SINHVIEN_LOP";
             this.fKSINHVIENLOPBindingSource.DataSource = this.lOPBindingSource;
-            // 
-            // dIEMTableAdapter
-            // 
-            this.dIEMTableAdapter.ClearBeforeFill = true;
             // 
             // panelMain
             // 
@@ -525,5 +540,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colDIEM;
         private System.Windows.Forms.Label labelColapse;
         private System.Windows.Forms.Panel panelMain;
+        private System.Windows.Forms.Panel panel1;
     }
 }
