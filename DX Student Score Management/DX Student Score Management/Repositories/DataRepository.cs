@@ -42,6 +42,14 @@ namespace DX_Student_Score_Management.Repositories
             this.FullName = sqlDataReader.GetValue(1).ToString();
             this.GroupId = sqlDataReader.GetValue(2).ToString();
         }
+        public SqlDataReader excuteSP(String SPName)
+        {
+            string sql = $"DECLARE @return_value int EXEC @return_value = {SPName} SELECT 'Return Value' = @return_value";
+            SqlCommand sqlCommand = new SqlCommand(sql, this.sqlConnection);
+            SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
+            sqlDataReader.Read();
+            return sqlDataReader;
+        }
         public string ConnectServer()
         {
             try

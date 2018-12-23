@@ -8,53 +8,41 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using DX_Student_Score_Management.Controllers.TaiKhoanForms;
 
 namespace DX_Student_Score_Management.Controllers
 {
     public partial class UserControlTaiKhoan : DevExpress.XtraEditors.XtraUserControl
     {
-        private QLDSVKhoaDataSet _QLDSVKhoaDataSet;
-        public UserControlTaiKhoan(QLDSVKhoaDataSet _QLDSVKhoaDataSet)
+        public UserControlTaiKhoan()
         {
-            this._QLDSVKhoaDataSet = _QLDSVKhoaDataSet;
             InitializeComponent();
             InitializeExtendComponent();
-            KhoaBindingSource.DataSource = this._QLDSVKhoaDataSet;
             UserControlTaiKhoan_Load();
         }
         private void InitializeExtendComponent()
         {
-            this.tableAdapterManager.Connection = Program._dataRepository.sqlConnection;
-            this.kHOATableAdapter.Connection = Program._dataRepository.sqlConnection;
-            this.gIANGVIENTableAdapter.Connection = Program._dataRepository.sqlConnection;
+            sP_List_LOGINBindingSource.DataSource = Program._QLDSVKhoaDataSet;
+            sP_List_LOGINTableAdapter.Connection = Program._dataRepository.sqlConnection;
         }
         public void UserControlTaiKhoan_Load()
         {
-            this.kHOATableAdapter.Fill(_QLDSVKhoaDataSet.KHOA);
-            this.gIANGVIENTableAdapter.Fill(_QLDSVKhoaDataSet.GIANGVIEN);
+            sP_List_LOGINTableAdapter.Fill(Program._QLDSVKhoaDataSet.SP_List_LOGIN);
         }
-        private void gIANGVIENBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.fKGIANGVIENKHOABindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this._QLDSVKhoaDataSet);
-
-        }
-
-        
+               
         private void barBtnRefresh_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             UserControlTaiKhoan_Load();
         }
 
-        private void barBtnUpload_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            this.tableAdapterManager.UpdateAll(this._QLDSVKhoaDataSet);
-        }
-
         private void barBtnDeleteGiangVien_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            this.fKGIANGVIENKHOABindingSource.RemoveCurrent();
+        }
+
+        private void barBtnNewLogin_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            new FormTAOLOGIN().Show();
+            UserControlTaiKhoan_Load();
         }
     }
 }

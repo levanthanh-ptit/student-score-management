@@ -56,8 +56,6 @@
             this.btnAddMonHoc = new System.Windows.Forms.Button();
             this.mAMHTextEdit = new DevExpress.XtraEditors.TextEdit();
             this.tENMHTextEdit = new DevExpress.XtraEditors.TextEdit();
-            this.mONHOCTableAdapter = new DX_Student_Score_Management.QLDSVKhoaDataSetTableAdapters.MONHOCTableAdapter();
-            this.tableAdapterManager = new DX_Student_Score_Management.QLDSVKhoaDataSetTableAdapters.TableAdapterManager();
             mAMHLabel = new System.Windows.Forms.Label();
             tENMHLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
@@ -206,7 +204,7 @@
             // 
             this.splitContainer.Panel2.Controls.Add(this.panel1);
             this.splitContainer.Size = new System.Drawing.Size(1270, 535);
-            this.splitContainer.SplitterDistance = 341;
+            this.splitContainer.SplitterDistance = 340;
             this.splitContainer.TabIndex = 4;
             // 
             // MONHOCGridControl
@@ -220,7 +218,7 @@
             this.MONHOCGridControl.MenuManager = this.barManager1;
             this.MONHOCGridControl.Name = "MONHOCGridControl";
             this.MONHOCGridControl.ShowOnlyPredefinedDetails = true;
-            this.MONHOCGridControl.Size = new System.Drawing.Size(1264, 332);
+            this.MONHOCGridControl.Size = new System.Drawing.Size(1264, 331);
             this.MONHOCGridControl.TabIndex = 0;
             this.MONHOCGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewMon});
@@ -250,6 +248,8 @@
             this.colMAMH.Caption = "Mã môn học";
             this.colMAMH.FieldName = "MAMH";
             this.colMAMH.Name = "colMAMH";
+            this.colMAMH.OptionsColumn.AllowEdit = false;
+            this.colMAMH.OptionsColumn.AllowFocus = false;
             this.colMAMH.Visible = true;
             this.colMAMH.VisibleIndex = 0;
             // 
@@ -258,6 +258,8 @@
             this.colTENMH.Caption = "Tên Môn học";
             this.colTENMH.FieldName = "TENMH";
             this.colTENMH.Name = "colTENMH";
+            this.colTENMH.OptionsColumn.AllowEdit = false;
+            this.colTENMH.OptionsColumn.AllowFocus = false;
             this.colTENMH.Visible = true;
             this.colTENMH.VisibleIndex = 1;
             // 
@@ -267,7 +269,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1270, 190);
+            this.panel1.Size = new System.Drawing.Size(1270, 191);
             this.panel1.TabIndex = 0;
             // 
             // groupBoxTTMon
@@ -325,6 +327,7 @@
             this.mAMHTextEdit.Location = new System.Drawing.Point(128, 25);
             this.mAMHTextEdit.MenuManager = this.barManager1;
             this.mAMHTextEdit.Name = "mAMHTextEdit";
+            this.mAMHTextEdit.Properties.MaxLength = 6;
             this.mAMHTextEdit.Size = new System.Drawing.Size(181, 20);
             this.mAMHTextEdit.TabIndex = 1;
             // 
@@ -334,24 +337,9 @@
             this.tENMHTextEdit.Location = new System.Drawing.Point(128, 61);
             this.tENMHTextEdit.MenuManager = this.barManager1;
             this.tENMHTextEdit.Name = "tENMHTextEdit";
+            this.tENMHTextEdit.Properties.MaxLength = 40;
             this.tENMHTextEdit.Size = new System.Drawing.Size(181, 20);
             this.tENMHTextEdit.TabIndex = 3;
-            // 
-            // mONHOCTableAdapter
-            // 
-            this.mONHOCTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.DIEMTableAdapter = null;
-            this.tableAdapterManager.GIANGVIENTableAdapter = null;
-            this.tableAdapterManager.HOCPHITableAdapter = null;
-            this.tableAdapterManager.KHOATableAdapter = null;
-            this.tableAdapterManager.LOPTableAdapter = null;
-            this.tableAdapterManager.MONHOCTableAdapter = this.mONHOCTableAdapter;
-            this.tableAdapterManager.SINHVIENTableAdapter = null;
-            this.tableAdapterManager.UpdateOrder = DX_Student_Score_Management.QLDSVKhoaDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
             // UserControlMon
             // 
@@ -397,8 +385,6 @@
         private System.Windows.Forms.SplitContainer splitContainer;
         private System.Windows.Forms.BindingSource mONHOCBindingSource;
         private QLDSVKhoaDataSet qLDSVKhoaDataSet;
-        private QLDSVKhoaDataSetTableAdapters.MONHOCTableAdapter mONHOCTableAdapter;
-        private QLDSVKhoaDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private DevExpress.XtraGrid.GridControl MONHOCGridControl;
         private DevExpress.XtraGrid.Views.Grid.GridView gridViewMon;
         private DevExpress.XtraGrid.Columns.GridColumn colMAMH;

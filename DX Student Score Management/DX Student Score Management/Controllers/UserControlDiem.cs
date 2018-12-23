@@ -1,73 +1,92 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Drawing;
 using System.Data;
-using System.Text;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using DevExpress.XtraEditors;
 using System.Data.SqlClient;
 
 namespace DX_Student_Score_Management.Controllers
 {
     public partial class UserControlDiem : DevExpress.XtraEditors.XtraUserControl
     {
-        private QLDSVKhoaDataSet _QLDSVKhoaDataSet;
         private bool stateLabelColapse = false;
 
 
-        public UserControlDiem(QLDSVKhoaDataSet _QLDSVKhoaDataSet)
+        public UserControlDiem()
         {
-            this._QLDSVKhoaDataSet = _QLDSVKhoaDataSet;
             InitializeComponent();
             InitializeExtendComponent();
-            this.lOPBindingSource.DataSource = _QLDSVKhoaDataSet;
-            this.mONHOCBindingSource.DataSource = _QLDSVKhoaDataSet;
-            this.dIEMBindingSource.DataSource = _QLDSVKhoaDataSet;
+            this.lOPBindingSource.DataSource = Program._QLDSVKhoaDataSet;
+            this.mONHOCBindingSource.DataSource = Program._QLDSVKhoaDataSet;
+            sPPreInsertDIEMSINHVIENBindingSource.DataSource = Program._QLDSVKhoaDataSet;
             UserControlDiem_Load();
         }
         private void InitializeExtendComponent()
         {
-            this.tableAdapterManager.Connection = Program._dataRepository.sqlConnection;
-            this.lOPTableAdapter.Connection = Program._dataRepository.sqlConnection;
-            this.sINHVIENTableAdapter.Connection = Program._dataRepository.sqlConnection;
-            this.dIEMTableAdapter.Connection = Program._dataRepository.sqlConnection;
-            this.mONHOCTableAdapter.Connection = Program._dataRepository.sqlConnection;
+            this.sP_PreInsert_DIEM_SINHVIENTableAdapter.Connection = Program._dataRepository.sqlConnection;
         }
         public void UserControlDiem_Load()
         {
-            this.lOPTableAdapter.Fill(_QLDSVKhoaDataSet.LOP);
-            this.sINHVIENTableAdapter.Fill(_QLDSVKhoaDataSet.SINHVIEN);
-            this.mONHOCTableAdapter.Fill(_QLDSVKhoaDataSet.MONHOC);
-            this.dIEMTableAdapter.Fill(_QLDSVKhoaDataSet.DIEM);
-        }
-
-        private void barBtnRefresh_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            this.dIEMBindingSource.EndEdit();
-            this.UserControlDiem_Load();
-            
+            Program.KHOA_LOPTableAdapter.Fill(Program._QLDSVKhoaDataSet.LOP);
+            Program.KHOA_SINHVIENTableAdapter.Fill(Program._QLDSVKhoaDataSet.SINHVIEN);
+            Program.KHOA_MONHOCTableAdapter.Fill(Program._QLDSVKhoaDataSet.MONHOC);
         }
 
         private void barBtnUpload_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            this.dIEMBindingSource.EndEdit();
-            try
+            this.UseWaitCursor = true;
+            this.dIEMGridControl.Enabled = false;
+            int n = sPPreInsertDIEMSINHVIENBindingSource.Count;
+            sPPreInsertDIEMSINHVIENBindingSource.MoveFirst();
+            for (int i = 0; i < n; i++)
             {
-                this.dIEMTableAdapter.Update(_QLDSVKhoaDataSet.DIEM);
+                if (((DataRowView)sPPreInsertDIEMSINHVIENBindingSource.Current)["DIEM"].ToString().Equals(""))
+                {
+                    MessageBox.Show($"Hàng {i + 1}: Điểm không được trống.");
+                    this.dIEMGridControl.Enabled = true;
+                    this.UseWaitCursor = false;
+                    return;
+                }
             }
-            catch (SqlException sqlExc)
+            n = sPPreInsertDIEMSINHVIENBindingSource.Count;
+            sPPreInsertDIEMSINHVIENBindingSource.MoveFirst();
+            for (int i = 0; i < n; i++)
             {
-                MessageBox.Show(sqlExc.Message);
+                try
+                {
+                    this.sP_PreInsert_DIEM_SINHVIENTableAdapter
+                   .InsertDIEMQuery(
+                       ((DataRowView)sPPreInsertDIEMSINHVIENBindingSource.Current)["MASV"].ToString(),
+                       labelMaMonHoc.Text,
+                       Convert.ToInt16(numUpDownLan.Value),
+                       double.Parse(((DataRowView)sPPreInsertDIEMSINHVIENBindingSource.Current)["DIEM"].ToString())
+                   );
+                }
+                catch (SqlException ex)
+                {
+                    this.UseWaitCursor = false;
+                    string mess = ex.ErrorCode == -2146232060 ? "Điểm đã tồn tại.\n Bạn có muốn ghi đè?" : ex.Message;
+                    DialogResult dialogResult = MessageBox.Show(mess, "Lỗi! Error Code: " + ex.ErrorCode, MessageBoxButtons.YesNo);
+                    if (dialogResult == DialogResult.Yes)
+                    {
+                        this.sP_PreInsert_DIEM_SINHVIENTableAdapter
+                            .UpdateDIEMQuery(
+                                Convert.ToDouble(((DataRowView)sPPreInsertDIEMSINHVIENBindingSource.Current)["DIEM"].ToString()),
+                                ((DataRowView)sPPreInsertDIEMSINHVIENBindingSource.Current)["MASV"].ToString(),
+                                labelMaMonHoc.Text,
+                                Convert.ToInt16(numUpDownLan.Value)
+                            );
+                    }
+                }
+                sPPreInsertDIEMSINHVIENBindingSource.MoveNext();
             }
-
-            this.dIEMBindingSource.EndEdit();
+            this.dIEMGridControl.Enabled = true;
+            this.UseWaitCursor = false;
+            MessageBox.Show("Ghi điểm thành công!");
         }
 
         private void btnGetFilter_Click(object sender, EventArgs e)
         {
+            this.UseWaitCursor = true;
             if (fKSINHVIENLOPBindingSource.Count != 0)
             {
                 this.dIEMGridControl.Visible = true;
@@ -75,23 +94,20 @@ namespace DX_Student_Score_Management.Controllers
                 this.labelColapse.Text = "Extend";
                 panelInfo.Height = 40;
                 // query and generate List of SinhVien in selected Lop into Diem table.
-                int DiemTablePosition = dIEMBindingSource.Count;
-                fKSINHVIENLOPBindingSource.MoveFirst();
-                for (int i = 0; i < fKSINHVIENLOPBindingSource.Count; i++)
-                {
-                    dIEMBindingSource.AddNew();
-                    ((DataRowView)dIEMBindingSource.Current)["MASV"] = ((DataRowView)fKSINHVIENLOPBindingSource.Current)["MASV"];
-                    ((DataRowView)dIEMBindingSource.Current)["MAMH"] = this.labelMaMonHoc.Text;
-                    ((DataRowView)dIEMBindingSource.Current)["LAN"] = Convert.ToInt32(this.textEditLan.Text);
-                    fKSINHVIENLOPBindingSource.MoveNext();
-                }
-                dIEMBindingSource.Position = DiemTablePosition;
+                sP_PreInsert_DIEM_SINHVIENTableAdapter
+                    .Fill(Program._QLDSVKhoaDataSet.SP_PreInsert_DIEM_SINHVIEN,
+                        this.labelMaLop.Text,
+                        this.labelMaMonHoc.Text,
+                        Convert.ToInt16(this.numUpDownLan.Value)
+                    );
+
+                this.UseWaitCursor = false;
             }
             else
             {
+                this.UseWaitCursor = false;
                 MessageBox.Show($"Lớp {((DataRowView)this.lOPBindingSource.Current)["MALOP"].ToString()} đã chọn không có bất cứ sinh viên nào.");
             }
-
         }
 
         private void labelColapse_Click(object sender, EventArgs e)

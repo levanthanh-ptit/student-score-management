@@ -34,22 +34,31 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="DevExpress.BonusSkins.v17.1" />
+    <Reference Include="DevExpress.Charts.v17.1.Core, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.CodeParser.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Data.v17.1" />
     <Reference Include="DevExpress.DataAccess.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Images.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Office.v17.1.Core, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Pdf.v17.1.Core, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.PivotGrid.v17.1.Core, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Printing.v17.1.Core" />
     <Reference Include="DevExpress.RichEdit.v17.1.Core, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.RichEdit.v17.1.Export, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Utils.v17.1" />
+    <Reference Include="DevExpress.Utils.v17.1.UI, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Xpo.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraBars.v17.1" />
     <Reference Include="DevExpress.Sparkline.v17.1.Core" />
+    <Reference Include="DevExpress.XtraCharts.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraEditors.v17.1" />
+    <Reference Include="DevExpress.XtraGauges.v17.1.Core, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraGrid.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraLayout.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraNavBar.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraPrinting.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraReports.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v17.1.Extensions, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
@@ -57,6 +66,7 @@
     <Reference Include="System.Data.Entity" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Transactions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -73,6 +83,30 @@
     </Compile>
     <Compile Include="Components\LoadingForm.Designer.cs">
       <DependentUpon>LoadingForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\ReportForms\FormReportDSSV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controllers\ReportForms\FormReportDSSV.Designer.cs">
+      <DependentUpon>FormReportDSSV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\ReportForms\XtraReportDSSV.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controllers\ReportForms\XtraReportDSSV.Designer.cs">
+      <DependentUpon>XtraReportDSSV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\TaiKhoanForms\FormTAOLOGIN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controllers\TaiKhoanForms\FormTAOLOGIN.Designer.cs">
+      <DependentUpon>FormTAOLOGIN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\TaiKhoanForms\FormXOALOGIN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controllers\TaiKhoanForms\FormXOALOGIN.Designer.cs">
+      <DependentUpon>FormXOALOGIN.cs</DependentUpon>
     </Compile>
     <Compile Include="Controllers\UserControlDiem.cs">
       <SubType>UserControl</SubType>
@@ -92,11 +126,11 @@
     <Compile Include="Controllers\UserControlMon.Designer.cs">
       <DependentUpon>UserControlMon.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controllers\UserControlSinhVien.cs">
+    <Compile Include="Controllers\UserControlReport.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Controllers\UserControlSinhVien.Designer.cs">
-      <DependentUpon>UserControlSinhVien.cs</DependentUpon>
+    <Compile Include="Controllers\UserControlReport.Designer.cs">
+      <DependentUpon>UserControlReport.cs</DependentUpon>
     </Compile>
     <Compile Include="Controllers\UserControlTaiKhoan.cs">
       <SubType>UserControl</SubType>
@@ -104,6 +138,7 @@
     <Compile Include="Controllers\UserControlTaiKhoan.Designer.cs">
       <DependentUpon>UserControlTaiKhoan.cs</DependentUpon>
     </Compile>
+    <Compile Include="Helper\Validation.cs" />
     <Compile Include="QLDSVHocPhiDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -149,6 +184,18 @@
     <EmbeddedResource Include="Components\LoadingForm.resx">
       <DependentUpon>LoadingForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controllers\ReportForms\FormReportDSSV.resx">
+      <DependentUpon>FormReportDSSV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controllers\ReportForms\XtraReportDSSV.resx">
+      <DependentUpon>XtraReportDSSV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controllers\TaiKhoanForms\FormTAOLOGIN.resx">
+      <DependentUpon>FormTAOLOGIN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controllers\TaiKhoanForms\FormXOALOGIN.resx">
+      <DependentUpon>FormXOALOGIN.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controllers\UserControlDiem.resx">
       <DependentUpon>UserControlDiem.cs</DependentUpon>
     </EmbeddedResource>
@@ -158,8 +205,8 @@
     <EmbeddedResource Include="Controllers\UserControlMon.resx">
       <DependentUpon>UserControlMon.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controllers\UserControlSinhVien.resx">
-      <DependentUpon>UserControlSinhVien.cs</DependentUpon>
+    <EmbeddedResource Include="Controllers\UserControlReport.resx">
+      <DependentUpon>UserControlReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controllers\UserControlTaiKhoan.resx">
       <DependentUpon>UserControlTaiKhoan.cs</DependentUpon>

@@ -9,37 +9,47 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using System.Data.SqlClient;
+using DX_Student_Score_Management.Helper;
 
 namespace DX_Student_Score_Management.Controllers
 {
     public partial class UserControlHocPhi : DevExpress.XtraEditors.XtraUserControl
     {
-        private QLDSVHocPhiDataSet _QLDSVHocPhiDataSet;
-        public UserControlHocPhi(QLDSVHocPhiDataSet _QLDSVHocPhiDataSet)
+        public UserControlHocPhi()
         {
-            this._QLDSVHocPhiDataSet = _QLDSVHocPhiDataSet;
             InitializeComponent();
-            sINHVIENBindingSource.DataSource = _QLDSVHocPhiDataSet;
+            sINHVIENBindingSource.DataSource = Program._QLDSVHocPhiDataSet;
             InitializeExtendComponent();
             UserControlHocPhi_Load();
         }
         private void InitializeExtendComponent()
         {
-            this.tableAdapterManager.Connection = Program._dataRepository.sqlConnection;
-            this.sINHVIENTableAdapter.Connection = Program._dataRepository.sqlConnection;
-            this.hOCPHITableAdapter.Connection = Program._dataRepository.sqlConnection;
+            Program.HOCPHI_TableAdapterManager.Connection = Program._dataRepository.sqlConnection;
+            Program.HOCPHI_SINHVIENTableAdapter.Connection = Program._dataRepository.sqlConnection;
+            Program.HOCPHI_HOCPHITableAdapter.Connection = Program._dataRepository.sqlConnection;
         }
         public void UserControlHocPhi_Load()
         {
-            this.hOCPHITableAdapter.Fill(this._QLDSVHocPhiDataSet.HOCPHI);
-            this.sINHVIENTableAdapter.Fill(this._QLDSVHocPhiDataSet.SINHVIEN);
+            Program.HOCPHI_HOCPHITableAdapter.Fill(Program._QLDSVHocPhiDataSet.HOCPHI);
+            Program.HOCPHI_SINHVIENTableAdapter.Fill(Program._QLDSVHocPhiDataSet.SINHVIEN);
         }
 
-        private void sINHVIENBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+       
+        private void barBtnUpload_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            this.Validate();
-            this.sINHVIENBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this._QLDSVHocPhiDataSet);
+            try
+            {
+                using (System.Transactions.TransactionScope updateTransaction = new System.Transactions.TransactionScope())
+                {
+                    Program.HOCPHI_TableAdapterManager.UpdateAll(Program._QLDSVHocPhiDataSet);
+                    updateTransaction.Complete();
+                }
+            }
+            catch (SqlException sqlEx)
+            {
+                MessageBox.Show(sqlEx.Message);
+            }
+            MessageBox.Show("Upload thành công!");
         }
 
         private void barBtnAddHocPhi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -52,6 +62,12 @@ namespace DX_Student_Score_Management.Controllers
 
         private void btnAddHocPhi_Click(object sender, EventArgs e)
         {
+            string valid = Validation.validateCommonText("Niên khóa",this.nIENKHOATextEdit.Text);
+            if (valid != "")
+            {
+                MessageBox.Show(valid);
+                return;
+            }
             this.fKHOCPHISINHVIENBindingSource.EndEdit();
             this.btnEditHocPhiOK.Visible = true;
             this.btnAddHocPhi.Visible = false;
@@ -72,18 +88,6 @@ namespace DX_Student_Score_Management.Controllers
             this.fKHOCPHISINHVIENBindingSource.EndEdit();
         }
 
-        private void barBtnUpload_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            try
-            {
-                this.tableAdapterManager.UpdateAll(this._QLDSVHocPhiDataSet);
-            }
-            catch (SqlException sqlEx)
-            {
-                MessageBox.Show(sqlEx.Message);
-            }
-            
-        }
 
         private void barBtnRefresh_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
@@ -97,6 +101,12 @@ namespace DX_Student_Score_Management.Controllers
 
         private void btnMaSVSearch_Click(object sender, EventArgs e)
         {
+            string valid = Validation.validateCode("Mã Sinh viên", this.textBoxMaSV.ToString());
+            if (valid != "")
+            {
+                MessageBox.Show(valid);
+                return;
+            }
             this.sINHVIENBindingSource.Filter = $"MASV = '{this.textBoxMaSV.Text}'";
             if (this.sINHVIENBindingSource.Count == 0)
             {
