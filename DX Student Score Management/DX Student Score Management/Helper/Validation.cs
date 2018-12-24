@@ -30,7 +30,7 @@ namespace DX_Student_Score_Management.Helper
             }
             return "";
         }
-        public static string validateName(String name, ref String text)
+        public static string validateName(String name, String text)
         {
             string isNullText = isNull(text);
             if (isNullText != "") return name + " " + isNullText;
@@ -47,7 +47,7 @@ namespace DX_Student_Score_Management.Helper
             string isNullText = isNull(text);
             if (isNullText != "") return name + " " + isNullText;
             removeUnuseSpace(ref text);
-            Regex rx = new Regex(@"[^a-zA-Z0-9{. }]{2,}");
+            Regex rx = new Regex(@"[`~!@#$%^&*()_\-+={}[\]<>,.?\/\|{. }]{2,}");
             if (rx.IsMatch(text))
             {
                 string erm = "";

@@ -4,5 +4,8 @@
 
     partial class QLDSVKhoaDataSet
     {
+        partial class SP_Print_BANGDIEM_TONGKETDataTable
+        {
+        }
     }
 }

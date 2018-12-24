@@ -96,7 +96,7 @@
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(0, 25, 0, 25);
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(399, 282);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(388, 282);
             this.flowLayoutPanel1.TabIndex = 3;
             // 
             // panel1
@@ -106,14 +106,14 @@
             this.panel1.Location = new System.Drawing.Point(50, 158);
             this.panel1.Margin = new System.Windows.Forms.Padding(50, 3, 3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(225, 51);
+            this.panel1.Size = new System.Drawing.Size(269, 51);
             this.panel1.TabIndex = 3;
             // 
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.DarkRed;
-            this.button1.Location = new System.Drawing.Point(11, 3);
+            this.button1.Location = new System.Drawing.Point(35, 3);
             this.button1.Margin = new System.Windows.Forms.Padding(125, 3, 3, 25);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(92, 35);
@@ -125,20 +125,20 @@
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(125, 3);
+            this.button2.Location = new System.Drawing.Point(149, 3);
             this.button2.Margin = new System.Windows.Forms.Padding(125, 3, 3, 25);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(92, 35);
             this.button2.TabIndex = 2;
             this.button2.Text = "HỦY";
             this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.btnXoa_Click);
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // FormXOALOGIN
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(399, 282);
+            this.ClientSize = new System.Drawing.Size(388, 282);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Name = "FormXOALOGIN";
             this.Text = "FormXOALOGIN";

@@ -41,6 +41,7 @@ namespace DX_Student_Score_Management.Repositories
             this.UserName = sqlDataReader.GetValue(0).ToString();
             this.FullName = sqlDataReader.GetValue(1).ToString();
             this.GroupId = sqlDataReader.GetValue(2).ToString();
+            sqlDataReader.Close();
         }
         public SqlDataReader excuteSP(String SPName)
         {

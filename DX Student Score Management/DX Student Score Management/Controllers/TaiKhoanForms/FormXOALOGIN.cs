@@ -36,10 +36,7 @@ namespace DX_Student_Score_Management.Controllers.TaiKhoanForms
             try
             {
                 SqlDataReader dataReader = Program._dataRepository
-                    .excuteSP(
-                    $"EXEC [dbo].[SP_XOALOGIN]" +
-                    $" @LGNAME = '{this.login}'," +
-                    $" @USRNAME = '{MAGV}'");
+                    .excuteSP($"SP_XOALOGIN @LGNAME = '{this.login}', @USRNAME = '{MAGV}'");
                 dataReader.Close();
                 if(this.kemTheo)
                 {
@@ -50,6 +47,13 @@ namespace DX_Student_Score_Management.Controllers.TaiKhoanForms
             {
                 MessageBox.Show(ex.Message, ex.ErrorCode.ToString());
             }
+            MessageBox.Show($"Xóa thành công Login: {login}","Xóa login");
+            this.Close();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

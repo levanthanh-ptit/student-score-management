@@ -26,9 +26,11 @@ namespace DX_Student_Score_Management.Controllers
         }
         public void UserControlDiem_Load()
         {
-            Program.KHOA_LOPTableAdapter.Fill(Program._QLDSVKhoaDataSet.LOP);
-            Program.KHOA_SINHVIENTableAdapter.Fill(Program._QLDSVKhoaDataSet.SINHVIEN);
-            Program.KHOA_MONHOCTableAdapter.Fill(Program._QLDSVKhoaDataSet.MONHOC);
+            //Program._QLDSVKhoaDataSet.EnforceConstraints = false;
+            //Program.KHOA_LOPTableAdapter.Fill(Program._QLDSVKhoaDataSet.LOP);
+            //Program.KHOA_SINHVIENTableAdapter.Fill(Program._QLDSVKhoaDataSet.SINHVIEN);
+            //Program.KHOA_MONHOCTableAdapter.Fill(Program._QLDSVKhoaDataSet.MONHOC);
+            //Program._QLDSVKhoaDataSet.EnforceConstraints = true;
         }
 
         private void barBtnUpload_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

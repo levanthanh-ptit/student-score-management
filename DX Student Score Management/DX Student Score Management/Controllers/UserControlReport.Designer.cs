@@ -30,18 +30,18 @@
         {
             this.flowLayoutPanelMain = new System.Windows.Forms.FlowLayoutPanel();
             this.btnDSSV = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnDSTHM = new System.Windows.Forms.Button();
+            this.btnPrintBDMH = new System.Windows.Forms.Button();
+            this.btnPrintBDTK = new System.Windows.Forms.Button();
             this.flowLayoutPanelMain.SuspendLayout();
             this.SuspendLayout();
             // 
             // flowLayoutPanelMain
             // 
             this.flowLayoutPanelMain.Controls.Add(this.btnDSSV);
-            this.flowLayoutPanelMain.Controls.Add(this.button2);
-            this.flowLayoutPanelMain.Controls.Add(this.button3);
-            this.flowLayoutPanelMain.Controls.Add(this.button4);
+            this.flowLayoutPanelMain.Controls.Add(this.btnDSTHM);
+            this.flowLayoutPanelMain.Controls.Add(this.btnPrintBDMH);
+            this.flowLayoutPanelMain.Controls.Add(this.btnPrintBDTK);
             this.flowLayoutPanelMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanelMain.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanelMain.Name = "flowLayoutPanelMain";
@@ -61,38 +61,41 @@
             this.btnDSSV.UseVisualStyleBackColor = true;
             this.btnDSSV.Click += new System.EventHandler(this.btnDSSV_Click);
             // 
-            // button2
+            // btnDSTHM
             // 
-            this.button2.Font = new System.Drawing.Font("Tahoma", 15F);
-            this.button2.Location = new System.Drawing.Point(371, 70);
-            this.button2.Margin = new System.Windows.Forms.Padding(20);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(261, 68);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnDSTHM.Font = new System.Drawing.Font("Tahoma", 15F);
+            this.btnDSTHM.Location = new System.Drawing.Point(371, 70);
+            this.btnDSTHM.Margin = new System.Windows.Forms.Padding(20);
+            this.btnDSTHM.Name = "btnDSTHM";
+            this.btnDSTHM.Size = new System.Drawing.Size(261, 68);
+            this.btnDSTHM.TabIndex = 1;
+            this.btnDSTHM.Text = "In danh sách thi hết môn";
+            this.btnDSTHM.UseVisualStyleBackColor = true;
+            this.btnDSTHM.Click += new System.EventHandler(this.btnDSTHM_Click);
             // 
-            // button3
+            // btnPrintBDMH
             // 
-            this.button3.Font = new System.Drawing.Font("Tahoma", 15F);
-            this.button3.Location = new System.Drawing.Point(672, 70);
-            this.button3.Margin = new System.Windows.Forms.Padding(20);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(261, 68);
-            this.button3.TabIndex = 1;
-            this.button3.Text = "button2";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnPrintBDMH.Font = new System.Drawing.Font("Tahoma", 15F);
+            this.btnPrintBDMH.Location = new System.Drawing.Point(672, 70);
+            this.btnPrintBDMH.Margin = new System.Windows.Forms.Padding(20);
+            this.btnPrintBDMH.Name = "btnPrintBDMH";
+            this.btnPrintBDMH.Size = new System.Drawing.Size(261, 68);
+            this.btnPrintBDMH.TabIndex = 1;
+            this.btnPrintBDMH.Text = "In bảng điểm môn học";
+            this.btnPrintBDMH.UseVisualStyleBackColor = true;
+            this.btnPrintBDMH.Click += new System.EventHandler(this.btnPrintBDMH_Click);
             // 
-            // button4
+            // btnPrintBDTK
             // 
-            this.button4.Font = new System.Drawing.Font("Tahoma", 15F);
-            this.button4.Location = new System.Drawing.Point(70, 178);
-            this.button4.Margin = new System.Windows.Forms.Padding(20);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(261, 68);
-            this.button4.TabIndex = 1;
-            this.button4.Text = "button2";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnPrintBDTK.Font = new System.Drawing.Font("Tahoma", 15F);
+            this.btnPrintBDTK.Location = new System.Drawing.Point(70, 178);
+            this.btnPrintBDTK.Margin = new System.Windows.Forms.Padding(20);
+            this.btnPrintBDTK.Name = "btnPrintBDTK";
+            this.btnPrintBDTK.Size = new System.Drawing.Size(261, 68);
+            this.btnPrintBDTK.TabIndex = 1;
+            this.btnPrintBDTK.Text = "In bảng điểm tổng kết";
+            this.btnPrintBDTK.UseVisualStyleBackColor = true;
+            this.btnPrintBDTK.Click += new System.EventHandler(this.btnPrintBDTK_Click);
             // 
             // UserControlReport
             // 
@@ -110,8 +113,8 @@
 
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelMain;
         private System.Windows.Forms.Button btnDSSV;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnDSTHM;
+        private System.Windows.Forms.Button btnPrintBDMH;
+        private System.Windows.Forms.Button btnPrintBDTK;
     }
 }

@@ -29,6 +29,7 @@ namespace DX_Student_Score_Management
         public static QLDSVKhoaDataSetTableAdapters.MONHOCTableAdapter KHOA_MONHOCTableAdapter = new QLDSVKhoaDataSetTableAdapters.MONHOCTableAdapter();
         public static QLDSVKhoaDataSetTableAdapters.SP_List_LOGINTableAdapter KHOA_SP_List_LOGINTableAdapter = new QLDSVKhoaDataSetTableAdapters.SP_List_LOGINTableAdapter();
         public static QLDSVKhoaDataSetTableAdapters.SP_List_NHOMTableAdapter KHOA_SP_List_NHOMTableAdapter = new QLDSVKhoaDataSetTableAdapters.SP_List_NHOMTableAdapter();
+        public static QLDSVKhoaDataSetTableAdapters.SP_List_LOPTableAdapter KHOA_SP_List_LOPTableAdapter = new QLDSVKhoaDataSetTableAdapters.SP_List_LOPTableAdapter();
         //---Site Hoc Phi-------------------
         public static QLDSVHocPhiDataSetTableAdapters.TableAdapterManager HOCPHI_TableAdapterManager = new QLDSVHocPhiDataSetTableAdapters.TableAdapterManager();
         public static QLDSVHocPhiDataSetTableAdapters.KHOATableAdapter HOCPHI_KHOATableAdapter = new QLDSVHocPhiDataSetTableAdapters.KHOATableAdapter();
@@ -40,7 +41,16 @@ namespace DX_Student_Score_Management
         public static bool KHOA_LOP_Change = true;
         public static bool KHOA_MONHOC_Change = true;
         public static bool KHOA_SINHVIEN_Change = true;
-
+        public static void FillAllTable()
+        {
+            KHOA_KHOATableAdapter.Fill(_QLDSVKhoaDataSet.KHOA);
+            KHOA_GIANGVIENTableAdapter.Fill(_QLDSVKhoaDataSet.GIANGVIEN);
+            KHOA_LOPTableAdapter.Fill(_QLDSVKhoaDataSet.LOP);
+            KHOA_SINHVIENTableAdapter.Fill(_QLDSVKhoaDataSet.SINHVIEN);
+            KHOA_DIEMTableAdapter.Fill(_QLDSVKhoaDataSet.DIEM);
+            KHOA_HOCPHITableAdapter.Fill(_QLDSVKhoaDataSet.HOCPHI);
+            KHOA_MONHOCTableAdapter.Fill(_QLDSVKhoaDataSet.MONHOC);
+        }
         private static void ChangeConnection(SqlConnection sqlConnection)
         {
             KHOA_KHOATableAdapter.Connection = sqlConnection;
@@ -53,6 +63,7 @@ namespace DX_Student_Score_Management
             KHOA_TableAdapterManager.Connection = sqlConnection;
             KHOA_SP_List_LOGINTableAdapter.Connection = sqlConnection;
             KHOA_SP_List_NHOMTableAdapter.Connection = sqlConnection;
+            KHOA_SP_List_LOPTableAdapter.Connection = sqlConnection;
             //---------------------------------------------------
             HOCPHI_KHOATableAdapter.Connection = sqlConnection;
             HOCPHI_GIANGVIENTableAdapter.Connection = sqlConnection;
@@ -60,6 +71,10 @@ namespace DX_Student_Score_Management
             HOCPHI_SINHVIENTableAdapter.Connection = sqlConnection;
             HOCPHI_HOCPHITableAdapter.Connection = sqlConnection;
             HOCPHI_TableAdapterManager.Connection = sqlConnection;
+            //---------------------------------------------------
+            
+
+
         }
         //--Handler rows change---
         private static void KHOA_LOP_Row_Changed(object sender, DataRowChangeEventArgs e)
@@ -103,6 +118,9 @@ namespace DX_Student_Score_Management
             KHOA_HOCPHITableAdapter.ClearBeforeFill = true;
             KHOA_MONHOCTableAdapter.ClearBeforeFill = true;
             KHOA_SP_List_LOGINTableAdapter.ClearBeforeFill = true;
+            KHOA_SP_List_LOPTableAdapter.ClearBeforeFill = true;
+            KHOA_SP_List_NHOMTableAdapter.ClearBeforeFill = true;
+
             //--TableAdapterManager config--
             KHOA_TableAdapterManager.KHOATableAdapter = KHOA_KHOATableAdapter;
             KHOA_TableAdapterManager.GIANGVIENTableAdapter = KHOA_GIANGVIENTableAdapter;
@@ -127,11 +145,13 @@ namespace DX_Student_Score_Management
             _dataRepository = new DataRepository();
             _formLogin = new FormLogin(_dataRepository);
         }
+
         private static void InitForm()
         {
             _DXFormMain = new DXFormMain(_dataRepository,
                                          new LayoutTabPage(_dataRepository.GroupId));
         }
+
         [STAThread]
         static void Main()
         {

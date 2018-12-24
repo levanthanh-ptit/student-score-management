@@ -165,7 +165,7 @@
             this.sP_List_LOGINGridControl.MainView = this.gridView1;
             this.sP_List_LOGINGridControl.MenuManager = this.barManagerTool;
             this.sP_List_LOGINGridControl.Name = "sP_List_LOGINGridControl";
-            this.sP_List_LOGINGridControl.Size = new System.Drawing.Size(1253, 422);
+            this.sP_List_LOGINGridControl.Size = new System.Drawing.Size(1253, 249);
             this.sP_List_LOGINGridControl.TabIndex = 0;
             this.sP_List_LOGINGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});

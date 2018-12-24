@@ -29,7 +29,7 @@ namespace DX_Student_Score_Management.Controllers
         {
             sP_List_LOGINTableAdapter.Fill(Program._QLDSVKhoaDataSet.SP_List_LOGIN);
         }
-               
+
         private void barBtnRefresh_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             UserControlTaiKhoan_Load();
@@ -37,6 +37,12 @@ namespace DX_Student_Score_Management.Controllers
 
         private void barBtnDeleteGiangVien_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            new FormXOALOGIN(
+                ((DataRowView)sP_List_LOGINBindingSource.Current)["LOGINNAME"].ToString(),
+                ((DataRowView)sP_List_LOGINBindingSource.Current)["MAGV"].ToString(),
+                ((DataRowView)sP_List_LOGINBindingSource.Current)["HO"].ToString() + " " + ((DataRowView)sP_List_LOGINBindingSource.Current)["TEN"].ToString()
+                ).Show();
+            UserControlTaiKhoan_Load();
         }
 
         private void barBtnNewLogin_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

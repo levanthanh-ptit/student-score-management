@@ -120,7 +120,7 @@
             this.LoginUserTextBox.Name = "LoginUserTextBox";
             this.LoginUserTextBox.Size = new System.Drawing.Size(222, 21);
             this.LoginUserTextBox.TabIndex = 3;
-            this.LoginUserTextBox.Text = "sa";
+            this.LoginUserTextBox.Text = "huy";
             // 
             // label3
             // 

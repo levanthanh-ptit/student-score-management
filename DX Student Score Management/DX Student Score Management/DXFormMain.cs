@@ -48,6 +48,7 @@ namespace DX_Student_Score_Management
             this.layoutTabPage = layoutTabPage;
             InitializeComponent();
             InitializeExtendComponent();
+            Program.FillAllTable();
         }
     }
 }

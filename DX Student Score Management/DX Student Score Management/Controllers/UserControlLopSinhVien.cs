@@ -20,7 +20,7 @@ namespace DX_Student_Score_Management.Controllers
             InitializeComponent();
             InitializeExtendComponent();
             kHOABindingSource.DataSource = Program._QLDSVKhoaDataSet;
-            UserControlLopSinhVien_Load();
+            //UserControlLopSinhVien_Load();
         }
         private void InitializeExtendComponent()
         {
@@ -65,7 +65,7 @@ namespace DX_Student_Score_Management.Controllers
 
         private void barBtnRefresh_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if (Program.KHOA_LOP_Change || Program.KHOA_LOP_Change)
+            if (Program.KHOA_LOP_Change || Program.KHOA_SINHVIEN_Change)
             {
                 DialogResult dr = MessageBox.Show("Phát hiện thay đổi chưa cập nhật!\nBạn có muốn load lại bảng?", "Phát hiện thay đổi", MessageBoxButtons.YesNo);
                 if (dr == DialogResult.Yes)
@@ -92,20 +92,29 @@ namespace DX_Student_Score_Management.Controllers
 
         private void btnAddLop_Click(object sender, EventArgs e)
         {
-            string valid = Validation.validateCode("Mã lớp", mALOPTextEdit.Text);
+            string valid = Validation.validateCode("Mã lớp", MALOPTextEdit.Text);
             if (valid != "")
             {
                 MessageBox.Show(valid);
                 return;
             }
-            valid = Validation.validateCommonText("Tên lớp", tENLOPTextEdit.Text);
+            valid = Validation.validateCommonText("Tên lớp", TENLOPTextEdit.Text);
             if (valid != "")
             {
                 MessageBox.Show(valid);
                 return;
             }
-            
-            fKLOPKHOABindingSource.EndEdit();
+            Program._QLDSVKhoaDataSet.EnforceConstraints = true;
+            try
+            {
+                fKLOPKHOABindingSource.EndEdit();
+            }
+            catch (ConstraintException ctex)
+            {
+                MessageBox.Show(ctex.HResult == -2146232022 ? "Mã Lớp bị trùng." : ctex.Message, ctex.HResult.ToString());
+                return;
+            }
+            Program._QLDSVKhoaDataSet.EnforceConstraints = false;
             barBtnUpload.Enabled = true;
             barBtnRefresh.Enabled = true;
             barMenuLop.Enabled = true;
@@ -120,7 +129,6 @@ namespace DX_Student_Score_Management.Controllers
         private void btnCancelAddLop_Click(object sender, EventArgs e)
         {
             fKLOPKHOABindingSource.CancelEdit();
-            //fKLOPKHOABindingSource.RemoveCurrent();
             barBtnUpload.Enabled = true;
             barBtnRefresh.Enabled = true;
             barMenuLop.Enabled = true;
@@ -134,7 +142,9 @@ namespace DX_Student_Score_Management.Controllers
 
         private void barBtnDeleteLop_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            Program._QLDSVKhoaDataSet.EnforceConstraints = true;
             DeleteCurrentLop();
+            Program._QLDSVKhoaDataSet.EnforceConstraints = true;
         }
 
         private void barBtnEditLop_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -151,7 +161,30 @@ namespace DX_Student_Score_Management.Controllers
 
         private void btnEditLopOK_Click(object sender, EventArgs e)
         {
-            fKLOPKHOABindingSource.EndEdit();
+            string valid = Validation.validateCode("Mã lớp", MALOPTextEdit.Text);
+            if (valid != "")
+            {
+                MessageBox.Show(valid);
+                return;
+            }
+            valid = Validation.validateCommonText("Tên lớp", TENLOPTextEdit.Text);
+            if (valid != "")
+            {
+                MessageBox.Show(valid);
+                return;
+            }
+            Program._QLDSVKhoaDataSet.EnforceConstraints = true;
+            try
+            {
+                fKLOPKHOABindingSource.EndEdit();
+
+            }
+            catch (ConstraintException ctex)
+            {
+                MessageBox.Show(ctex.HResult == -2146232022 ? "Mã Lớp bị trùng." : ctex.Message, ctex.HResult.ToString());
+                return;
+            }
+            Program._QLDSVKhoaDataSet.EnforceConstraints = false;
             barBtnUpload.Enabled = true;
             barBtnRefresh.Enabled = true;
             barMenuLop.Enabled = true;
@@ -164,6 +197,18 @@ namespace DX_Student_Score_Management.Controllers
         }
         private void toolStripMenuAddLop_Click(object sender, EventArgs e)
         {
+            string valid = Validation.validateCode("Mã lớp", MALOPTextEdit.Text);
+            if (valid != "")
+            {
+                MessageBox.Show(valid);
+                return;
+            }
+            valid = Validation.validateCommonText("Tên lớp", TENLOPTextEdit.Text);
+            if (valid != "")
+            {
+                MessageBox.Show(valid);
+                return;
+            }
             fKLOPKHOABindingSource.AddNew();
             barBtnUpload.Enabled = false;
             barBtnRefresh.Enabled = false;
@@ -181,6 +226,18 @@ namespace DX_Student_Score_Management.Controllers
         }
         private void toolStripMenuEditLop_Click(object sender, EventArgs e)
         {
+            string valid = Validation.validateCode("Mã lớp", MALOPTextEdit.Text);
+            if (valid != "")
+            {
+                MessageBox.Show(valid);
+                return;
+            }
+            valid = Validation.validateCommonText("Tên lớp", TENLOPTextEdit.Text);
+            if (valid != "")
+            {
+                MessageBox.Show(valid);
+                return;
+            }
             barBtnUpload.Enabled = false;
             barBtnRefresh.Enabled = false;
             barMenuLop.Enabled = false;
@@ -194,7 +251,6 @@ namespace DX_Student_Score_Management.Controllers
 
         private void barBtnAddSinhVien_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
             fKSINHVIENLOPBindingSource.AddNew();
             barBtnUpload.Enabled = false;
             barBtnRefresh.Enabled = false;
@@ -210,19 +266,49 @@ namespace DX_Student_Score_Management.Controllers
 
         private void btnAddSinhVien_Click(object sender, EventArgs e)
         {
-            string valid = Validation.validateCode("Mã lớp", mASVTextEdit.Text);
+            string valid = Validation.validateCode("Mã Sinh viên", MASVTextEdit.Text);
             if (valid != "")
             {
                 MessageBox.Show(valid);
                 return;
             }
-            valid = Validation.validateCommonText("Tên lớp", tENLOPTextEdit.Text);
+            
+            valid = Validation.validateCommonText("Họ", HOTextEdit.Text);
             if (valid != "")
             {
                 MessageBox.Show(valid);
                 return;
             }
-            fKSINHVIENLOPBindingSource.EndEdit();
+            valid = Validation.validateName("Tên sinh viên", TENTextEdit.Text);
+            if (valid != "")
+            {
+                MessageBox.Show(valid);
+                return;
+            }
+            valid = Validation.validateCommonText("Nơi sinh", NOISINHTextEdit.Text);
+            if (valid != "")
+            {
+                MessageBox.Show(valid);
+                return;
+            }
+            valid = Validation.validateCommonText("Địa chỉ", DIACHITextEdit.Text);
+            if (valid != "")
+            {
+                MessageBox.Show(valid);
+                return;
+            }
+            Program._QLDSVKhoaDataSet.EnforceConstraints = true;
+            try
+            {
+                fKSINHVIENLOPBindingSource.EndEdit();
+            }
+            catch (ConstraintException ctex)
+            {
+                MessageBox.Show(ctex.HResult == -2146232022 ? "Mã Sinh viên bị trùng." : ctex.Message, ctex.HResult.ToString());
+                return;
+            }
+
+            Program._QLDSVKhoaDataSet.EnforceConstraints = false;
             barBtnUpload.Enabled = true;
             barBtnRefresh.Enabled = true;
             barMenuLop.Enabled = true;
@@ -267,7 +353,18 @@ namespace DX_Student_Score_Management.Controllers
 
         private void btnEditSinhVienOK_Click(object sender, EventArgs e)
         {
-            fKSINHVIENLOPBindingSource.EndEdit();
+            Program._QLDSVKhoaDataSet.EnforceConstraints = true;
+            try
+            {
+                fKSINHVIENLOPBindingSource.EndEdit();
+            }
+            catch (ConstraintException ctex)
+            {
+                MessageBox.Show(ctex.HResult == -2146232022 ? "Mã Sinh viên bị trùng." : ctex.Message, ctex.HResult.ToString());
+                return;
+            }
+
+            Program._QLDSVKhoaDataSet.EnforceConstraints = false;
             barBtnUpload.Enabled = true;
             barBtnRefresh.Enabled = true;
             barMenuLop.Enabled = true;

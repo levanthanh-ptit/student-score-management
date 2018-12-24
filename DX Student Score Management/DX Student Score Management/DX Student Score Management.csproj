@@ -84,17 +84,53 @@
     <Compile Include="Components\LoadingForm.Designer.cs">
       <DependentUpon>LoadingForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controllers\ReportForms\FormReportBDMH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controllers\ReportForms\FormReportBDMH.Designer.cs">
+      <DependentUpon>FormReportBDMH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\ReportForms\FormReportBDTK.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controllers\ReportForms\FormReportBDTK.Designer.cs">
+      <DependentUpon>FormReportBDTK.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\ReportForms\FormReportDSThi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controllers\ReportForms\FormReportDSThi.Designer.cs">
+      <DependentUpon>FormReportDSThi.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controllers\ReportForms\FormReportDSSV.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Controllers\ReportForms\FormReportDSSV.Designer.cs">
       <DependentUpon>FormReportDSSV.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controllers\ReportForms\XtraReportBDMH.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controllers\ReportForms\XtraReportBDMH.Designer.cs">
+      <DependentUpon>XtraReportBDMH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\ReportForms\XtraReportBDTK.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controllers\ReportForms\XtraReportBDTK.Designer.cs">
+      <DependentUpon>XtraReportBDTK.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controllers\ReportForms\XtraReportDSSV.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Controllers\ReportForms\XtraReportDSSV.Designer.cs">
       <DependentUpon>XtraReportDSSV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\ReportForms\XtraReportDSThi.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controllers\ReportForms\XtraReportDSThi.Designer.cs">
+      <DependentUpon>XtraReportDSThi.cs</DependentUpon>
     </Compile>
     <Compile Include="Controllers\TaiKhoanForms\FormTAOLOGIN.cs">
       <SubType>Form</SubType>
@@ -184,11 +220,29 @@
     <EmbeddedResource Include="Components\LoadingForm.resx">
       <DependentUpon>LoadingForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controllers\ReportForms\FormReportBDMH.resx">
+      <DependentUpon>FormReportBDMH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controllers\ReportForms\FormReportBDTK.resx">
+      <DependentUpon>FormReportBDTK.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controllers\ReportForms\FormReportDSThi.resx">
+      <DependentUpon>FormReportDSThi.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controllers\ReportForms\FormReportDSSV.resx">
       <DependentUpon>FormReportDSSV.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controllers\ReportForms\XtraReportBDMH.resx">
+      <DependentUpon>XtraReportBDMH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controllers\ReportForms\XtraReportBDTK.resx">
+      <DependentUpon>XtraReportBDTK.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controllers\ReportForms\XtraReportDSSV.resx">
       <DependentUpon>XtraReportDSSV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controllers\ReportForms\XtraReportDSThi.resx">
+      <DependentUpon>XtraReportDSThi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controllers\TaiKhoanForms\FormTAOLOGIN.resx">
       <DependentUpon>FormTAOLOGIN.cs</DependentUpon>

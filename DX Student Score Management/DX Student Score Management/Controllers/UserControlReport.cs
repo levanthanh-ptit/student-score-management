@@ -20,7 +20,31 @@ namespace DX_Student_Score_Management.Controllers
 
         private void btnDSSV_Click(object sender, EventArgs e)
         {
-            new FormReportDSSV().Show();
+            FormReportDSSV DSSV = new FormReportDSSV();
+            DSSV.Activate();
+            DSSV.Show();
+        }
+
+        private void btnDSTHM_Click(object sender, EventArgs e)
+        {
+            FormReportDSThi DSThi = new FormReportDSThi();
+            DSThi.Activate();
+            DSThi.Show();
+        }
+
+        private void btnPrintBDMH_Click(object sender, EventArgs e)
+        {
+            FormReportBDMH BDMH = new FormReportBDMH();
+            BDMH.Activate();
+            BDMH.Show();
+        }
+
+        private void btnPrintBDTK_Click(object sender, EventArgs e)
+        {
+            FormReportBDTK BDTK = new FormReportBDTK();
+            BDTK.Activate();
+            BDTK.Show();
+
         }
     }
 }

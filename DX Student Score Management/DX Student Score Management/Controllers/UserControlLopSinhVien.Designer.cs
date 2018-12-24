@@ -66,19 +66,19 @@
             this.groupBoxSinhVien = new System.Windows.Forms.GroupBox();
             this.btnEditSinhVienOK = new System.Windows.Forms.Button();
             this.btnCancelAddSinhVien = new System.Windows.Forms.Button();
-            this.mASVTextEdit = new DevExpress.XtraEditors.TextEdit();
+            this.MASVTextEdit = new DevExpress.XtraEditors.TextEdit();
             this.fKSINHVIENLOPBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.fKLOPKHOABindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.kHOABindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnAddSinhVien = new System.Windows.Forms.Button();
-            this.mALOPTextEdit1 = new DevExpress.XtraEditors.TextEdit();
+            this.SV_MALOPTextEdit = new DevExpress.XtraEditors.TextEdit();
             this.nGHIHOCCheckEdit = new DevExpress.XtraEditors.CheckEdit();
-            this.hOTextEdit = new DevExpress.XtraEditors.TextEdit();
-            this.gHICHUTextEdit = new DevExpress.XtraEditors.TextEdit();
-            this.tENTextEdit = new DevExpress.XtraEditors.TextEdit();
-            this.dIACHITextEdit = new DevExpress.XtraEditors.TextEdit();
+            this.HOTextEdit = new DevExpress.XtraEditors.TextEdit();
+            this.GHICHUTextEdit = new DevExpress.XtraEditors.TextEdit();
+            this.TENTextEdit = new DevExpress.XtraEditors.TextEdit();
+            this.DIACHITextEdit = new DevExpress.XtraEditors.TextEdit();
             this.pHAICheckEdit = new DevExpress.XtraEditors.CheckEdit();
-            this.nOISINHTextEdit = new DevExpress.XtraEditors.TextEdit();
+            this.NOISINHTextEdit = new DevExpress.XtraEditors.TextEdit();
             this.nGAYSINHDateEdit = new DevExpress.XtraEditors.DateEdit();
             this.sINHVIENGridControl = new DevExpress.XtraGrid.GridControl();
             this.contextMenuSinhVien = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -98,8 +98,8 @@
             this.colDIACHI = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colGHICHU = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colNGHIHOC = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.tENLOPTextEdit = new DevExpress.XtraEditors.TextEdit();
-            this.mALOPTextEdit = new DevExpress.XtraEditors.TextEdit();
+            this.TENLOPTextEdit = new DevExpress.XtraEditors.TextEdit();
+            this.MALOPTextEdit = new DevExpress.XtraEditors.TextEdit();
             this.splitContainer = new System.Windows.Forms.SplitContainer();
             this.groupBoxLOP = new System.Windows.Forms.GroupBox();
             this.btnCancelAddLop = new System.Windows.Forms.Button();
@@ -134,25 +134,25 @@
             ((System.ComponentModel.ISupportInitialize)(this.qLDSVKhoaDataSet)).BeginInit();
             this.panelSubContainer.SuspendLayout();
             this.groupBoxSinhVien.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.mASVTextEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MASVTextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fKSINHVIENLOPBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fKLOPKHOABindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kHOABindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mALOPTextEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SV_MALOPTextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nGHIHOCCheckEdit.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.hOTextEdit.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gHICHUTextEdit.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tENTextEdit.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dIACHITextEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.HOTextEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GHICHUTextEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TENTextEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DIACHITextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pHAICheckEdit.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nOISINHTextEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NOISINHTextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nGAYSINHDateEdit.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nGAYSINHDateEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sINHVIENGridControl)).BeginInit();
             this.contextMenuSinhVien.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewSinhVien)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tENLOPTextEdit.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mALOPTextEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TENLOPTextEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MALOPTextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer)).BeginInit();
             this.splitContainer.Panel1.SuspendLayout();
             this.splitContainer.Panel2.SuspendLayout();
@@ -480,22 +480,22 @@
             this.groupBoxSinhVien.Controls.Add(this.btnCancelAddSinhVien);
             this.groupBoxSinhVien.Controls.Add(mASVLabel);
             this.groupBoxSinhVien.Controls.Add(nGHIHOCLabel);
-            this.groupBoxSinhVien.Controls.Add(this.mASVTextEdit);
+            this.groupBoxSinhVien.Controls.Add(this.MASVTextEdit);
             this.groupBoxSinhVien.Controls.Add(this.btnAddSinhVien);
-            this.groupBoxSinhVien.Controls.Add(this.mALOPTextEdit1);
+            this.groupBoxSinhVien.Controls.Add(this.SV_MALOPTextEdit);
             this.groupBoxSinhVien.Controls.Add(this.nGHIHOCCheckEdit);
             this.groupBoxSinhVien.Controls.Add(mALOPLabel1);
             this.groupBoxSinhVien.Controls.Add(gHICHULabel);
-            this.groupBoxSinhVien.Controls.Add(this.hOTextEdit);
-            this.groupBoxSinhVien.Controls.Add(this.gHICHUTextEdit);
+            this.groupBoxSinhVien.Controls.Add(this.HOTextEdit);
+            this.groupBoxSinhVien.Controls.Add(this.GHICHUTextEdit);
             this.groupBoxSinhVien.Controls.Add(hOLabel);
             this.groupBoxSinhVien.Controls.Add(dIACHILabel);
-            this.groupBoxSinhVien.Controls.Add(this.tENTextEdit);
-            this.groupBoxSinhVien.Controls.Add(this.dIACHITextEdit);
+            this.groupBoxSinhVien.Controls.Add(this.TENTextEdit);
+            this.groupBoxSinhVien.Controls.Add(this.DIACHITextEdit);
             this.groupBoxSinhVien.Controls.Add(tENLabel);
             this.groupBoxSinhVien.Controls.Add(nOISINHLabel);
             this.groupBoxSinhVien.Controls.Add(this.pHAICheckEdit);
-            this.groupBoxSinhVien.Controls.Add(this.nOISINHTextEdit);
+            this.groupBoxSinhVien.Controls.Add(this.NOISINHTextEdit);
             this.groupBoxSinhVien.Controls.Add(pHAILabel);
             this.groupBoxSinhVien.Controls.Add(nGAYSINHLabel);
             this.groupBoxSinhVien.Controls.Add(this.nGAYSINHDateEdit);
@@ -530,15 +530,15 @@
             this.btnCancelAddSinhVien.Visible = false;
             this.btnCancelAddSinhVien.Click += new System.EventHandler(this.btnCancelAddSinhVien_Click);
             // 
-            // mASVTextEdit
+            // MASVTextEdit
             // 
-            this.mASVTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.fKSINHVIENLOPBindingSource, "MASV", true));
-            this.mASVTextEdit.Location = new System.Drawing.Point(48, 24);
-            this.mASVTextEdit.MenuManager = this.barManager1;
-            this.mASVTextEdit.Name = "mASVTextEdit";
-            this.mASVTextEdit.Properties.MaxLength = 12;
-            this.mASVTextEdit.Size = new System.Drawing.Size(100, 20);
-            this.mASVTextEdit.TabIndex = 6;
+            this.MASVTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.fKSINHVIENLOPBindingSource, "MASV", true));
+            this.MASVTextEdit.Location = new System.Drawing.Point(48, 24);
+            this.MASVTextEdit.MenuManager = this.barManager1;
+            this.MASVTextEdit.Name = "MASVTextEdit";
+            this.MASVTextEdit.Properties.MaxLength = 12;
+            this.MASVTextEdit.Size = new System.Drawing.Size(100, 20);
+            this.MASVTextEdit.TabIndex = 6;
             // 
             // fKSINHVIENLOPBindingSource
             // 
@@ -566,15 +566,16 @@
             this.btnAddSinhVien.Visible = false;
             this.btnAddSinhVien.Click += new System.EventHandler(this.btnAddSinhVien_Click);
             // 
-            // mALOPTextEdit1
+            // SV_MALOPTextEdit
             // 
-            this.mALOPTextEdit1.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.fKSINHVIENLOPBindingSource, "MALOP", true));
-            this.mALOPTextEdit1.Location = new System.Drawing.Point(222, 24);
-            this.mALOPTextEdit1.MenuManager = this.barManager1;
-            this.mALOPTextEdit1.Name = "mALOPTextEdit1";
-            this.mALOPTextEdit1.Properties.MaxLength = 8;
-            this.mALOPTextEdit1.Size = new System.Drawing.Size(100, 20);
-            this.mALOPTextEdit1.TabIndex = 7;
+            this.SV_MALOPTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.fKSINHVIENLOPBindingSource, "MALOP", true));
+            this.SV_MALOPTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.fKSINHVIENLOPBindingSource, "MALOP", true));
+            this.SV_MALOPTextEdit.Location = new System.Drawing.Point(222, 24);
+            this.SV_MALOPTextEdit.MenuManager = this.barManager1;
+            this.SV_MALOPTextEdit.Name = "SV_MALOPTextEdit";
+            this.SV_MALOPTextEdit.Properties.MaxLength = 8;
+            this.SV_MALOPTextEdit.Size = new System.Drawing.Size(100, 20);
+            this.SV_MALOPTextEdit.TabIndex = 7;
             // 
             // nGHIHOCCheckEdit
             // 
@@ -586,45 +587,45 @@
             this.nGHIHOCCheckEdit.Size = new System.Drawing.Size(18, 19);
             this.nGHIHOCCheckEdit.TabIndex = 15;
             // 
-            // hOTextEdit
+            // HOTextEdit
             // 
-            this.hOTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.fKSINHVIENLOPBindingSource, "HO", true));
-            this.hOTextEdit.Location = new System.Drawing.Point(376, 24);
-            this.hOTextEdit.MenuManager = this.barManager1;
-            this.hOTextEdit.Name = "hOTextEdit";
-            this.hOTextEdit.Properties.MaxLength = 40;
-            this.hOTextEdit.Size = new System.Drawing.Size(171, 20);
-            this.hOTextEdit.TabIndex = 8;
+            this.HOTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.fKSINHVIENLOPBindingSource, "HO", true));
+            this.HOTextEdit.Location = new System.Drawing.Point(376, 24);
+            this.HOTextEdit.MenuManager = this.barManager1;
+            this.HOTextEdit.Name = "HOTextEdit";
+            this.HOTextEdit.Properties.MaxLength = 40;
+            this.HOTextEdit.Size = new System.Drawing.Size(171, 20);
+            this.HOTextEdit.TabIndex = 8;
             // 
-            // gHICHUTextEdit
+            // GHICHUTextEdit
             // 
-            this.gHICHUTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.fKSINHVIENLOPBindingSource, "GHICHU", true));
-            this.gHICHUTextEdit.Location = new System.Drawing.Point(733, 57);
-            this.gHICHUTextEdit.MenuManager = this.barManager1;
-            this.gHICHUTextEdit.Name = "gHICHUTextEdit";
-            this.gHICHUTextEdit.Properties.MaxLength = 1073741823;
-            this.gHICHUTextEdit.Size = new System.Drawing.Size(173, 20);
-            this.gHICHUTextEdit.TabIndex = 14;
+            this.GHICHUTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.fKSINHVIENLOPBindingSource, "GHICHU", true));
+            this.GHICHUTextEdit.Location = new System.Drawing.Point(733, 57);
+            this.GHICHUTextEdit.MenuManager = this.barManager1;
+            this.GHICHUTextEdit.Name = "GHICHUTextEdit";
+            this.GHICHUTextEdit.Properties.MaxLength = 1073741823;
+            this.GHICHUTextEdit.Size = new System.Drawing.Size(173, 20);
+            this.GHICHUTextEdit.TabIndex = 14;
             // 
-            // tENTextEdit
+            // TENTextEdit
             // 
-            this.tENTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.fKSINHVIENLOPBindingSource, "TEN", true));
-            this.tENTextEdit.Location = new System.Drawing.Point(606, 24);
-            this.tENTextEdit.MenuManager = this.barManager1;
-            this.tENTextEdit.Name = "tENTextEdit";
-            this.tENTextEdit.Properties.MaxLength = 10;
-            this.tENTextEdit.Size = new System.Drawing.Size(100, 20);
-            this.tENTextEdit.TabIndex = 9;
+            this.TENTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.fKSINHVIENLOPBindingSource, "TEN", true));
+            this.TENTextEdit.Location = new System.Drawing.Point(606, 24);
+            this.TENTextEdit.MenuManager = this.barManager1;
+            this.TENTextEdit.Name = "TENTextEdit";
+            this.TENTextEdit.Properties.MaxLength = 10;
+            this.TENTextEdit.Size = new System.Drawing.Size(100, 20);
+            this.TENTextEdit.TabIndex = 9;
             // 
-            // dIACHITextEdit
+            // DIACHITextEdit
             // 
-            this.dIACHITextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.fKSINHVIENLOPBindingSource, "DIACHI", true));
-            this.dIACHITextEdit.Location = new System.Drawing.Point(397, 57);
-            this.dIACHITextEdit.MenuManager = this.barManager1;
-            this.dIACHITextEdit.Name = "dIACHITextEdit";
-            this.dIACHITextEdit.Properties.MaxLength = 80;
-            this.dIACHITextEdit.Size = new System.Drawing.Size(256, 20);
-            this.dIACHITextEdit.TabIndex = 13;
+            this.DIACHITextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.fKSINHVIENLOPBindingSource, "DIACHI", true));
+            this.DIACHITextEdit.Location = new System.Drawing.Point(397, 57);
+            this.DIACHITextEdit.MenuManager = this.barManager1;
+            this.DIACHITextEdit.Name = "DIACHITextEdit";
+            this.DIACHITextEdit.Properties.MaxLength = 80;
+            this.DIACHITextEdit.Size = new System.Drawing.Size(256, 20);
+            this.DIACHITextEdit.TabIndex = 13;
             // 
             // pHAICheckEdit
             // 
@@ -636,15 +637,15 @@
             this.pHAICheckEdit.Size = new System.Drawing.Size(54, 19);
             this.pHAICheckEdit.TabIndex = 10;
             // 
-            // nOISINHTextEdit
+            // NOISINHTextEdit
             // 
-            this.nOISINHTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.fKSINHVIENLOPBindingSource, "NOISINH", true));
-            this.nOISINHTextEdit.Location = new System.Drawing.Point(56, 57);
-            this.nOISINHTextEdit.MenuManager = this.barManager1;
-            this.nOISINHTextEdit.Name = "nOISINHTextEdit";
-            this.nOISINHTextEdit.Properties.MaxLength = 40;
-            this.nOISINHTextEdit.Size = new System.Drawing.Size(256, 20);
-            this.nOISINHTextEdit.TabIndex = 12;
+            this.NOISINHTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.fKSINHVIENLOPBindingSource, "NOISINH", true));
+            this.NOISINHTextEdit.Location = new System.Drawing.Point(56, 57);
+            this.NOISINHTextEdit.MenuManager = this.barManager1;
+            this.NOISINHTextEdit.Name = "NOISINHTextEdit";
+            this.NOISINHTextEdit.Properties.MaxLength = 40;
+            this.NOISINHTextEdit.Size = new System.Drawing.Size(256, 20);
+            this.NOISINHTextEdit.TabIndex = 12;
             // 
             // nGAYSINHDateEdit
             // 
@@ -826,26 +827,26 @@
             this.colNGHIHOC.Visible = true;
             this.colNGHIHOC.VisibleIndex = 9;
             // 
-            // tENLOPTextEdit
+            // TENLOPTextEdit
             // 
-            this.tENLOPTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.fKLOPKHOABindingSource, "TENLOP", true));
-            this.tENLOPTextEdit.Location = new System.Drawing.Point(341, 23);
-            this.tENLOPTextEdit.MenuManager = this.barManager1;
-            this.tENLOPTextEdit.Name = "tENLOPTextEdit";
-            this.tENLOPTextEdit.Properties.MaxLength = 200;
-            this.tENLOPTextEdit.Size = new System.Drawing.Size(425, 20);
-            this.tENLOPTextEdit.TabIndex = 2;
+            this.TENLOPTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.fKLOPKHOABindingSource, "TENLOP", true));
+            this.TENLOPTextEdit.Location = new System.Drawing.Point(341, 23);
+            this.TENLOPTextEdit.MenuManager = this.barManager1;
+            this.TENLOPTextEdit.Name = "TENLOPTextEdit";
+            this.TENLOPTextEdit.Properties.MaxLength = 200;
+            this.TENLOPTextEdit.Size = new System.Drawing.Size(425, 20);
+            this.TENLOPTextEdit.TabIndex = 2;
             // 
-            // mALOPTextEdit
+            // MALOPTextEdit
             // 
-            this.mALOPTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.fKLOPKHOABindingSource, "MALOP", true));
-            this.mALOPTextEdit.Location = new System.Drawing.Point(54, 23);
-            this.mALOPTextEdit.MenuManager = this.barManager1;
-            this.mALOPTextEdit.Name = "mALOPTextEdit";
-            this.mALOPTextEdit.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
-            this.mALOPTextEdit.Properties.MaxLength = 8;
-            this.mALOPTextEdit.Size = new System.Drawing.Size(212, 20);
-            this.mALOPTextEdit.TabIndex = 1;
+            this.MALOPTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.fKLOPKHOABindingSource, "MALOP", true));
+            this.MALOPTextEdit.Location = new System.Drawing.Point(54, 23);
+            this.MALOPTextEdit.MenuManager = this.barManager1;
+            this.MALOPTextEdit.Name = "MALOPTextEdit";
+            this.MALOPTextEdit.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
+            this.MALOPTextEdit.Properties.MaxLength = 8;
+            this.MALOPTextEdit.Size = new System.Drawing.Size(212, 20);
+            this.MALOPTextEdit.TabIndex = 1;
             // 
             // splitContainer
             // 
@@ -875,9 +876,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBoxLOP.Controls.Add(this.btnCancelAddLop);
             this.groupBoxLOP.Controls.Add(mALOPLabel);
-            this.groupBoxLOP.Controls.Add(this.tENLOPTextEdit);
+            this.groupBoxLOP.Controls.Add(this.TENLOPTextEdit);
             this.groupBoxLOP.Controls.Add(tENLOPLabel);
-            this.groupBoxLOP.Controls.Add(this.mALOPTextEdit);
+            this.groupBoxLOP.Controls.Add(this.MALOPTextEdit);
             this.groupBoxLOP.Controls.Add(this.btnEditLopOK);
             this.groupBoxLOP.Controls.Add(this.btnAddLop);
             this.groupBoxLOP.Enabled = false;
@@ -1056,25 +1057,25 @@
             this.panelSubContainer.ResumeLayout(false);
             this.groupBoxSinhVien.ResumeLayout(false);
             this.groupBoxSinhVien.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.mASVTextEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MASVTextEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fKSINHVIENLOPBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fKLOPKHOABindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kHOABindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mALOPTextEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SV_MALOPTextEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nGHIHOCCheckEdit.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.hOTextEdit.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gHICHUTextEdit.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tENTextEdit.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dIACHITextEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.HOTextEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GHICHUTextEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TENTextEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DIACHITextEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pHAICheckEdit.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nOISINHTextEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NOISINHTextEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nGAYSINHDateEdit.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nGAYSINHDateEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sINHVIENGridControl)).EndInit();
             this.contextMenuSinhVien.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridViewSinhVien)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tENLOPTextEdit.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mALOPTextEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TENLOPTextEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MALOPTextEdit.Properties)).EndInit();
             this.splitContainer.Panel1.ResumeLayout(false);
             this.splitContainer.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer)).EndInit();
@@ -1101,8 +1102,8 @@
         private QLDSVKhoaDataSet qLDSVKhoaDataSet;
         private QLDSVKhoaDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.Panel panelSubContainer;
-        private DevExpress.XtraEditors.TextEdit tENLOPTextEdit;
-        private DevExpress.XtraEditors.TextEdit mALOPTextEdit;
+        private DevExpress.XtraEditors.TextEdit TENLOPTextEdit;
+        private DevExpress.XtraEditors.TextEdit MALOPTextEdit;
         private System.Windows.Forms.SplitContainer splitContainer;
         private DevExpress.XtraBars.BarSubItem barMenuLop;
         private DevExpress.XtraBars.BarButtonItem barBtnAddLop;
@@ -1136,15 +1137,15 @@
         private DevExpress.XtraGrid.Columns.GridColumn colGHICHU;
         private DevExpress.XtraGrid.Columns.GridColumn colNGHIHOC;
         private DevExpress.XtraEditors.CheckEdit nGHIHOCCheckEdit;
-        private DevExpress.XtraEditors.TextEdit gHICHUTextEdit;
-        private DevExpress.XtraEditors.TextEdit dIACHITextEdit;
-        private DevExpress.XtraEditors.TextEdit nOISINHTextEdit;
+        private DevExpress.XtraEditors.TextEdit GHICHUTextEdit;
+        private DevExpress.XtraEditors.TextEdit DIACHITextEdit;
+        private DevExpress.XtraEditors.TextEdit NOISINHTextEdit;
         private DevExpress.XtraEditors.DateEdit nGAYSINHDateEdit;
         private DevExpress.XtraEditors.CheckEdit pHAICheckEdit;
-        private DevExpress.XtraEditors.TextEdit tENTextEdit;
-        private DevExpress.XtraEditors.TextEdit hOTextEdit;
-        private DevExpress.XtraEditors.TextEdit mALOPTextEdit1;
-        private DevExpress.XtraEditors.TextEdit mASVTextEdit;
+        private DevExpress.XtraEditors.TextEdit TENTextEdit;
+        private DevExpress.XtraEditors.TextEdit HOTextEdit;
+        private DevExpress.XtraEditors.TextEdit SV_MALOPTextEdit;
+        private DevExpress.XtraEditors.TextEdit MASVTextEdit;
         private System.Windows.Forms.Button btnCancelAddLop;
         private System.Windows.Forms.Button btnAddLop;
         private System.Windows.Forms.Button btnCancelAddSinhVien;
