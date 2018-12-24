@@ -120,7 +120,7 @@
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManagerTool;
-            this.barDockControlTop.Size = new System.Drawing.Size(1259, 40);
+            this.barDockControlTop.Size = new System.Drawing.Size(1259, 42);
             // 
             // barDockControlBottom
             // 
@@ -134,25 +134,25 @@
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 40);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 42);
             this.barDockControlLeft.Manager = this.barManagerTool;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 492);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 490);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1259, 40);
+            this.barDockControlRight.Location = new System.Drawing.Point(1259, 42);
             this.barDockControlRight.Manager = this.barManagerTool;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 492);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 490);
             // 
             // panel1
             // 
             this.panel1.Controls.Add(this.sP_List_LOGINGridControl);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 40);
+            this.panel1.Location = new System.Drawing.Point(0, 42);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1259, 492);
+            this.panel1.Size = new System.Drawing.Size(1259, 490);
             this.panel1.TabIndex = 6;
             // 
             // sP_List_LOGINGridControl
@@ -165,7 +165,7 @@
             this.sP_List_LOGINGridControl.MainView = this.gridView1;
             this.sP_List_LOGINGridControl.MenuManager = this.barManagerTool;
             this.sP_List_LOGINGridControl.Name = "sP_List_LOGINGridControl";
-            this.sP_List_LOGINGridControl.Size = new System.Drawing.Size(1253, 249);
+            this.sP_List_LOGINGridControl.Size = new System.Drawing.Size(1253, 185);
             this.sP_List_LOGINGridControl.TabIndex = 0;
             this.sP_List_LOGINGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});

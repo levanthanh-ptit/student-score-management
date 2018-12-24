@@ -261,6 +261,7 @@
             // 
             this.lOPComboBox.DataSource = this.lOPBindingSource;
             this.lOPComboBox.DisplayMember = "TENLOP";
+            this.lOPComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.lOPComboBox.FormattingEnabled = true;
             this.lOPComboBox.Location = new System.Drawing.Point(192, 42);
             this.lOPComboBox.Name = "lOPComboBox";
@@ -314,6 +315,7 @@
             // 
             this.mONHOCComboBox.DataSource = this.mONHOCBindingSource;
             this.mONHOCComboBox.DisplayMember = "TENMH";
+            this.mONHOCComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.mONHOCComboBox.FormattingEnabled = true;
             this.mONHOCComboBox.Location = new System.Drawing.Point(192, 79);
             this.mONHOCComboBox.Margin = new System.Windows.Forms.Padding(3, 3, 20, 3);

@@ -105,6 +105,7 @@
             // 
             this.sP_List_LOPComboBox.DataSource = this.sP_List_LOPBindingSource;
             this.sP_List_LOPComboBox.DisplayMember = "TENLOP";
+            this.sP_List_LOPComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.sP_List_LOPComboBox.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sP_List_LOPComboBox.FormattingEnabled = true;
             this.sP_List_LOPComboBox.Location = new System.Drawing.Point(83, 101);
@@ -145,6 +146,7 @@
             // 
             this.mONHOCComboBox.DataSource = this.MonHocBindingSource;
             this.mONHOCComboBox.DisplayMember = "TENMH";
+            this.mONHOCComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.mONHOCComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mONHOCComboBox.FormattingEnabled = true;
             this.mONHOCComboBox.Location = new System.Drawing.Point(118, 161);

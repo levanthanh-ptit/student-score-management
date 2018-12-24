@@ -182,6 +182,7 @@
             // 
             this.sP_List_NHOMComboBox.DataSource = this.sP_List_NHOMBindingSource;
             this.sP_List_NHOMComboBox.DisplayMember = "TENNHOM";
+            this.sP_List_NHOMComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.sP_List_NHOMComboBox.FormattingEnabled = true;
             this.sP_List_NHOMComboBox.Location = new System.Drawing.Point(116, 220);
             this.sP_List_NHOMComboBox.Name = "sP_List_NHOMComboBox";

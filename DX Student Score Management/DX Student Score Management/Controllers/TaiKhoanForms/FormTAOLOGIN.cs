@@ -31,7 +31,7 @@ namespace DX_Student_Score_Management.Controllers.TaiKhoanForms
 
         private void FormTAOLOGIN_Load(object sender, EventArgs e)
         {
-            Program.KHOA_SP_List_NHOMTableAdapter.Fill(Program._QLDSVKhoaDataSet.SP_List_NHOM);
+            Program.KHOA_SP_List_NHOMTableAdapter.Fill(Program._QLDSVKhoaDataSet.SP_List_NHOM,Program._dataRepository.GroupId);
         }
 
         private void btnTAO_Click(object sender, EventArgs e)
@@ -43,7 +43,6 @@ namespace DX_Student_Score_Management.Controllers.TaiKhoanForms
                 SqlDataReader dataReader = Program._dataRepository.excuteSP($"SP_Check_GIANGVIEN @MAGV = '{textEditMAGV.Text}'");
                 check = dataReader.GetInt32(0);
                 dataReader.Close();
-                MessageBox.Show(check.ToString());
                 if (check > 0)
                 {
                     DialogResult result = MessageBox.Show("Tạo Login cho tài khoản?", "Giảng viên đã tồn tại.", MessageBoxButtons.YesNo);

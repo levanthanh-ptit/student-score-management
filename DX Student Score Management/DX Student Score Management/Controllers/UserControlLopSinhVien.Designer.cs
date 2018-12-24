@@ -408,7 +408,7 @@
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(1256, 40);
+            this.barDockControlTop.Size = new System.Drawing.Size(1256, 42);
             // 
             // barDockControlBottom
             // 
@@ -422,17 +422,17 @@
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 40);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 42);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 605);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 603);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1256, 40);
+            this.barDockControlRight.Location = new System.Drawing.Point(1256, 42);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 605);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 603);
             // 
             // qLDSVKhoaDataSet
             // 
@@ -469,7 +469,7 @@
             this.panelSubContainer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelSubContainer.Location = new System.Drawing.Point(0, 0);
             this.panelSubContainer.Name = "panelSubContainer";
-            this.panelSubContainer.Size = new System.Drawing.Size(1254, 337);
+            this.panelSubContainer.Size = new System.Drawing.Size(1254, 336);
             this.panelSubContainer.TabIndex = 6;
             // 
             // groupBoxSinhVien
@@ -501,7 +501,7 @@
             this.groupBoxSinhVien.Controls.Add(this.nGAYSINHDateEdit);
             this.groupBoxSinhVien.Enabled = false;
             this.groupBoxSinhVien.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.groupBoxSinhVien.Location = new System.Drawing.Point(3, 238);
+            this.groupBoxSinhVien.Location = new System.Drawing.Point(3, 237);
             this.groupBoxSinhVien.Name = "groupBoxSinhVien";
             this.groupBoxSinhVien.Size = new System.Drawing.Size(1248, 96);
             this.groupBoxSinhVien.TabIndex = 2;
@@ -673,7 +673,7 @@
             this.sINHVIENGridControl.MenuManager = this.barManager1;
             this.sINHVIENGridControl.Name = "sINHVIENGridControl";
             this.sINHVIENGridControl.ShowOnlyPredefinedDetails = true;
-            this.sINHVIENGridControl.Size = new System.Drawing.Size(1248, 229);
+            this.sINHVIENGridControl.Size = new System.Drawing.Size(1248, 228);
             this.sINHVIENGridControl.TabIndex = 1;
             this.sINHVIENGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewSinhVien});
@@ -852,7 +852,7 @@
             // 
             this.splitContainer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.splitContainer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer.Location = new System.Drawing.Point(0, 40);
+            this.splitContainer.Location = new System.Drawing.Point(0, 42);
             this.splitContainer.Name = "splitContainer";
             this.splitContainer.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
@@ -866,8 +866,8 @@
             // splitContainer.Panel2
             // 
             this.splitContainer.Panel2.Controls.Add(this.panelSubContainer);
-            this.splitContainer.Size = new System.Drawing.Size(1256, 605);
-            this.splitContainer.SplitterDistance = 262;
+            this.splitContainer.Size = new System.Drawing.Size(1256, 603);
+            this.splitContainer.SplitterDistance = 261;
             this.splitContainer.TabIndex = 0;
             // 
             // groupBoxLOP
@@ -883,7 +883,7 @@
             this.groupBoxLOP.Controls.Add(this.btnAddLop);
             this.groupBoxLOP.Enabled = false;
             this.groupBoxLOP.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.groupBoxLOP.Location = new System.Drawing.Point(3, 200);
+            this.groupBoxLOP.Location = new System.Drawing.Point(3, 199);
             this.groupBoxLOP.Name = "groupBoxLOP";
             this.groupBoxLOP.Size = new System.Drawing.Size(1248, 57);
             this.groupBoxLOP.TabIndex = 2;
@@ -927,6 +927,7 @@
             // 
             this.kHOAComboBox.DataSource = this.kHOABindingSource;
             this.kHOAComboBox.DisplayMember = "TENKH";
+            this.kHOAComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.kHOAComboBox.Enabled = false;
             this.kHOAComboBox.FormattingEnabled = true;
             this.kHOAComboBox.Location = new System.Drawing.Point(3, 3);
@@ -947,7 +948,7 @@
             this.lOPGridControl.MenuManager = this.barManager1;
             this.lOPGridControl.Name = "lOPGridControl";
             this.lOPGridControl.ShowOnlyPredefinedDetails = true;
-            this.lOPGridControl.Size = new System.Drawing.Size(1248, 164);
+            this.lOPGridControl.Size = new System.Drawing.Size(1248, 163);
             this.lOPGridControl.TabIndex = 1;
             this.lOPGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewLop});
