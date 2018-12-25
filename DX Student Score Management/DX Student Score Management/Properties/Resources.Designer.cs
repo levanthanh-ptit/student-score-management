@@ -63,6 +63,16 @@ namespace DX_Student_Score_Management.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Diamond_Pattern_Backgrounds {
+            get {
+                object obj = ResourceManager.GetObject("Diamond-Pattern-Backgrounds", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Loading_icon {
             get {
                 object obj = ResourceManager.GetObject("Loading_icon", resourceCulture);

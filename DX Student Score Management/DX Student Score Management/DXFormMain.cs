@@ -19,6 +19,7 @@ namespace DX_Student_Score_Management
     {
         DataRepository _dataRepository;
         private LayoutTabPage layoutTabPage;
+
         private void InitializeExtendComponent()
         {
             //

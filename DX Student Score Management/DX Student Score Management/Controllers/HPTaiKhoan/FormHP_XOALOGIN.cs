@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace DX_Student_Score_Management.Controllers.TaiKhoanForms
+namespace DX_Student_Score_Management.Controllers.HPTaiKhoanForms
 {
     public partial class FormXOALOGIN : Form
     {

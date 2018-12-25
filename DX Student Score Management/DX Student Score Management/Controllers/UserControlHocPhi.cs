@@ -24,9 +24,6 @@ namespace DX_Student_Score_Management.Controllers
         }
         private void InitializeExtendComponent()
         {
-            Program.HOCPHI_TableAdapterManager.Connection = Program._dataRepository.sqlConnection;
-            Program.HOCPHI_SINHVIENTableAdapter.Connection = Program._dataRepository.sqlConnection;
-            Program.HOCPHI_HOCPHITableAdapter.Connection = Program._dataRepository.sqlConnection;
         }
         public void UserControlHocPhi_Load()
         {
@@ -48,6 +45,7 @@ namespace DX_Student_Score_Management.Controllers
             catch (SqlException sqlEx)
             {
                 MessageBox.Show(sqlEx.Message);
+                return;
             }
             MessageBox.Show("Upload thành công!");
         }
@@ -96,12 +94,20 @@ namespace DX_Student_Score_Management.Controllers
 
         private void barBtnDeleteHocPhi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            this.fKHOCPHISINHVIENBindingSource.RemoveCurrent();
+            try
+            {
+                this.fKHOCPHISINHVIENBindingSource.RemoveCurrent();
+            }
+            catch (Exception)
+            {
+
+            }
+            
         }
 
         private void btnMaSVSearch_Click(object sender, EventArgs e)
         {
-            string valid = Validation.validateCode("Mã Sinh viên", this.textBoxMaSV.ToString());
+            string valid = Validation.validateCode("Mã Sinh viên", this.textBoxMaSV.Text);
             if (valid != "")
             {
                 MessageBox.Show(valid);

@@ -3,36 +3,31 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
 using System.Data;
-using System.Text;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using DevExpress.XtraEditors;
-using DX_Student_Score_Management.Controllers.TaiKhoanForms;
+using DX_Student_Score_Management.Controllers.HPTaiKhoanForms;
 
 namespace DX_Student_Score_Management.Controllers
 {
-    public partial class UserControlTaiKhoan : DevExpress.XtraEditors.XtraUserControl
+    public partial class UserControlHPTaiKhoan : DevExpress.XtraEditors.XtraUserControl
     {
-        public UserControlTaiKhoan()
+        public UserControlHPTaiKhoan()
         {
             InitializeComponent();
-            InitializeExtendComponent();
-            
+            if (Program._dataRepository.GroupId.Equals("KETOAN")) barBtnDeleteGiangVien.Enabled = false;
+            this.sP_List_LOGINBindingSource.DataSource = Program._QLDSVHocPhiDataSet;
             UserControlTaiKhoan_Load();
         }
-        private void InitializeExtendComponent()
+        
+        private void UserControlTaiKhoan_Load()
         {
-            sP_List_LOGINBindingSource.DataSource = Program._QLDSVKhoaDataSet;
-            sP_List_LOGINTableAdapter.Connection = Program._dataRepository.sqlConnection;
+            Program.HOCPHI_SP_List_LOGINTableAdapter.Fill(Program._QLDSVHocPhiDataSet.SP_List_LOGIN);
         }
-        public void UserControlTaiKhoan_Load()
+        private void barBtnNewLogin_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            sP_List_LOGINTableAdapter.Fill(Program._QLDSVKhoaDataSet.SP_List_LOGIN);
-        }
-
-        private void barBtnRefresh_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
+            new FormTAOLOGIN().Show();
             UserControlTaiKhoan_Load();
         }
 
@@ -46,10 +41,10 @@ namespace DX_Student_Score_Management.Controllers
             UserControlTaiKhoan_Load();
         }
 
-        private void barBtnNewLogin_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void barBtnRefresh_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            new FormTAOLOGIN().Show();
-            UserControlTaiKhoan_Load();
+            Program.HOCPHI_SP_List_LOGINTableAdapter.Fill(Program._QLDSVHocPhiDataSet.SP_List_LOGIN);
+
         }
     }
 }

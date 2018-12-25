@@ -84,6 +84,18 @@
     <Compile Include="Components\LoadingForm.Designer.cs">
       <DependentUpon>LoadingForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controllers\HPTaiKhoan\FormHP_TAOLOGIN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controllers\HPTaiKhoan\FormHP_TAOLOGIN.Designer.cs">
+      <DependentUpon>FormHP_TAOLOGIN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\HPTaiKhoan\FormHP_XOALOGIN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controllers\HPTaiKhoan\FormHP_XOALOGIN.Designer.cs">
+      <DependentUpon>FormHP_XOALOGIN.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controllers\ReportForms\FormReportBDMH.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -120,6 +132,12 @@
     <Compile Include="Controllers\ReportForms\XtraReportBDTK.Designer.cs">
       <DependentUpon>XtraReportBDTK.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controllers\ReportForms\XtraReportDSHP.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controllers\ReportForms\XtraReportDSHP.Designer.cs">
+      <DependentUpon>XtraReportDSHP.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controllers\ReportForms\XtraReportDSSV.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -155,6 +173,18 @@
     </Compile>
     <Compile Include="Controllers\UserControlHocPhi.Designer.cs">
       <DependentUpon>UserControlHocPhi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\UserControlHPReport.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controllers\UserControlHPReport.Designer.cs">
+      <DependentUpon>UserControlHPReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\UserControlHPTaiKhoan.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controllers\UserControlHPTaiKhoan.Designer.cs">
+      <DependentUpon>UserControlHPTaiKhoan.cs</DependentUpon>
     </Compile>
     <Compile Include="Controllers\UserControlMon.cs">
       <SubType>UserControl</SubType>
@@ -220,6 +250,12 @@
     <EmbeddedResource Include="Components\LoadingForm.resx">
       <DependentUpon>LoadingForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controllers\HPTaiKhoan\FormHP_TAOLOGIN.resx">
+      <DependentUpon>FormHP_TAOLOGIN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controllers\HPTaiKhoan\FormHP_XOALOGIN.resx">
+      <DependentUpon>FormHP_XOALOGIN.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controllers\ReportForms\FormReportBDMH.resx">
       <DependentUpon>FormReportBDMH.cs</DependentUpon>
     </EmbeddedResource>
@@ -238,6 +274,9 @@
     <EmbeddedResource Include="Controllers\ReportForms\XtraReportBDTK.resx">
       <DependentUpon>XtraReportBDTK.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controllers\ReportForms\XtraReportDSHP.resx">
+      <DependentUpon>XtraReportDSHP.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controllers\ReportForms\XtraReportDSSV.resx">
       <DependentUpon>XtraReportDSSV.cs</DependentUpon>
     </EmbeddedResource>
@@ -255,6 +294,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controllers\UserControlHocPhi.resx">
       <DependentUpon>UserControlHocPhi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controllers\UserControlHPReport.resx">
+      <DependentUpon>UserControlHPReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controllers\UserControlHPTaiKhoan.resx">
+      <DependentUpon>UserControlHPTaiKhoan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controllers\UserControlMon.resx">
       <DependentUpon>UserControlMon.cs</DependentUpon>
@@ -331,6 +376,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="SrcImg\Loading_icon.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="SrcImg\Diamond-Pattern-Backgrounds.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

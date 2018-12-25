@@ -37,19 +37,34 @@ namespace DX_Student_Score_Management
         public static QLDSVHocPhiDataSetTableAdapters.LOPTableAdapter HOCPHI_LOPTableAdapter = new QLDSVHocPhiDataSetTableAdapters.LOPTableAdapter();
         public static QLDSVHocPhiDataSetTableAdapters.SINHVIENTableAdapter HOCPHI_SINHVIENTableAdapter = new QLDSVHocPhiDataSetTableAdapters.SINHVIENTableAdapter();
         public static QLDSVHocPhiDataSetTableAdapters.HOCPHITableAdapter HOCPHI_HOCPHITableAdapter = new QLDSVHocPhiDataSetTableAdapters.HOCPHITableAdapter();
+        public static QLDSVHocPhiDataSetTableAdapters.SP_List_LOGINTableAdapter HOCPHI_SP_List_LOGINTableAdapter = new QLDSVHocPhiDataSetTableAdapters.SP_List_LOGINTableAdapter();
+        public static QLDSVHocPhiDataSetTableAdapters.SP_List_NHOMTableAdapter HOCPHI_SP_List_NHOMTableAdapter = new QLDSVHocPhiDataSetTableAdapters.SP_List_NHOMTableAdapter();
 
         public static bool KHOA_LOP_Change = true;
         public static bool KHOA_MONHOC_Change = true;
         public static bool KHOA_SINHVIEN_Change = true;
         public static void FillAllTable()
         {
-            KHOA_KHOATableAdapter.Fill(_QLDSVKhoaDataSet.KHOA);
-            KHOA_GIANGVIENTableAdapter.Fill(_QLDSVKhoaDataSet.GIANGVIEN);
-            KHOA_LOPTableAdapter.Fill(_QLDSVKhoaDataSet.LOP);
-            KHOA_SINHVIENTableAdapter.Fill(_QLDSVKhoaDataSet.SINHVIEN);
-            KHOA_DIEMTableAdapter.Fill(_QLDSVKhoaDataSet.DIEM);
-            KHOA_HOCPHITableAdapter.Fill(_QLDSVKhoaDataSet.HOCPHI);
-            KHOA_MONHOCTableAdapter.Fill(_QLDSVKhoaDataSet.MONHOC);
+            if (!_dataRepository.Server.Equals("FPTDNSB\\THANH04"))
+            {
+                KHOA_KHOATableAdapter.Fill(_QLDSVKhoaDataSet.KHOA);
+                KHOA_GIANGVIENTableAdapter.Fill(_QLDSVKhoaDataSet.GIANGVIEN);
+                KHOA_LOPTableAdapter.Fill(_QLDSVKhoaDataSet.LOP);
+                KHOA_SINHVIENTableAdapter.Fill(_QLDSVKhoaDataSet.SINHVIEN);
+                KHOA_DIEMTableAdapter.Fill(_QLDSVKhoaDataSet.DIEM);
+                KHOA_HOCPHITableAdapter.Fill(_QLDSVKhoaDataSet.HOCPHI);
+                KHOA_MONHOCTableAdapter.Fill(_QLDSVKhoaDataSet.MONHOC);
+            }
+            else
+            {
+                HOCPHI_KHOATableAdapter.Fill(_QLDSVHocPhiDataSet.KHOA);
+                HOCPHI_GIANGVIENTableAdapter.Fill(_QLDSVHocPhiDataSet.GIANGVIEN);
+                HOCPHI_LOPTableAdapter.Fill(_QLDSVHocPhiDataSet.LOP);
+                HOCPHI_SINHVIENTableAdapter.Fill(_QLDSVHocPhiDataSet.SINHVIEN);
+                HOCPHI_HOCPHITableAdapter.Fill(_QLDSVHocPhiDataSet.HOCPHI);
+                HOCPHI_SP_List_LOGINTableAdapter.Fill(_QLDSVHocPhiDataSet.SP_List_LOGIN);
+            }
+                       
         }
         private static void ChangeConnection(SqlConnection sqlConnection)
         {
@@ -135,6 +150,7 @@ namespace DX_Student_Score_Management
             HOCPHI_LOPTableAdapter.ClearBeforeFill = true;
             HOCPHI_SINHVIENTableAdapter.ClearBeforeFill = true;
             HOCPHI_HOCPHITableAdapter.ClearBeforeFill = true;
+            HOCPHI_SP_List_LOGINTableAdapter.ClearBeforeFill = true;
             //--TableAdapterManager config--
             HOCPHI_TableAdapterManager.KHOATableAdapter = HOCPHI_KHOATableAdapter;
             HOCPHI_TableAdapterManager.GIANGVIENTableAdapter = HOCPHI_GIANGVIENTableAdapter;

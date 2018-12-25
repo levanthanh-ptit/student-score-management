@@ -43,6 +43,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.LoginPasswordTextBox = new System.Windows.Forms.TextBox();
             this.LoginButton = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.qLDSVDataSetMaster)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.v_DSPMBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.v_DSPMBindingSource1)).BeginInit();
@@ -83,8 +84,9 @@
             // 
             this.LoginServerListComboBox.DataSource = this.v_DSPMBindingSource2;
             this.LoginServerListComboBox.DisplayMember = "description";
+            this.LoginServerListComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.LoginServerListComboBox.FormattingEnabled = true;
-            this.LoginServerListComboBox.Location = new System.Drawing.Point(115, 41);
+            this.LoginServerListComboBox.Location = new System.Drawing.Point(197, 151);
             this.LoginServerListComboBox.Name = "LoginServerListComboBox";
             this.LoginServerListComboBox.Size = new System.Drawing.Size(222, 21);
             this.LoginServerListComboBox.TabIndex = 0;
@@ -97,8 +99,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(41, 44);
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(123, 154);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(66, 13);
             this.label1.TabIndex = 1;
@@ -107,8 +111,10 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(74, 92);
+            this.label2.ForeColor = System.Drawing.Color.Black;
+            this.label2.Location = new System.Drawing.Point(156, 202);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(33, 13);
             this.label2.TabIndex = 2;
@@ -116,7 +122,7 @@
             // 
             // LoginUserTextBox
             // 
-            this.LoginUserTextBox.Location = new System.Drawing.Point(115, 89);
+            this.LoginUserTextBox.Location = new System.Drawing.Point(197, 199);
             this.LoginUserTextBox.Name = "LoginUserTextBox";
             this.LoginUserTextBox.Size = new System.Drawing.Size(222, 21);
             this.LoginUserTextBox.TabIndex = 3;
@@ -125,8 +131,10 @@
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.label3.Location = new System.Drawing.Point(50, 119);
+            this.label3.ForeColor = System.Drawing.Color.Black;
+            this.label3.Location = new System.Drawing.Point(132, 229);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(61, 13);
             this.label3.TabIndex = 2;
@@ -134,7 +142,7 @@
             // 
             // LoginPasswordTextBox
             // 
-            this.LoginPasswordTextBox.Location = new System.Drawing.Point(115, 116);
+            this.LoginPasswordTextBox.Location = new System.Drawing.Point(197, 226);
             this.LoginPasswordTextBox.Name = "LoginPasswordTextBox";
             this.LoginPasswordTextBox.Size = new System.Drawing.Size(222, 21);
             this.LoginPasswordTextBox.TabIndex = 3;
@@ -143,7 +151,7 @@
             // 
             // LoginButton
             // 
-            this.LoginButton.Location = new System.Drawing.Point(169, 163);
+            this.LoginButton.Location = new System.Drawing.Point(251, 273);
             this.LoginButton.Name = "LoginButton";
             this.LoginButton.Size = new System.Drawing.Size(65, 30);
             this.LoginButton.TabIndex = 4;
@@ -151,20 +159,34 @@
             this.LoginButton.UseVisualStyleBackColor = true;
             this.LoginButton.Click += new System.EventHandler(this.loginLoginButton_Click);
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Times New Roman", 25F, System.Drawing.FontStyle.Bold);
+            this.label4.ForeColor = System.Drawing.Color.Black;
+            this.label4.Location = new System.Drawing.Point(190, 62);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(222, 38);
+            this.label4.TabIndex = 1;
+            this.label4.Text = "ĐĂNG NHẬP";
+            // 
             // FormLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(401, 216);
+            this.BackgroundImageLayoutStore = System.Windows.Forms.ImageLayout.Tile;
+            this.BackgroundImageStore = global::DX_Student_Score_Management.Properties.Resources.Diamond_Pattern_Backgrounds;
+            this.ClientSize = new System.Drawing.Size(606, 351);
             this.Controls.Add(this.LoginButton);
             this.Controls.Add(this.LoginPasswordTextBox);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.LoginUserTextBox);
             this.Controls.Add(this.label2);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.LoginServerListComboBox);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(417, 277);
             this.MinimizeBox = false;
             this.Name = "FormLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -195,5 +217,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox LoginPasswordTextBox;
         private System.Windows.Forms.Button LoginButton;
+        private System.Windows.Forms.Label label4;
     }
 }

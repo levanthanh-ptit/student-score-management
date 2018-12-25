@@ -1,4 +1,4 @@
-﻿namespace DX_Student_Score_Management.Controllers.TaiKhoanForms
+﻿namespace DX_Student_Score_Management.Controllers.HPTaiKhoanForms
 {
     partial class FormXOALOGIN
     {
